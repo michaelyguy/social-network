@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const compression = require("compression");
 const cookieSession = require("cookie-session");
+const { insertRegister } = require("./db.js");
 
 app.use(compression());
 app.use(

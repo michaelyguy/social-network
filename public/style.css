@@ -1,3 +1,40 @@
 * {
-    background-color: bisque;
+    margin: 0;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: ivory;
+}
+
+.logo {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 100px;
+}
+
+.welcome {
+    position: relative;
+    text-align: center;
+    /* background-color: hotpink; */
+    top: 50px;
+    font-size: 30px;
+    color: red;
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: cornflowerblue; */
+    height: 80vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 200px;
+    /* background-color: gold; */
 }

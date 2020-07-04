@@ -4,7 +4,10 @@ export default class Register extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "Kitty",
+            first: "",
+            last: "",
+            email: "",
+            password: "",
         };
     }
     handleChange(e) {
@@ -14,6 +17,9 @@ export default class Register extends React.Component {
             email: e.target.value,
             password: e.target.value,
         });
+    }
+    submitRegister() {
+        /// axios req. here ///
     }
     render() {
         return (
@@ -43,7 +49,9 @@ export default class Register extends React.Component {
                         placeholder="password"
                         onChange={(e) => this.handleChange(e)}
                     />
-                    <button type="submit">Submit</button>
+                    <button onClick={this.submitRegister} type="submit">
+                        Submit
+                    </button>
                 </form>
             </div>
         );
