@@ -35,6 +35,25 @@ app.get("/welcome", (req, res) => {
     }
 });
 
+app.post("/register", (req, res) => {
+    console.log("------REQ.BODY------");
+    console.log(req.body);
+    insertRegister(
+        req.body.first,
+        req.body.last,
+        req.params.email,
+        req.params.password
+    )
+        .then((result) => {
+            console.log("------RESULT IN /COMMENT POST-------");
+            console.log(result);
+            // res.json(result.rows[0]);
+        })
+        .catch((err) => {
+            console.log("-----ERROR IN CATCH /REGISTER POST-----", err);
+        });
+});
+
 app.get("*", function (req, res) {
     if (!req.session.userId) {
         res.redirect("/welcome");

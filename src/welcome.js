@@ -5,7 +5,7 @@ export default function Welcome() {
     return (
         <div className="welcome">
             <img src="logo.png" className="logo" />
-            <h3>You are rly welcome</h3>
+            <h3>Welcome to McDonald's</h3>
             <Register />
         </div>
     );

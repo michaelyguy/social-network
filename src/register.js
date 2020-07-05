@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 export default class Register extends React.Component {
     constructor(props) {
@@ -17,9 +18,21 @@ export default class Register extends React.Component {
             email: e.target.value,
             password: e.target.value,
         });
+        // console.log("----THIS----");
+        // console.log(this);
+        // console.log("----THIS.STATE----");
+        // console.log(this.state);
     }
     submitRegister() {
-        /// axios req. here ///
+        axios
+            .post("/register", this.state)
+            .then((response) => {
+                console.log("----RESPONSE IN POST AXIOS----");
+                console.log(response);
+            })
+            .catch(function (err) {
+                console.log("error ins POST /upload: ", err);
+            });
     }
     render() {
         return (
@@ -49,7 +62,7 @@ export default class Register extends React.Component {
                         placeholder="password"
                         onChange={(e) => this.handleChange(e)}
                     />
-                    <button onClick={this.submitRegister} type="submit">
+                    <button onSubmit={this.submitRegister} type="submit">
                         Submit
                     </button>
                 </form>
