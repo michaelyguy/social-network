@@ -1,13 +1,10 @@
 import React from "react";
 import axios from "./axios";
-import { Link } from "react-router-dom";
 
-export default class Register extends React.Component {
+export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            first: "",
-            last: "",
             email: "",
             password: "",
         };
@@ -24,32 +21,20 @@ export default class Register extends React.Component {
         console.log("---THIS---");
         console.log(this);
         axios
-            .post("/register", this.state)
+            .post("/login", this.state)
             .then((response) => {
-                console.log("----RESPONSE IN POST AXIOS----");
-                console.log(response);
-                console.log(response.data);
+                // console.log("----RESPONSE IN POST AXIOS----");
+                // console.log(response);
+                // console.log(response.data);
                 location.replace("/");
             })
             .catch(function (err) {
-                console.log("error ins POST /upload: ", err);
+                console.log("ERROR IN CATCH POST /LOGIN: ", err);
             });
     }
     render() {
         return (
-            <div className="register">
-                <input
-                    name="first"
-                    type="text"
-                    placeholder="first"
-                    onChange={(e) => this.handleChange(e)}
-                />
-                <input
-                    name="last"
-                    type="text"
-                    placeholder="last"
-                    onChange={(e) => this.handleChange(e)}
-                />
+            <div className="login">
                 <input
                     name="email"
                     type="text"
@@ -62,8 +47,7 @@ export default class Register extends React.Component {
                     placeholder="password"
                     onChange={(e) => this.handleChange(e)}
                 />
-                <button onClick={(e) => this.handleSubmit(e)}>Submit</button>
-                <Link to="/login">Click here to Log in!</Link>
+                <button onClick={(e) => this.handleSubmit(e)}>Login</button>
             </div>
         );
     }
