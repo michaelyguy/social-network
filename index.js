@@ -5,6 +5,10 @@ const cookieSession = require("cookie-session");
 const { insertRegister, getHashedPassword } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
+const cryptoRandomString = require("crypto-random-string");
+const secretCode = cryptoRandomString({
+    length: 6,
+});
 
 app.use(compression());
 app.use(
@@ -82,10 +86,11 @@ app.post("/login", (req, res) => {
                         console.log("PASSWORD CORRECT?: ", match);
                         if (match == true) {
                             req.session.userId = result.rows[0].id;
+
                             if (!result.rows[0]) {
                                 res.json("PASSWORD DON'T MATCH");
                             } else {
-                                res.json("LOGGIN SUCCSSFULL");
+                                res.json("LOGIN SUCCSSFULL");
                             }
                         } else {
                             res.json("PASSWORD OR EMAIL DOESN'T MATCH");

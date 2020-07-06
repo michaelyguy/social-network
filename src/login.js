@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "./axios";
+import { Link } from "react-router-dom";
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -7,6 +8,7 @@ export default class Login extends React.Component {
         this.state = {
             email: "",
             password: "",
+            error: false,
         };
     }
     handleChange(e) {
@@ -23,9 +25,9 @@ export default class Login extends React.Component {
         axios
             .post("/login", this.state)
             .then((response) => {
-                // console.log("----RESPONSE IN POST AXIOS----");
-                // console.log(response);
-                // console.log(response.data);
+                console.log("----RESPONSE IN POST AXIOS----");
+                console.log(response);
+                console.log(response.data);
                 location.replace("/");
             })
             .catch(function (err) {
@@ -48,6 +50,7 @@ export default class Login extends React.Component {
                     onChange={(e) => this.handleChange(e)}
                 />
                 <button onClick={(e) => this.handleSubmit(e)}>Login</button>
+                <Link to="/password/reset/start">Forgot your password?</Link>
             </div>
         );
     }
