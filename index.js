@@ -6,9 +6,6 @@ const { insertRegister, getHashedPassword } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
 const cryptoRandomString = require("crypto-random-string");
-const secretCode = cryptoRandomString({
-    length: 6,
-});
 
 app.use(compression());
 app.use(
@@ -49,6 +46,25 @@ app.get("/welcome", (req, res) => {
     }
 });
 
+app.post("/password/reset/start", (req, res) => {
+    getHashedPassword(req.body.email)
+        .then((result) => {
+            console.log("----RESULT IN /RESET PASSWORD--");
+            console.log(result);
+            if (result.rows.length > 0) {
+                const cryptoRandomString = require("crypto-random-string");
+                const secretCode = cryptoRandomString({
+                    length: 6,
+                });
+            } else {
+                res.json({ error: true });
+            }
+        })
+        .catch((err) => {
+            console.log("ERROR IN CATCH /RESET PASSWORD", err);
+        });
+});
+
 app.post("/register", (req, res) => {
     console.log("------REQ.BODY------");
     console.log(req.body);
@@ -78,8 +94,8 @@ app.post("/register", (req, res) => {
 app.post("/login", (req, res) => {
     getHashedPassword(req.body.email)
         .then((result) => {
-            console.log("----RESULT IN POST /LOGIN----");
-            console.log(result);
+            // console.log("----RESULT IN POST /LOGIN----");
+            // console.log(result);
             if (result.rows.length <= 0) {
                 res.redirect("/register");
             } else {
@@ -88,9 +104,7 @@ app.post("/login", (req, res) => {
                         console.log("PASSWORD CORRECT?: ", match);
                         if (match == true) {
                             req.session.userId = result.rows[0].id;
-                            console.log("----req.session.userId-----");
                             console.log(req.session);
-
                             if (!result.rows[0]) {
                                 res.json("PASSWORD DON'T MATCH");
                             } else {
