@@ -38,7 +38,7 @@ export default class ResetPassword extends React.Component {
     getCurrentDisplay() {
         if (this.state.currentDisplay == 0) {
             return (
-                <div>
+                <div className="inputs-container">
                     {this.state.error && <h3>error sorry</h3>}
                     <input
                         name="email"

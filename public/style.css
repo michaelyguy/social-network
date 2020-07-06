@@ -4,37 +4,43 @@
 
 body {
     font-family: Helvetica, sans-serif;
-    background-color: ivory;
+    background-color: gainsboro;
 }
 
 .logo {
-    position: fixed;
-    top: 30px;
-    left: 30px;
-    width: 100px;
+    width: 250px;
 }
 
-.welcome {
+.logo-small {
+    position: fixed;
+    top: 35px;
+    left: 30px;
+    height: 100px;
+}
+
+.container {
     position: relative;
+    flex-direction: column;
     text-align: center;
     /* background-color: hotpink; */
-    top: 80px;
-    font-size: 30px;
     color: red;
+    height: 100vh;
 }
 
-.register {
+.components {
+    /* background-color: royalblue; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: cornflowerblue; */
-    height: 80vh;
+    margin-top: 50px;
 }
 
-form {
+.inputs-container {
     display: flex;
     flex-direction: column;
-    height: 300px;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
     width: 200px;
-    /* background-color: gold; */
+    /* background-color: seagreen; */
 }

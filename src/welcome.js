@@ -7,11 +7,11 @@ import { HashRouter, Route } from "react-router-dom";
 
 export default function Welcome() {
     return (
-        <div className="welcome">
+        <div className="container">
             <img src="logo.png" className="logo" />
             <h3>Welcome to McDonald's</h3>
             <HashRouter>
-                <div>
+                <div className="components">
                     <Route exact path="/" component={Register} />
                     <Route path="/login" component={Login} />
                     <Route

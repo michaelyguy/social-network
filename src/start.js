@@ -11,8 +11,8 @@ if (location.pathname === "/welcome") {
     /// put logo image inside public to render here ///
     elem = (
         <div>
-            <img className="logo" src="/logo.png" />
-            <h3>Welcome back</h3>
+            <img className="logo-small" src="/logo.png" />
+            {/* <h3>Welcome back</h3> */}
         </div>
     );
 }
