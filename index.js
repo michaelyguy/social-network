@@ -57,9 +57,11 @@ app.post("/register", (req, res) => {
         console.log(hashedPw);
         insertRegister(req.body.first, req.body.last, req.body.email, hashedPw)
             .then((result) => {
-                console.log("------RESULT IN /COMMENT POST-------");
+                console.log("------RESULT IN /REGISTER POST-------");
                 console.log(result);
+                // req.session.userId = result.rows[0].id;
                 req.session.userId = {
+                    userId: result.rows[0].id,
                     first: result.rows[0].first,
                     last: result.rows[0].last,
                     email: result.rows[0].email,
@@ -86,6 +88,8 @@ app.post("/login", (req, res) => {
                         console.log("PASSWORD CORRECT?: ", match);
                         if (match == true) {
                             req.session.userId = result.rows[0].id;
+                            console.log("----req.session.userId-----");
+                            console.log(req.session);
 
                             if (!result.rows[0]) {
                                 res.json("PASSWORD DON'T MATCH");
