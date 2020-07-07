@@ -2,10 +2,11 @@ const express = require("express");
 const app = express();
 const compression = require("compression");
 const cookieSession = require("cookie-session");
-const { insertRegister, getHashedPassword } = require("./db.js");
+const { insertRegister, getUser, insertCode, getCode } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
 const cryptoRandomString = require("crypto-random-string");
+const { sendEmail } = require("./ses.js");
 
 app.use(compression());
 app.use(
@@ -47,21 +48,70 @@ app.get("/welcome", (req, res) => {
 });
 
 app.post("/password/reset/start", (req, res) => {
-    getHashedPassword(req.body.email)
+    getUser(req.body.email)
         .then((result) => {
             console.log("----RESULT IN /RESET PASSWORD--");
-            console.log(result);
+            console.log(result.rows.length);
             if (result.rows.length > 0) {
-                const cryptoRandomString = require("crypto-random-string");
                 const secretCode = cryptoRandomString({
                     length: 6,
                 });
+                // console.log("-----secretCode-----");
+                // console.log(secretCode);
+                insertCode(req.body.email, secretCode)
+                    .then((result) => {
+                        // console.log("----RESULT IN /PASSWORD/RESET/START-----");
+                        // console.log(result);
+                        sendEmail(
+                            req.body.email,
+                            "Heres your password reset code",
+                            secretCode
+                        )
+                            .then((result) => {
+                                res.json("PLEASE CHECK YOUR EMAIL");
+                            })
+                            .catch((err) => {
+                                console.log("ERROR IN CATCH SEND EMAIL", err);
+                            });
+                    })
+                    .catch((err) => {
+                        console.log(
+                            "----EROOR IN /PASSWORD/RESET/START----",
+                            err
+                        );
+                    });
             } else {
                 res.json({ error: true });
+                console.log("add error email don't match");
             }
         })
         .catch((err) => {
             console.log("ERROR IN CATCH /RESET PASSWORD", err);
+        });
+});
+
+app.post("/password/reset/verify", (req, res) => {
+    /// chage to code to work with the new qu (add code)
+    // from tom example - if rwesult.rows.lengt > 0 mean i have a match in compare
+    getCode(req.body.email)
+        .then((result) => {
+            console.log("----RESULT IN POST /VERIFY----");
+            console.log(result.rows[0]);
+            console.log("-----req.body.code------");
+            console.log(req.body.code);
+
+            compare(result.rows[0].code, req.body.code)
+                .then((match) => {
+                    console.log("CODE MATCH", match);
+                    if (match == true) {
+                    }
+                })
+                .catch((err) => {
+                    console.log("ERROR IN CATCH MATCH COMPARE", err);
+                });
+        })
+        .catch((err) => {
+            console.log("ERROR IN CATCH POST /VERIFY", err);
         });
 });
 
@@ -92,7 +142,7 @@ app.post("/register", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-    getHashedPassword(req.body.email)
+    getUser(req.body.email)
         .then((result) => {
             // console.log("----RESULT IN POST /LOGIN----");
             // console.log(result);
