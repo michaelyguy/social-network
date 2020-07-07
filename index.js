@@ -122,6 +122,7 @@ app.post("/login", (req, res) => {
         });
 });
 
+/// LAST ROUTE ///
 app.get("*", function (req, res) {
     if (!req.session.userId) {
         res.redirect("/welcome");

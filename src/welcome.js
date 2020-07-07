@@ -2,14 +2,16 @@ import React from "react";
 import Register from "./register";
 import Login from "./login";
 import ResetPassword from "./resetPassword";
-// import axios from "./axios;";
 import { HashRouter, Route } from "react-router-dom";
 
 export default function Welcome() {
     return (
         <div className="container">
             <img src="logo.png" className="logo" />
-            <h3>Welcome to McDonald's</h3>
+            <h3>
+                I really wants to eat McDonald's right now, so please fill your
+                details
+            </h3>
             <HashRouter>
                 <div className="components">
                     <Route exact path="/" component={Register} />
