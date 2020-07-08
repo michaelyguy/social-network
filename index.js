@@ -2,7 +2,13 @@ const express = require("express");
 const app = express();
 const compression = require("compression");
 const cookieSession = require("cookie-session");
-const { insertRegister, getUser, insertCode, getCode } = require("./db.js");
+const {
+    insertRegister,
+    getUser,
+    insertCode,
+    getCode,
+    updatePassword,
+} = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
 const cryptoRandomString = require("crypto-random-string");
@@ -96,7 +102,24 @@ app.post("/password/reset/verify", (req, res) => {
             console.log("----RESULT IN POST /VERIFY----");
             console.log(result);
             if (result.rows.length > 0) {
-                //// DEAL WITH PASSWORD ////
+                // hash(req.body.password).then((hashedPw) => {
+                //     console.log("------HASEDPASSWORD-----");
+                //     console.log(hashedPw);
+                //     updatePassword(hashedPw)
+                //         .then((result) => {
+                //             console.log(
+                //                 "------RESULT IN /REGISTER POST-------"
+                //             );
+                //             console.log(result);
+                //             res.json(result.rows[0]);
+                //         })
+                //         .catch((err) => {
+                //             console.log(
+                //                 "-----ERROR IN CATCH /REGISTER POST-----",
+                //                 err
+                //             );
+                //         });
+                // });
             }
         })
         .catch((err) => {
