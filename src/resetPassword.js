@@ -14,9 +14,15 @@ export default class ResetPassword extends React.Component {
         };
     }
     handleChange(e) {
-        this.setState({
-            [e.target.name]: e.target.value,
-        });
+        if (this.state.currentDisplay == 0) {
+            this.setState({
+                [e.target.name]: e.target.value,
+            });
+        } else {
+            this.setState({
+                newPassword: e.target.value,
+            });
+        }
         // console.log("----THIS.STATE----");
         // console.log(this.state);
     }
@@ -70,7 +76,6 @@ export default class ResetPassword extends React.Component {
         }
     }
 
-    // }
     getCurrentDisplay() {
         if (this.state.currentDisplay == 0) {
             return (

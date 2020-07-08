@@ -96,6 +96,7 @@ app.post("/password/reset/verify", (req, res) => {
             console.log("----RESULT IN POST /VERIFY----");
             console.log(result);
             if (result.rows.length > 0) {
+                //// DEAL WITH PASSWORD ////
             }
         })
         .catch((err) => {
