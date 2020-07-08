@@ -91,24 +91,12 @@ app.post("/password/reset/start", (req, res) => {
 });
 
 app.post("/password/reset/verify", (req, res) => {
-    /// chage to code to work with the new qu (add code)
-    // from tom example - if rwesult.rows.lengt > 0 mean i have a match in compare
-    getCode(req.body.email)
+    getCode(req.body.email, req.body.code)
         .then((result) => {
             console.log("----RESULT IN POST /VERIFY----");
-            console.log(result.rows[0]);
-            console.log("-----req.body.code------");
-            console.log(req.body.code);
-
-            compare(result.rows[0].code, req.body.code)
-                .then((match) => {
-                    console.log("CODE MATCH", match);
-                    if (match == true) {
-                    }
-                })
-                .catch((err) => {
-                    console.log("ERROR IN CATCH MATCH COMPARE", err);
-                });
+            console.log(result);
+            if (result.rows.length > 0) {
+            }
         })
         .catch((err) => {
             console.log("ERROR IN CATCH POST /VERIFY", err);

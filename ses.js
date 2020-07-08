@@ -36,6 +36,8 @@ exports.sendEmail = function (to, subject, message) {
         .catch((err) => console.log(err));
 };
 
+/// EXAMPLE OF SENDEMAIL FUNCTON ///
+
 // sendEmail(
 //     "dill@spicedling.email",
 //     "Heres your password reset code",

@@ -5,7 +5,13 @@ import { Link } from "react-router-dom";
 export default class ResetPassword extends React.Component {
     constructor() {
         super();
-        this.state = { currentDisplay: 0, error: false };
+        this.state = {
+            currentDisplay: 0,
+            error: false,
+            ///// TO ASK ABT THAT - NOT SURE I NEED THIS ////
+            newPassword: "",
+            code: "",
+        };
     }
     handleChange(e) {
         this.setState({
