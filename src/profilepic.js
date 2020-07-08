@@ -9,8 +9,8 @@ export default function ProfilePic(props) {
             <img
                 className="small-userpic"
                 onClick={() => props.toggleModal()}
-                src="defaultpic.jpg"
-                alt="{props.first} heree {props.last}"
+                src={props.profilePic || "defaultpic.jpg"}
+                alt={`${props.first} ${props.last}`}
             />
         </div>
     );

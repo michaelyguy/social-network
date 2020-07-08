@@ -47,9 +47,9 @@ module.exports.getUserImg = (id) => {
     );
 };
 
-module.exports.insertProfilePic = (profilePic, userId) => {
-    return db.query(
-        `INSERT INTO users (imgurl, id) VALUES ($1, $2) RETURNING *`,
-        [profilePic, userId]
-    );
+module.exports.updateProfilePic = (profilePic, userId) => {
+    return db.query(`UPDATE users SET imgurl = $1 WHERE id = $2 RETURNING *`, [
+        profilePic,
+        userId,
+    ]);
 };

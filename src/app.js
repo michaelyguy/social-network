@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "./axios";
-import ProfilePic from "./profilepic";
+// import ProfilePic from "./profilepic";
 import Uploader from "./uploader";
-// import Profile from "./profile";
+import Profile from "./profile";
 
 export default class App extends React.Component {
     constructor() {
@@ -50,18 +50,19 @@ export default class App extends React.Component {
             <div className="container">
                 <img src="logo.png" className="logo-small" />
                 <h1>Hello from App</h1>
-                {/* <Profile
-                first={this.state.first}
-                last={this.state.last}
-                profilePic={this.state.profilePic}
-                /> */}
-
-                <ProfilePic
+                <Profile
                     first={this.state.first}
                     last={this.state.last}
                     profilePic={this.state.profilePic}
                     toggleModal={() => this.toggleModal()}
                 />
+
+                {/* <ProfilePic
+                    first={this.state.first}
+                    last={this.state.last}
+                    profilePic={this.state.profilePic}
+                    toggleModal={() => this.toggleModal()}
+                /> */}
                 {this.state.uploaderIsVisible && (
                     <Uploader setImage={() => this.setImage()} />
                 )}

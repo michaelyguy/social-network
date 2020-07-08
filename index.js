@@ -9,7 +9,7 @@ const {
     getCode,
     updatePassword,
     getUserImg,
-    insertProfilePic,
+    updateProfilePic,
 } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
@@ -248,7 +248,7 @@ app.post("/upload", uploader.single("imgurl"), s3.upload, (req, res) => {
     console.log(s3Url);
 
     if (filename) {
-        insertProfilePic(imageUrl, req.session.userId)
+        updateProfilePic(imageUrl, req.session.userId)
             .then((result) => {
                 // console.log("------RESULT------");
                 // console.log(result);

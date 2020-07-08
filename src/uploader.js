@@ -9,12 +9,6 @@ export default class Uploader extends React.Component {
         };
     }
 
-    /// when the user selects an image, store this img in state ///
-    /// REFERENCE TO MAGE BOARD CODE HERE - /upload /// molter, s3, uidsafepath ///
-    //// store the file in FormData -> then we can send the file off to the server.
-
-    //// SEE FUNCTION FROM CLASS DEMO /////
-
     handleChange(e) {
         this.setState({
             imgurl: e.target.files[0],
