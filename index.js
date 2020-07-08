@@ -97,29 +97,31 @@ app.post("/password/reset/start", (req, res) => {
 });
 
 app.post("/password/reset/verify", (req, res) => {
+    // console.log("---REQ.BODY VERIFY----");
+    // console.log(req.body);
     getCode(req.body.email, req.body.code)
         .then((result) => {
             console.log("----RESULT IN POST /VERIFY----");
             console.log(result);
             if (result.rows.length > 0) {
-                // hash(req.body.password).then((hashedPw) => {
-                //     console.log("------HASEDPASSWORD-----");
-                //     console.log(hashedPw);
-                //     updatePassword(hashedPw, result.row[0].id)
-                //         .then((result) => {
-                //             console.log(
-                //                 "------RESULT IN /HASE POST RESET-------"
-                //             );
-                //             console.log(result);
-                //             res.json("SUCCESSE UPDATE");
-                //         })
-                //         .catch((err) => {
-                //             console.log(
-                //                 "-----ERROR IN CATCH /RESET/VERIFY POST-----",
-                //                 err
-                //             );
-                //         });
-                // });
+                hash(req.body.newPassword).then((hashedPw) => {
+                    console.log("------HASEDPASSWORD-----");
+                    console.log(hashedPw);
+                    updatePassword(hashedPw, result.rows[0].id)
+                        .then((result) => {
+                            console.log(
+                                "------RESULT IN /HASE POST RESET-------"
+                            );
+                            console.log(result);
+                            res.json("SUCCESSE UPDATE");
+                        })
+                        .catch((err) => {
+                            console.log(
+                                "-----ERROR IN CATCH /RESET/VERIFY POST-----",
+                                err
+                            );
+                        });
+                });
             }
         })
         .catch((err) => {

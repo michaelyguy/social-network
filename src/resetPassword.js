@@ -46,6 +46,8 @@ export default class ResetPassword extends React.Component {
                     console.log("ERROR IN CATCH POST /RESET PASSWORD: ", err);
                 });
         } else if (this.state.currentDisplay == 1) {
+            console.log("---THIS.STATE DISPLAY1----");
+            console.log(this.state);
             axios
                 .post("/password/reset/verify", this.state)
                 .then((response) => {
@@ -66,6 +68,9 @@ export default class ResetPassword extends React.Component {
             return (
                 <div>
                     <h3>Password reset</h3>
+                    <Link to="/login">
+                        You can now log in with your new password!
+                    </Link>
                 </div>
             );
         }
@@ -79,6 +84,7 @@ export default class ResetPassword extends React.Component {
                     <input
                         name="email"
                         type="text"
+                        key="email"
                         placeholder="email"
                         onChange={(e) => this.handleChange(e)}
                     />
@@ -99,6 +105,7 @@ export default class ResetPassword extends React.Component {
                     <input
                         name="newPassword"
                         type="password"
+                        key="password"
                         placeholder="new password"
                         onChange={(e) => this.handleChange(e)}
                     />

@@ -9,7 +9,6 @@ if (location.pathname === "/welcome") {
     elem = <Welcome />;
 } else {
     /// runs if the user is logged in ///
-    /// put logo image inside public to render here ///
     elem = <App />;
 }
 

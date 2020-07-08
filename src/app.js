@@ -2,13 +2,17 @@ import React from "react";
 import axios from "./axios";
 import ProfilePic from "./profilepic";
 import Uploader from "./uploader";
-import Profile from "./profile";
+// import Profile from "./profile";
 
 export default class App extends React.Component {
     constructor() {
         super();
         this.state = {
             uploaderIsVisible: false,
+            first: "",
+            last: "",
+            profilePic: "",
+            toggleModal: "",
         };
     }
 
@@ -37,20 +41,21 @@ export default class App extends React.Component {
         console.log("------THIS.STATE -> HAVE TO BE DEFINE------");
         console.log(this.state);
         return (
-            <div>
+            <div className="container">
+                <img src="logo.png" className="logo-small" />
                 <h1>Hello from App</h1>
-                <Profile
-                    first={this.state.first}
-                    last={this.state.last}
-                    profilePic={this.state.profilePic}
-                />
+                {/* <Profile
+                first={this.state.first}
+                last={this.state.last}
+                profilePic={this.state.profilePic}
+                /> */}
 
-                {/* <ProfilePic
+                <ProfilePic
                     first={this.state.first}
                     last={this.state.last}
                     profilePic={this.state.profilePic}
                     toggleModal={() => this.toggleModal()}
-                /> */}
+                />
 
                 <p onClick={() => this.toggleModal()}>
                     Click me to toggle the modal!
