@@ -18,6 +18,14 @@ body {
     height: 100px;
 }
 
+.small-userpic {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    height: 75px;
+    border: 1px solid black;
+}
+
 .container {
     position: relative;
     flex-direction: column;
@@ -43,4 +51,13 @@ body {
     height: 200px;
     width: 200px;
     /* background-color: seagreen; */
+}
+
+.uploader-container {
+    background-color: darkseagreen;
+    position: relative;
+    margin: 0 auto;
+    top: 180px;
+    height: 300px;
+    width: 500px;
 }

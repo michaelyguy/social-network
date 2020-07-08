@@ -38,3 +38,18 @@ module.exports.updatePassword = (password, Id) => {
         [password, Id]
     );
 };
+
+module.exports.getUserImg = (id) => {
+    return db.query(
+        `SELECT * FROM users
+  WHERE id = $1`,
+        [id]
+    );
+};
+
+module.exports.insertProfilePic = (profilePic, userId) => {
+    return db.query(
+        `INSERT INTO users (imgurl, id) VALUES ($1, $2) RETURNING *`,
+        [profilePic, userId]
+    );
+};

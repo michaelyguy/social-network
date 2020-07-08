@@ -18,11 +18,17 @@ export default class App extends React.Component {
 
     /// lifecyrcle methods - read! ///
     componentDidMount() {
-        /// get info abt the logged in user ///
-        /// (first, last, profile pic) ///
-        /// modigy "users" table to have a profilePic ///
-        axios.get("/user").then((response) => {});
-        /// store response from server in state - log -> (this.state) and see the info ///
+        axios.get("/user").then((response) => {
+            console.log("----RESPONSE IN GET/USER---");
+            console.log(response.data);
+            this.setState({
+                first: response.data.first,
+                last: response.data.last,
+                profilePic: response.data.imgurl,
+            });
+            console.log("-----THIS.STATE----");
+            console.log(this.state);
+        });
     }
 
     setImage(newProfilePic) {
@@ -56,10 +62,6 @@ export default class App extends React.Component {
                     profilePic={this.state.profilePic}
                     toggleModal={() => this.toggleModal()}
                 />
-
-                <p onClick={() => this.toggleModal()}>
-                    Click me to toggle the modal!
-                </p>
                 {this.state.uploaderIsVisible && (
                     <Uploader setImage={() => this.setImage()} />
                 )}
