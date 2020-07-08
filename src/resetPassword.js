@@ -14,15 +14,10 @@ export default class ResetPassword extends React.Component {
         };
     }
     handleChange(e) {
-        if (this.state.currentDisplay == 0) {
-            this.setState({
-                [e.target.name]: e.target.value,
-            });
-        } else {
-            this.setState({
-                newPassword: e.target.value,
-            });
-        }
+        this.setState({
+            [e.target.name]: e.target.value,
+        });
+
         // console.log("----THIS.STATE----");
         // console.log(this.state);
     }
