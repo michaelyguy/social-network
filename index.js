@@ -56,8 +56,8 @@ app.get("/welcome", (req, res) => {
 app.post("/password/reset/start", (req, res) => {
     getUser(req.body.email)
         .then((result) => {
-            console.log("----RESULT IN /RESET PASSWORD--");
-            console.log(result.rows.length);
+            // console.log("----RESULT IN /RESET PASSWORD--");
+            // console.log(result.rows.length);
             if (result.rows.length > 0) {
                 const secretCode = cryptoRandomString({
                     length: 6,
@@ -105,17 +105,17 @@ app.post("/password/reset/verify", (req, res) => {
                 // hash(req.body.password).then((hashedPw) => {
                 //     console.log("------HASEDPASSWORD-----");
                 //     console.log(hashedPw);
-                //     updatePassword(hashedPw)
+                //     updatePassword(hashedPw, result.row[0].id)
                 //         .then((result) => {
                 //             console.log(
-                //                 "------RESULT IN /REGISTER POST-------"
+                //                 "------RESULT IN /HASE POST RESET-------"
                 //             );
                 //             console.log(result);
-                //             res.json(result.rows[0]);
+                //             res.json("SUCCESSE UPDATE");
                 //         })
                 //         .catch((err) => {
                 //             console.log(
-                //                 "-----ERROR IN CATCH /REGISTER POST-----",
+                //                 "-----ERROR IN CATCH /RESET/VERIFY POST-----",
                 //                 err
                 //             );
                 //         });
