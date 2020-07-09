@@ -10,6 +10,7 @@ const {
     updatePassword,
     getUserImg,
     updateProfilePic,
+    updateBio,
 } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
@@ -216,8 +217,6 @@ app.post("/login", (req, res) => {
 app.get("/user", (req, res) => {
     getUserImg(req.session.userId)
         .then((result) => {
-            // console.log("-----RESULT IN /USER-----");
-            // console.log(result);
             res.json(result.rows[0]);
         })
         .catch((err) => {
@@ -225,15 +224,15 @@ app.get("/user", (req, res) => {
         });
 });
 
-// app.get("/user", async (req, res) => {
-//     try {
-//         await getUserImg(req.session.userId);
-//     } catch (e) {
-//         console.log("ERROE IN /USER", e);
-//     }
-//     console.log("-----REQ.SSESION-----");
-//     console.log(req.session.userId);
-// });
+app.post("/bio/editor", (req, res) => {
+    updateBio(req.body.bioText, req.session.userId)
+        .then((result) => {
+            res.json(result.rows[0]);
+        })
+        .catch((err) => {
+            console.log("ERROR IN /BIO/EDITOR", err);
+        });
+});
 
 app.post("/upload", uploader.single("imgurl"), s3.upload, (req, res) => {
     const { filename } = req.file;

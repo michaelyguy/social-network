@@ -3,12 +3,8 @@ import ProfilePic from "./profilepic";
 import BioEditor from "./bioeditor";
 
 export default function Profile(props) {
-    console.log("props in profile: ", props);
-    console.log("----props.toggleModal----");
-
-    console.log(props.toggleModal);
     return (
-        <div className="container">
+        <div>
             <h1>YOU SEE PROFILE COMPONENT</h1>
             <h2>Hey Name: {props.first}</h2>
 
@@ -20,7 +16,7 @@ export default function Profile(props) {
                 toggleModal={props.toggleModal}
                 newProfilePic={props.newProfilePic}
             />
-            <BioEditor />
+            <BioEditor setBio={props.setBio} bio={props.bio} />
         </div>
     );
 }
