@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "./axios";
-// import ProfilePic from "./profilepic";
+import ProfilePic from "./profilepic";
 import Uploader from "./uploader";
 import Profile from "./profile";
 
@@ -13,6 +13,7 @@ export default class App extends React.Component {
             last: "",
             profilePic: "",
             toggleModal: "",
+            setImage: "",
         };
     }
 
@@ -38,6 +39,7 @@ export default class App extends React.Component {
     }
 
     toggleModal() {
+        console.log("heyyyyyyyy");
         this.setState({
             uploaderIsVisible: true,
         });
@@ -46,23 +48,23 @@ export default class App extends React.Component {
     render() {
         console.log("------THIS.STATE -> HAVE TO BE DEFINE------");
         console.log(this.state);
+        console.log("----this.toggleModal----");
+
+        console.log(this.toggleModal);
+
         return (
             <div className="container">
                 <img src="logo.png" className="logo-small" />
-                <h1>Hello from App</h1>
+                <h1>YOU SEE APP COMPONENT</h1>
                 <Profile
                     first={this.state.first}
                     last={this.state.last}
                     profilePic={this.state.profilePic}
+                    uploaderIsVisible={this.state.uploaderIsVisible}
                     toggleModal={() => this.toggleModal()}
+                    setImage={() => this.setImage()}
                 />
 
-                {/* <ProfilePic
-                    first={this.state.first}
-                    last={this.state.last}
-                    profilePic={this.state.profilePic}
-                    toggleModal={() => this.toggleModal()}
-                /> */}
                 {this.state.uploaderIsVisible && (
                     <Uploader setImage={() => this.setImage()} />
                 )}

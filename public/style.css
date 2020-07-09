@@ -29,12 +29,11 @@ body {
 }
 
 .container {
-    position: relative;
+    /* position: relative; */
     flex-direction: column;
     text-align: center;
-    /* background-color: hotpink; */
-    color: red;
-    height: 100vh;
+    background-color: hotpink;
+    /* height: 100vh; */
 }
 
 .components {

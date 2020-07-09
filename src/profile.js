@@ -4,16 +4,21 @@ import BioEditor from "./bioeditor";
 
 export default function Profile(props) {
     console.log("props in profile: ", props);
+    console.log("----props.toggleModal----");
+
+    console.log(props.toggleModal);
     return (
         <div className="container">
-            <h1>this is the Profile component</h1>
-            <h2>Hey {props.first}</h2>
+            <h1>YOU SEE PROFILE COMPONENT</h1>
+            <h2>Hey Name: {props.first}</h2>
 
             <ProfilePic
                 first={props.first}
                 last={props.last}
                 profilePic={props.profilePic}
-                toggleModal={() => this.toggleModal()}
+                uploaderIsVisible={props.uploaderIsVisible}
+                toggleModal={props.toggleModal}
+                newProfilePic={props.newProfilePic}
             />
             <BioEditor />
         </div>

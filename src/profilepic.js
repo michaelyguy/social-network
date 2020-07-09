@@ -1,8 +1,8 @@
 import React from "react";
 
 export default function ProfilePic(props) {
-    console.log("-------PROPS IN PROFILEPIC------");
-    console.log(props);
+    console.log("-------PROPS IN PROFILEPIC-------");
+    console.log(props.toggleModal);
 
     return (
         <div>
