@@ -7,7 +7,7 @@ export default function Profile(props) {
         <div>
             <h1>YOU SEE PROFILE COMPONENT</h1>
             <h2>
-                Hey Name: {props.first} {props.last}
+                Hey {props.first} {props.last}
                 <img className="userpic" src={props.profilePic} />
             </h2>
 
