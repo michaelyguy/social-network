@@ -6,7 +6,10 @@ export default function Profile(props) {
     return (
         <div>
             <h1>YOU SEE PROFILE COMPONENT</h1>
-            <h2>Hey Name: {props.first}</h2>
+            <h2>
+                Hey Name: {props.first} {props.last}
+                <img className="userpic" src={props.profilePic} />
+            </h2>
 
             <ProfilePic
                 first={props.first}
