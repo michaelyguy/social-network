@@ -214,6 +214,10 @@ app.post("/login", (req, res) => {
         });
 });
 
+app.get("/api/user/:id", async (req, res) => {
+    // const result =
+});
+
 app.get("/user", (req, res) => {
     getUserImg(req.session.userId)
         .then((result) => {

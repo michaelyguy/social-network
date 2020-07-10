@@ -13,7 +13,7 @@ export default class OtherProfile extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("/user").then((response) => {
+        axios.get("/api/user/:id").then((response) => {
             console.log("----RESPONSE IN GET/USER---");
             console.log(response.data);
             // this.setState({
