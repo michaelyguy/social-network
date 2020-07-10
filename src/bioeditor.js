@@ -56,7 +56,7 @@ export default class BioEditor extends React.Component {
                         </button>
                     </div>
                 )}
-                {this.props.bio ? (
+                {this.props.officialBio ? (
                     <div>
                         <button onClick={(e) => this.showBioArea(e)}>
                             Edit
@@ -67,7 +67,6 @@ export default class BioEditor extends React.Component {
                         <p onClick={(e) => this.showBioArea(e)}>Add bio</p>
                     </div>
                 )}
-                ;
             </div>
         );
     }

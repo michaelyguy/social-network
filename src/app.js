@@ -10,11 +10,6 @@ export default class App extends React.Component {
         super();
         this.state = {
             uploaderIsVisible: false,
-            id: "",
-            first: "",
-            last: "",
-            profilePic: "",
-            officialBio: "",
         };
     }
 

@@ -214,7 +214,9 @@ app.post("/login", (req, res) => {
         });
 });
 
-app.get("/api/user/:id", async (req, res) => {
+app.get("/api/user/:id", (req, res) => {
+    console.log("---req.params-----");
+    console.log(req.params);
     // const result =
 });
 
