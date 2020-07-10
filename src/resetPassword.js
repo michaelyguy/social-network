@@ -79,8 +79,8 @@ export default class ResetPassword extends React.Component {
     getCurrentDisplay() {
         if (this.state.currentDisplay == 0) {
             return (
-                <div className="inputs-container">
-                    {this.state.error && <h3>error sorry</h3>}
+                <div className="inputs-fields">
+                    {this.state.error && <p>email don't match</p>}
                     <input
                         name="email"
                         type="text"

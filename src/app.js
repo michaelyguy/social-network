@@ -55,9 +55,9 @@ export default class App extends React.Component {
         console.log("------THIS.STATE -> HAVE TO BE DEFINE------");
         console.log(this.state);
         return (
-            <div className="container">
+            <div className="app-container">
                 <img src="logo.png" className="logo-small" />
-                <h1>YOU SEE APP COMPONENT</h1>
+                {/* <h1>YOU SEE APP COMPONENT</h1> */}
                 <Profile
                     id={this.state.id}
                     first={this.state.first}

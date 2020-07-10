@@ -4,11 +4,11 @@ import BioEditor from "./bioeditor";
 
 export default function Profile(props) {
     return (
-        <div>
-            <h1>YOU SEE PROFILE COMPONENT</h1>
+        <div className="user-info">
+            {/* <h1>YOU SEE PROFILE COMPONENT</h1> */}
+            <img className="userpic" src={props.profilePic} />
             <h2>
-                Hey {props.first} {props.last}
-                <img className="userpic" src={props.profilePic} />
+                {props.first} {props.last}
             </h2>
 
             <ProfilePic
