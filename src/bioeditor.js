@@ -14,30 +14,31 @@ export default class BioEditor extends React.Component {
         this.setState({
             [e.target.name]: e.target.value,
         });
-        console.log("----THIS.STATE----");
+        console.log("----THIS.STATE IN BIOEDIROR----");
         console.log(this.state);
     }
     handleSubmit(e) {
         e.preventDefault();
         // console.log("-----THIS-----");
         // console.log(this);
-        axios
-            .post("/bio/editor", this.state)
-            .then((response) => {
-                console.log("----RESPONSE IN POST/BIO EDITOR----");
-                console.log(response);
+        if (this.state.bioText != "") {
+            axios
+                .post("/bio/editor", this.state)
+                .then((response) => {
+                    console.log("----RESPONSE IN POST/BIO EDITOR----");
+                    console.log(response);
 
-                //////////// WHAT THE FUCK //////////////
-                props.setBio(response.data.bio);
-                location.replace("/");
-            })
-            .catch(function (err) {
-                console.log("ERROR IN /BIO/EDITOR: ", err);
-            });
+                    //////////// WHAT THE FUCK //////////////
+                    this.props.setBio(response.data.bio);
+                    location.replace("/");
+                })
+                .catch(function (err) {
+                    console.log("ERROR IN /BIO/EDITOR: ", err);
+                });
+        }
     }
-    showBio(e) {
+    showBioArea(e) {
         e.preventDefault();
-        // console.log("this is workingggggg");
         this.setState({
             isTextEdited: true,
         });
@@ -48,7 +49,6 @@ export default class BioEditor extends React.Component {
                 {this.state.isTextEdited && (
                     <div>
                         <textarea
-                            value={this.state.bioText}
                             onChange={(e) => this.handleChange(e)}
                             name="bioText"
                         />
@@ -58,9 +58,18 @@ export default class BioEditor extends React.Component {
                     </div>
                 )}
 
+                {this.props.bio && (
+                    <div>
+                        <p>{this.props.bio}</p>
+                        <button onClick={(e) => this.showBioArea(e)}>
+                            Edit
+                        </button>
+                    </div>
+                )}
+
                 {!this.state.isTextEdited && (
                     <div>
-                        <p onClick={(e) => this.showBio(e)}>Add bio</p>
+                        <p onClick={(e) => this.showBioArea(e)}>Add bio</p>
                     </div>
                 )}
             </div>

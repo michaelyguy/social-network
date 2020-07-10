@@ -224,14 +224,15 @@ app.get("/user", (req, res) => {
         });
 });
 
-app.post("/bio/editor", (req, res) => {
-    updateBio(req.body.bioText, req.session.userId)
-        .then((result) => {
-            res.json(result.rows[0]);
-        })
-        .catch((err) => {
-            console.log("ERROR IN /BIO/EDITOR", err);
-        });
+app.post("/bio/editor", async (req, res) => {
+    try {
+        const result = await updateBio(req.body.bioText, req.session.userId);
+        console.log("----RESULT BIO EDITOR------");
+        console.log(result.rows[0]);
+        res.json(result.rows[0]);
+    } catch (err) {
+        console.log("ERROR IN BIO/EDITOR");
+    }
 });
 
 app.post("/upload", uploader.single("imgurl"), s3.upload, (req, res) => {

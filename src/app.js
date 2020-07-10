@@ -27,8 +27,8 @@ export default class App extends React.Component {
                 profilePic: response.data.imgurl,
                 id: response.data.id,
             });
-            console.log("-----THIS.STATE----");
-            console.log(this.state);
+            // console.log("-----THIS.STATE----");
+            // console.log(this.state);
         });
     }
 
@@ -52,8 +52,8 @@ export default class App extends React.Component {
     ///// DO SOMETHING HERE //////
 
     render() {
-        console.log("------THIS.STATE -> HAVE TO BE DEFINE------");
-        console.log(this.state);
+        // console.log("------THIS.STATE------");
+        // console.log(this.state);
         return (
             <div className="app-container">
                 <img src="logo.png" className="logo-small" />
