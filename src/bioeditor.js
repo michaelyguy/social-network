@@ -9,32 +9,32 @@ export default class BioEditor extends React.Component {
             isTextEdited: false,
             bioText: "",
         };
+        console.log("----PROPS IN BIOEDITOR----");
+        console.log(props);
     }
     handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value,
         });
-        console.log("----THIS.STATE IN BIOEDIROR----");
-        console.log(this.state);
     }
     handleSubmit(e) {
         e.preventDefault();
         // console.log("-----THIS-----");
         // console.log(this);
-        if (this.state.bioText != "") {
-            axios
-                .post("/bio/editor", this.state)
-                .then((response) => {
-                    console.log("----RESPONSE IN POST/BIO EDITOR----");
-                    console.log(response);
-                    this.props.setBio(response.data.bio);
-                    location.replace("/");
-                })
-                .catch(function (err) {
-                    console.log("ERROR IN /BIO/EDITOR: ", err);
-                });
-        }
+
+        axios
+            .post("/bio/editor", this.state)
+            .then((response) => {
+                console.log("----RESPONSE IN POST/BIO EDITOR----");
+                console.log(response);
+                this.props.setBio(response.data.bio);
+                // location.replace("/");
+            })
+            .catch(function (err) {
+                console.log("ERROR IN /BIO/EDITOR: ", err);
+            });
     }
+
     showBioArea(e) {
         e.preventDefault();
         this.setState({
@@ -47,29 +47,27 @@ export default class BioEditor extends React.Component {
                 {this.state.isTextEdited && (
                     <div>
                         <textarea
-                            onChange={(e) => this.handleChange(e)}
                             name="bioText"
+                            defaultValue={this.props.officialBio}
+                            onChange={(e) => this.handleChange(e)}
                         />
                         <button onClick={(e) => this.handleSubmit(e)}>
                             Save
                         </button>
                     </div>
                 )}
-
-                {this.props.bio && (
+                {this.props.bio ? (
                     <div>
-                        <p>{this.props.bio}</p>
                         <button onClick={(e) => this.showBioArea(e)}>
                             Edit
                         </button>
                     </div>
-                )}
-
-                {!this.state.isTextEdited && (
+                ) : (
                     <div>
                         <p onClick={(e) => this.showBioArea(e)}>Add bio</p>
                     </div>
                 )}
+                ;
             </div>
         );
     }

@@ -14,7 +14,7 @@ export default class App extends React.Component {
             first: "",
             last: "",
             profilePic: "",
-            bio: "",
+            officialBio: "",
         };
     }
 
@@ -22,12 +22,13 @@ export default class App extends React.Component {
     componentDidMount() {
         axios.get("/user").then((response) => {
             console.log("----RESPONSE IN GET/USER---");
-            console.log(response.data);
+            console.log(response);
             this.setState({
                 first: response.data.first,
                 last: response.data.last,
                 profilePic: response.data.imgurl,
                 id: response.data.id,
+                officialBio: response.data.bio,
             });
             // console.log("-----THIS.STATE----");
             // console.log(this.state);
@@ -46,8 +47,9 @@ export default class App extends React.Component {
         });
     }
     setBio(newBio) {
+        console.log("new bio incoming: ", newBio);
         this.setState({
-            bio: newBio,
+            officialBio: newBio,
         });
     }
 
@@ -64,7 +66,7 @@ export default class App extends React.Component {
                         last={this.state.last}
                         profilePic={this.state.profilePic}
                         uploaderIsVisible={this.state.uploaderIsVisible}
-                        bio={this.state.bio}
+                        officialBio={this.state.officialBio}
                         toggleModal={() => this.toggleModal()}
                         setImage={() => this.setImage()}
                         setBio={() => this.setBio()}
