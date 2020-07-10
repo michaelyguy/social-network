@@ -16,12 +16,12 @@ export default class OtherProfile extends React.Component {
         axios.get("/user").then((response) => {
             console.log("----RESPONSE IN GET/USER---");
             console.log(response.data);
-            this.setState({
-                first: response.data.first,
-                last: response.data.last,
-                profilePic: response.data.imgurl,
-                id: response.data.id,
-            });
+            // this.setState({
+            //     first: response.data.first,
+            //     last: response.data.last,
+            //     profilePic: response.data.imgurl,
+            //     id: response.data.id,
+            // });
             // console.log("-----THIS.STATE----");
             // console.log(this.state);
         });

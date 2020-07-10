@@ -27,8 +27,6 @@ export default class BioEditor extends React.Component {
                 .then((response) => {
                     console.log("----RESPONSE IN POST/BIO EDITOR----");
                     console.log(response);
-
-                    //////////// WHAT THE FUCK //////////////
                     this.props.setBio(response.data.bio);
                     location.replace("/");
                 })
