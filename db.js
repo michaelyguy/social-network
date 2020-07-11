@@ -60,3 +60,11 @@ module.exports.updateBio = (bio, userId) => {
         userId,
     ]);
 };
+
+module.exports.getOtherProfile = (id) => {
+    return db.query(
+        `SELECT * FROM users
+         WHERE id = $1`,
+        [id]
+    );
+};

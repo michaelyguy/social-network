@@ -11,6 +11,7 @@ const {
     getUserImg,
     updateProfilePic,
     updateBio,
+    getOtherProfile,
 } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
@@ -214,10 +215,17 @@ app.post("/login", (req, res) => {
         });
 });
 
-app.get("/api/user/:id", (req, res) => {
+app.get("/api/user/:id", async (req, res) => {
     console.log("---req.params-----");
     console.log(req.params);
-    // const result =
+    try {
+        const result = await getOtherProfile(req.params.id);
+        console.log("----RESULT IN /USER:Id-----");
+        console.log(result.rows[0]);
+        res.json(result.rows[0]);
+    } catch (err) {
+        console.log("ERROR IN /USER:ID");
+    }
 });
 
 app.get("/user", (req, res) => {

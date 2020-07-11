@@ -6,25 +6,25 @@ export default class OtherProfile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentUserId: "",
+            // currentUserId: "",
         };
-        // console.log("----PROPS IN OTHERPROFILE----");
-        // console.log(props);
     }
 
     componentDidMount() {
-        axios.get("/api/user/:id").then((response) => {
-            console.log("----RESPONSE IN GET/USER---");
-            console.log(response.data);
-            // this.setState({
-            //     first: response.data.first,
-            //     last: response.data.last,
-            //     profilePic: response.data.imgurl,
-            //     id: response.data.id,
-            // });
-            // console.log("-----THIS.STATE----");
-            // console.log(this.state);
-        });
+        axios
+            .get(`/api/user/${this.props.match.params.id}`)
+            .then((response) => {
+                console.log("----RESPONSE IN GET/USER---");
+                console.log(response.data);
+                this.setState({
+                    first: response.data[0].first,
+                    last: response.data[0].last,
+                    profilePic: response[0].data.imgurl,
+                    officialBio: response.data[0].bio,
+                });
+                // console.log("-----THIS.STATE----");
+                // console.log(this.state);
+            });
     }
 
     // handleChange(e) {
@@ -52,8 +52,14 @@ export default class OtherProfile extends React.Component {
     // }
     render() {
         return (
-            <div>
-                <h1>HEYYYY</h1>
+            <div className="user-info">
+                <img className="userpic" src={this.state.imgurl} />
+                <div className="user-info-text">
+                    <h1>
+                        {this.state.first} {this.state.last}
+                    </h1>
+                    <p>{this.state.bio}</p>
+                </div>
             </div>
         );
     }

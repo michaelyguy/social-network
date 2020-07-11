@@ -72,13 +72,11 @@ export default class App extends React.Component {
                     )}
                     <Route
                         path="/user/:id"
-                        component={(props) => (
+                        render={(props) => (
                             <OtherProfile
-                                id={this.state.id}
-                                first={this.state.firt}
-                                last={this.state.last}
-                                profilePic={this.state.profilePic}
-                                bio={this.state.bio}
+                                key={props.match.url}
+                                match={props.match}
+                                history={props.history}
                             />
                         )}
                     />
