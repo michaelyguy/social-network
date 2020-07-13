@@ -4,6 +4,7 @@ import Uploader from "./uploader";
 import Profile from "./profile";
 import { BrowserRouter, Route } from "react-router-dom";
 import OtherProfile from "./otherprofile";
+import ProfilePic from "./profilepic";
 
 export default class App extends React.Component {
     constructor() {
@@ -11,13 +12,15 @@ export default class App extends React.Component {
         this.state = {
             uploaderIsVisible: false,
         };
+        console.log("----THIS.STATE IN APP-----");
+        console.log(this.state);
     }
 
     /// lifecyrcle methods - read! ///
     componentDidMount() {
         axios.get("/user").then((response) => {
             console.log("----RESPONSE IN GET/USER---");
-            console.log(response);
+            console.log(response.data);
             this.setState({
                 first: response.data.first,
                 last: response.data.last,
@@ -54,26 +57,43 @@ export default class App extends React.Component {
         return (
             <BrowserRouter>
                 <div className="app-container">
-                    <img src="logo.png" className="logo-small" />
-                    <Profile
-                        id={this.state.id}
+                    <img src="/logo.png" className="logo-small" />
+                    <ProfilePic
                         first={this.state.first}
                         last={this.state.last}
                         profilePic={this.state.profilePic}
                         uploaderIsVisible={this.state.uploaderIsVisible}
-                        officialBio={this.state.officialBio}
-                        toggleModal={() => this.toggleModal()}
-                        setImage={() => this.setImage()}
-                        setBio={() => this.setBio()}
+                        toggleModal={this.state.toggleModal}
+                        newProfilePic={this.state.newProfilePic}
+                    />
+
+                    <Route
+                        exact
+                        path="/"
+                        render={() => (
+                            <Profile
+                                id={this.state.id}
+                                first={this.state.first}
+                                last={this.state.last}
+                                profilePic={this.state.profilePic}
+                                uploaderIsVisible={this.state.uploaderIsVisible}
+                                officialBio={this.state.officialBio}
+                                toggleModal={() => this.toggleModal()}
+                                setImage={() => this.setImage()}
+                                setBio={() => this.setBio()}
+                            />
+                        )}
                     />
 
                     {this.state.uploaderIsVisible && (
                         <Uploader setImage={() => this.setImage()} />
                     )}
+
                     <Route
                         path="/user/:id"
                         render={(props) => (
                             <OtherProfile
+                                profilePic={this.state.profilePic}
                                 key={props.match.url}
                                 match={props.match}
                                 history={props.history}

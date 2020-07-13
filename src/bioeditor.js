@@ -7,7 +7,6 @@ export default class BioEditor extends React.Component {
         super(props);
         this.state = {
             isTextEdited: false,
-            bioText: "",
         };
         console.log("----PROPS IN BIOEDITOR----");
         console.log(props);
@@ -19,16 +18,13 @@ export default class BioEditor extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        // console.log("-----THIS-----");
-        // console.log(this);
-
         axios
             .post("/bio/editor", this.state)
             .then((response) => {
                 console.log("----RESPONSE IN POST/BIO EDITOR----");
                 console.log(response);
                 this.props.setBio(response.data.bio);
-                // location.replace("/");
+                location.replace("/");
             })
             .catch(function (err) {
                 console.log("ERROR IN /BIO/EDITOR: ", err);
@@ -42,32 +38,34 @@ export default class BioEditor extends React.Component {
         });
     }
     render() {
-        return (
-            <div>
-                {this.state.isTextEdited && (
+        if (this.state.isTextEdited) {
+            return (
+                <div>
+                    <textarea
+                        name="bioText"
+                        defaultValue={this.props.officialBio}
+                        onChange={(e) => this.handleChange(e)}
+                    />
+                    <button onClick={(e) => this.handleSubmit(e)}>Save</button>
+                </div>
+            );
+        } else {
+            if (this.props.officialBio) {
+                return (
                     <div>
-                        <textarea
-                            name="bioText"
-                            defaultValue={this.props.officialBio}
-                            onChange={(e) => this.handleChange(e)}
-                        />
-                        <button onClick={(e) => this.handleSubmit(e)}>
-                            Save
-                        </button>
-                    </div>
-                )}
-                {this.props.officialBio ? (
-                    <div>
+                        <p>{this.props.officialBio}</p>
                         <button onClick={(e) => this.showBioArea(e)}>
                             Edit
                         </button>
                     </div>
-                ) : (
+                );
+            } else {
+                return (
                     <div>
                         <p onClick={(e) => this.showBioArea(e)}>Add bio</p>
                     </div>
-                )}
-            </div>
-        );
+                );
+            }
+        }
     }
 }

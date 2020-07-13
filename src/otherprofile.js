@@ -14,51 +14,33 @@ export default class OtherProfile extends React.Component {
         axios
             .get(`/api/user/${this.props.match.params.id}`)
             .then((response) => {
-                console.log("----RESPONSE IN GET/USER---");
+                console.log("----RESPONSE IN GET/USER OTHERPROFILE---");
                 console.log(response.data);
-                this.setState({
-                    first: response.data[0].first,
-                    last: response.data[0].last,
-                    profilePic: response[0].data.imgurl,
-                    officialBio: response.data[0].bio,
-                });
-                // console.log("-----THIS.STATE----");
-                // console.log(this.state);
+                this.setState(
+                    {
+                        first: response.data.first,
+                        last: response.data.last,
+                        profilePic: response.data.imgurl,
+                        officialBio: response.data.bio,
+                    },
+                    () =>
+                        console.log(
+                            "------THIS.STATE IN OTHERPROFILE------",
+                            this.state
+                        )
+                );
             });
     }
 
-    // handleChange(e) {
-    //     this.setState({
-    //         [e.target.name]: e.target.value,
-    //     });
-    //     console.log("----THIS.STATE----");
-    //     console.log(this.state);
-    // }
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     console.log("---THIS---");
-    //     console.log(this);
-    //     axios
-    //         .post("/register", this.state)
-    //         .then((response) => {
-    //             console.log("----RESPONSE IN POST AXIOS----");
-    //             console.log(response);
-    //             console.log(response.data);
-    //             location.replace("/");
-    //         })
-    //         .catch(function (err) {
-    //             console.log("error ins POST /upload: ", err);
-    //         });
-    // }
     render() {
         return (
             <div className="user-info">
-                <img className="userpic" src={this.state.imgurl} />
+                <img className="userpic" src={this.state.profilePic} />
                 <div className="user-info-text">
-                    <h1>
+                    <h2>
                         {this.state.first} {this.state.last}
-                    </h1>
-                    <p>{this.state.bio}</p>
+                    </h2>
+                    <p>{this.state.officialBio}</p>
                 </div>
             </div>
         );
