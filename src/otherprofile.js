@@ -5,29 +5,27 @@ import axios from "./axios";
 export default class OtherProfile extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            // currentUserId: "",
-        };
+        this.state = {};
     }
 
     componentDidMount() {
         axios
             .get(`/api/user/${this.props.match.params.id}`)
             .then((response) => {
-                console.log("----RESPONSE IN GET/USER OTHERPROFILE---");
-                console.log(response.data);
+                // console.log("----RESPONSE IN GET/USER OTHERPROFILE---");
+                // console.log(response.data);
                 this.setState(
                     {
                         first: response.data.first,
                         last: response.data.last,
                         profilePic: response.data.imgurl,
                         officialBio: response.data.bio,
-                    },
-                    () =>
-                        console.log(
-                            "------THIS.STATE IN OTHERPROFILE------",
-                            this.state
-                        )
+                    }
+                    // () =>
+                    //     console.log(
+                    //         "------THIS.STATE IN OTHERPROFILE------",
+                    //         this.state
+                    //     )
                 );
             });
     }

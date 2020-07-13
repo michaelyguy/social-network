@@ -13,6 +13,8 @@ const {
     updateBio,
     getOtherProfile,
     getInitialStatus,
+    getMatchingUsers,
+    getLastUsers,
 } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
@@ -217,8 +219,8 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/api/user/:id", async (req, res) => {
-    console.log("---req.params-----");
-    console.log(req.params);
+    // console.log("---req.params-----");
+    // console.log(req.params);
     try {
         const result = await getOtherProfile(req.params.id);
         console.log("----RESULT IN /USER:Id-----");
@@ -275,6 +277,28 @@ app.post("/upload", uploader.single("imgurl"), s3.upload, (req, res) => {
             });
     } else {
         console.log("SOMETHING WENT WRONG!");
+    }
+});
+
+app.get("/api/users/:id", async (req, res) => {
+    try {
+        const result = await getLastUsers();
+        res.json(result.rows);
+    } catch (err) {
+        console.log("ERROR IN /api/users/:id", err);
+    }
+});
+
+app.get("/api/match/users", async (req, res) => {
+    try {
+        // console.log("-----req.query in match/user-----");
+        // console.log(req.query.name);
+        const result = await getMatchingUsers(req.query.name);
+        console.log("----RESULT IN /api/match/users:id-----");
+        console.log(result.rows);
+        res.json(result.rows);
+    } catch (err) {
+        console.log("ERROR IN /api/more/users:id", err);
     }
 });
 

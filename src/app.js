@@ -5,6 +5,8 @@ import Profile from "./profile";
 import { BrowserRouter, Route } from "react-router-dom";
 import OtherProfile from "./otherprofile";
 import ProfilePic from "./profilepic";
+import FindPeople from "./findpeople";
+import { Link } from "react-router-dom";
 
 export default class App extends React.Component {
     constructor() {
@@ -52,20 +54,23 @@ export default class App extends React.Component {
     }
 
     render() {
-        // console.log("------THIS.STATE IN APP------");
-        // console.log(this.state);
         return (
             <BrowserRouter>
                 <div className="app-container">
-                    <img src="/logo.png" className="logo-small" />
-                    <ProfilePic
-                        first={this.state.first}
-                        last={this.state.last}
-                        profilePic={this.state.profilePic}
-                        uploaderIsVisible={this.state.uploaderIsVisible}
-                        toggleModal={this.state.toggleModal}
-                        newProfilePic={this.state.newProfilePic}
-                    />
+                    <div className="header">
+                        <img src="/logo.png" className="logo-small" />
+                        <ProfilePic
+                            first={this.state.first}
+                            last={this.state.last}
+                            profilePic={this.state.profilePic}
+                            uploaderIsVisible={this.state.uploaderIsVisible}
+                            toggleModal={this.state.toggleModal}
+                            newProfilePic={this.state.newProfilePic}
+                        />
+                        <Link className="header-link" to="/users">
+                            Find ppl!
+                        </Link>
+                    </div>
 
                     <Route
                         exact
@@ -100,6 +105,8 @@ export default class App extends React.Component {
                             />
                         )}
                     />
+
+                    <Route exact path="/users" render={() => <FindPeople />} />
                 </div>
             </BrowserRouter>
         );
