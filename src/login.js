@@ -2,6 +2,29 @@ import React from "react";
 import axios from "./axios";
 import { Link } from "react-router-dom";
 
+// import { useStatefulFields } from "./hooks/useStatefulFields";
+// import { useAuthSubmit } from "./hooks/useAuthSubmit";
+
+// export default function Login() {
+//     const [values, handleChange] = useStatefulFields();
+//     const [error, handleClick] = useAuthSubmit("/login", values);
+
+//     return (
+//         <div className="inputs-fields">
+//             {error && <p>somthing broke</p>}
+//             <input name="email" placeholder="email" onChange={handleChange} />
+//             <input
+//                 name="password"
+//                 type="password"
+//                 placeholder="password"
+//                 onChange={handleChange}
+//             />
+//             <button onClick={handleClick}>Submit</button>
+//             <Link to="/password/reset/start">Forgot your password?</Link>
+//         </div>
+//     );
+// }
+
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -15,8 +38,8 @@ export default class Login extends React.Component {
         this.setState({
             [e.target.name]: e.target.value,
         });
-        console.log("----THIS.STATE----");
-        console.log(this.state);
+        // console.log("----THIS.STATE----");
+        // console.log(this.state);
     }
     handleSubmit(e) {
         e.preventDefault();

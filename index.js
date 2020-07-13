@@ -12,6 +12,7 @@ const {
     updateProfilePic,
     updateBio,
     getOtherProfile,
+    getInitialStatus,
 } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");

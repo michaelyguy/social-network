@@ -54,10 +54,10 @@ body {
     height: 100vh;
 } */
 
-.header {
+/* .header {
     height: 100px;
     border-bottom: 1px solid black;
-}
+} */
 
 .user-info {
     display: flex;
