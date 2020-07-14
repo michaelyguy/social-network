@@ -7,6 +7,8 @@ export default class BioEditor extends React.Component {
         super(props);
         this.state = {
             isTextEdited: false,
+            user: [],
+            userInput: "",
         };
         console.log("----PROPS IN BIOEDITOR----");
         console.log(props);

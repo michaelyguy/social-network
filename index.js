@@ -15,6 +15,7 @@ const {
     getInitialStatus,
     getMatchingUsers,
     getLastUsers,
+    addFriendReq,
 } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
@@ -317,6 +318,17 @@ app.get("/get-initial-status/:id", async (req, res) => {
         res.json(result);
     } catch (err) {
         console.log("ERROR IN /get-initial-status/:id", err);
+    }
+});
+
+app.post("/make-friend-request/:id", async (req, res) => {
+    try {
+        const result = await addFriendReq(req.session.userId, req.params.id);
+        console.log("---/make-friend-request/:id---");
+        console.log(result);
+        res.json(result);
+    } catch (err) {
+        console.log("ERROR IN /make-friend-request/:id", err);
     }
 });
 

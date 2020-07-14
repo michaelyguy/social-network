@@ -88,3 +88,14 @@ module.exports.getMatchingUsers = (val) => {
 module.exports.getLastUsers = () => {
     return db.query(`SELECT * FROM users ORDER BY id DESC LIMIT 3`);
 };
+
+module.exports.addFriendReq = (myId, otherUserId) => {
+    return db.query(
+        `INSERT INTO friendships (sender_id, receiver_id) VALUES ($1, $2) RETURNING *`,
+        [myId, otherUserId]
+    );
+};
+
+
+
+INSERT that runs when "send friend request" is clicked. It will INSERT the two users' ids (sender_id and receiver_id)
