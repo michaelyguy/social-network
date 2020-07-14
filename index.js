@@ -134,18 +134,18 @@ app.post("/password/reset/verify", (req, res) => {
     // console.log(req.body);
     getCode(req.body.email, req.body.code)
         .then((result) => {
-            console.log("----RESULT IN POST /VERIFY----");
-            console.log(result);
+            // console.log("----RESULT IN POST /VERIFY----");
+            // console.log(result);
             if (result.rows.length > 0) {
                 hash(req.body.newPassword).then((hashedPw) => {
-                    console.log("------HASEDPASSWORD-----");
-                    console.log(hashedPw);
+                    // console.log("------HASEDPASSWORD-----");
+                    // console.log(hashedPw);
                     updatePassword(hashedPw, result.rows[0].id)
                         .then((result) => {
-                            console.log(
-                                "------RESULT IN /HASE POST RESET-------"
-                            );
-                            console.log(result);
+                            // console.log(
+                            //     "------RESULT IN /HASE POST RESET-------"
+                            // );
+                            // console.log(result);
                             res.json("SUCCESSE UPDATE");
                         })
                         .catch((err) => {
@@ -223,8 +223,8 @@ app.get("/api/user/:id", async (req, res) => {
     // console.log(req.params);
     try {
         const result = await getOtherProfile(req.params.id);
-        console.log("----RESULT IN /USER:Id-----");
-        console.log(result.rows[0]);
+        // console.log("----RESULT IN /USER:Id-----");
+        // console.log(result.rows[0]);
         res.json(result.rows[0]);
     } catch (err) {
         console.log("ERROR IN /USER:ID");
@@ -303,14 +303,20 @@ app.get("/api/match/users", async (req, res) => {
 });
 
 app.get("/get-initial-status/:id", async (req, res) => {
+    // console.log("----req.session.userId----");
+    // console.log(req.session.userId);
+    // console.log("----req.params.id----");
+    // console.log(req.params.id);
     try {
-        console.log("----req.bosy get-initial-status----");
-        console.log(req.body);
-        const result = await getInitialStatus(req.session.id);
+        const result = await getInitialStatus(
+            req.session.userId,
+            req.params.id
+        );
         console.log("---result in get-initial-status---");
         console.log(result);
+        res.json(result);
     } catch (err) {
-        console.log("ERROR IN /get-initial-status/:id");
+        console.log("ERROR IN /get-initial-status/:id", err);
     }
 });
 

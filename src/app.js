@@ -14,8 +14,8 @@ export default class App extends React.Component {
         this.state = {
             uploaderIsVisible: false,
         };
-        console.log("----THIS.STATE IN APP-----");
-        console.log(this.state);
+        // console.log("----THIS.STATE IN APP-----");
+        // console.log(this.state);
     }
 
     /// lifecyrcle methods - read! ///

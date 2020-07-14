@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "./axios";
-import FriendButton from "./friendsbutton";
+import FriendsButton from "./friendsbutton";
 // import { Link } from "react-router-dom";
 
 export default class OtherProfile extends React.Component {
@@ -22,12 +22,12 @@ export default class OtherProfile extends React.Component {
                         last: response.data.last,
                         profilePic: response.data.imgurl,
                         officialBio: response.data.bio,
-                    },
-                    () =>
-                        console.log(
-                            "------THIS.STATE IN OTHERPROFILE------",
-                            this.state
-                        )
+                    }
+                    // () =>
+                    //     console.log(
+                    //         "------THIS.STATE IN OTHERPROFILE------",
+                    //         this.state
+                    //     )
                 );
             });
     }
@@ -42,7 +42,7 @@ export default class OtherProfile extends React.Component {
                     </h2>
                     <p>{this.state.officialBio}</p>
                 </div>
-                <FriendButton id={this.state.id} />
+                <FriendsButton id={this.state.id} />
             </div>
         );
     }
