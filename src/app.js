@@ -70,6 +70,9 @@ export default class App extends React.Component {
                         <Link className="header-link" to="/users">
                             Find ppl!
                         </Link>
+                        {this.state.uploaderIsVisible && (
+                            <Uploader setImage={() => this.setImage()} />
+                        )}
                     </div>
 
                     <Route
@@ -89,10 +92,6 @@ export default class App extends React.Component {
                             />
                         )}
                     />
-
-                    {this.state.uploaderIsVisible && (
-                        <Uploader setImage={() => this.setImage()} />
-                    )}
 
                     <Route
                         path="/user/:id"

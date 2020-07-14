@@ -23,14 +23,16 @@ export default function FindPeople({ id }) {
     return (
         <div className="user-info">
             <h2>Find People</h2>
-
-            {user.map((user) => (
-                <div key={user.id}>
-                    {" "}
-                    {user.first}
-                    <img className="userpic" src={user.imgurl} />
-                </div>
-            ))}
+            <div className="each-user">
+                {user.map((user) => (
+                    <div key={user.id}>
+                        <img className="userpic" src={user.imgurl} />
+                        <h2>
+                            {user.first} {user.last}
+                        </h2>
+                    </div>
+                ))}
+            </div>
 
             <input
                 placeholder="user name"

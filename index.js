@@ -302,6 +302,18 @@ app.get("/api/match/users", async (req, res) => {
     }
 });
 
+app.get("/get-initial-status/:id", async (req, res) => {
+    try {
+        console.log("----req.bosy get-initial-status----");
+        console.log(req.body);
+        const result = await getInitialStatus(req.session.id);
+        console.log("---result in get-initial-status---");
+        console.log(result);
+    } catch (err) {
+        console.log("ERROR IN /get-initial-status/:id");
+    }
+});
+
 /// LAST ROUTE ///
 app.get("*", function (req, res) {
     if (!req.session.userId) {
