@@ -95,7 +95,3 @@ module.exports.addFriendReq = (myId, otherUserId) => {
         [myId, otherUserId]
     );
 };
-
-
-
-INSERT that runs when "send friend request" is clicked. It will INSERT the two users' ids (sender_id and receiver_id)

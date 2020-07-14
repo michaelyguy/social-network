@@ -11,10 +11,19 @@ export default function FriendsButton(props) {
             console.log("----data in axios friendsbutton----");
             console.log(data);
             if (data.rows.length <= 0) {
-                setButtonText("make friend req");
+                setButtonText("Make Friend Request");
             }
         });
-    });
+    }, [props]);
 
-    return <button>{buttonText}</button>;
+    async function handleClick() {
+        if (buttonText == "Make Friend Request") {
+            const data = await axios.post(`/make-friend-request/${props.id}`);
+            console.log("----data in /make-friend-request/${props.id}----");
+            console.log(data);
+            setButtonText("Cancel Friend Request");
+        }
+    }
+
+    return <button onClick={handleClick}>{buttonText}</button>;
 }
