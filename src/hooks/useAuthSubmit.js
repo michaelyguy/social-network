@@ -12,7 +12,7 @@ export function useAuthSubmit(url, values) {
         axios
             .post(url, values)
             .then(({ data }) => {
-                // console.log("this is working outside", data);
+                console.log("this is working outside", data);
                 if (data.id) {
                     // console.log("this is working inside");
                     location.replace("/");

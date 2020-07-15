@@ -202,12 +202,12 @@ app.post("/login", (req, res) => {
                     (match) => {
                         // console.log("PASSWORD CORRECT?: ", match);
                         if (match == true) {
-                            req.session.userId = result.rows[0].id;
+                            req.session.userId = { userId: result.rows[0].id };
                             // console.log(req.session);
                             if (!result.rows[0]) {
                                 res.json("PASSWORD DON'T MATCH");
                             } else {
-                                res.json("LOGIN SUCCSSFULL");
+                                res.json({ id: result.rows[0].id });
                             }
                         } else {
                             res.json("PASSWORD OR EMAIL DOESN'T MATCH");
@@ -313,8 +313,10 @@ app.get("/get-initial-status/:id", async (req, res) => {
     // console.log("----req.params.id----");
     // console.log(req.params.id);
     try {
+        console.log("---req.session---");
+        console.log(req.session);
         const result = await getInitialStatus(
-            req.session.userId,
+            req.session.userId.userId,
             req.params.id
         );
         // console.log("---result in get-initial-status---");

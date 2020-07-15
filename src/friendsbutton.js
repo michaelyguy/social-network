@@ -4,7 +4,7 @@ import axios from "./axios";
 export default function FriendsButton(props) {
     console.log("----props.id in friendsbutton----");
     console.log(props.id);
-    const [buttonText, setButtonText] = useState("button!");
+    const [buttonText, setButtonText] = useState("");
 
     useEffect(() => {
         axios.get(`/get-initial-status/${props.id}`).then(({ data }) => {

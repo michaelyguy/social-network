@@ -24,14 +24,17 @@ export default function FindPeople({ id }) {
         <div className="user-info">
             <h2>Find People</h2>
             <div className="each-user">
-                {user.map((user) => (
-                    <div key={user.id}>
-                        <img className="userpic" src={user.imgurl} />
-                        <h2>
-                            {user.first} {user.last}
-                        </h2>
-                    </div>
-                ))}
+                {user
+                    .slice(0)
+                    .reverse()
+                    .map((user) => (
+                        <div key={user.id}>
+                            <img className="userpic" src={user.imgurl} />
+                            <h2>
+                                {user.first} {user.last}
+                            </h2>
+                        </div>
+                    ))}
             </div>
 
             <input
