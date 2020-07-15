@@ -95,3 +95,17 @@ module.exports.addFriendReq = (myId, otherUserId) => {
         [myId, otherUserId]
     );
 };
+
+module.exports.updateUsersFriendship = (myId, otherUserId) => {
+    return db.query(
+        `UPDATE friendships SET accepted = true WHERE (sender_id = $1 AND receiver_id =$2) OR (sender_id = $2 AND receiver_id =$1) RETURNING *`,
+        [myId, otherUserId]
+    );
+};
+
+module.exports.deleteFriendship = (myId, otherUserId) => {
+    return db.query(
+        `DELETE FROM friendships WHERE sender_id = $1 AND receiver_id =$2`,
+        [myId, otherUserId]
+    );
+};

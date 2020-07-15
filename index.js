@@ -16,6 +16,8 @@ const {
     getMatchingUsers,
     getLastUsers,
     addFriendReq,
+    updateUsersFriendship,
+    deleteFriendship,
 } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
@@ -233,7 +235,9 @@ app.get("/api/user/:id", async (req, res) => {
 });
 
 app.get("/user", (req, res) => {
-    getUserImg(req.session.userId)
+    console.log("----reqsession-----");
+    console.log(req.session);
+    getUserImg(req.session.userId.userId)
         .then((result) => {
             res.json(result.rows[0]);
         })
@@ -313,8 +317,8 @@ app.get("/get-initial-status/:id", async (req, res) => {
             req.session.userId,
             req.params.id
         );
-        console.log("---result in get-initial-status---");
-        console.log(result);
+        // console.log("---result in get-initial-status---");
+        // console.log(result);
         res.json(result);
     } catch (err) {
         console.log("ERROR IN /get-initial-status/:id", err);
@@ -324,11 +328,39 @@ app.get("/get-initial-status/:id", async (req, res) => {
 app.post("/make-friend-request/:id", async (req, res) => {
     try {
         const result = await addFriendReq(req.session.userId, req.params.id);
-        console.log("---/make-friend-request/:id---");
-        console.log(result);
+        // console.log("---resukt in make-friend-request/:id---");
+        // console.log(result);
         res.json(result);
     } catch (err) {
         console.log("ERROR IN /make-friend-request/:id", err);
+    }
+});
+
+app.post("/accept-friend-request/:id", async (req, res) => {
+    try {
+        const result = await updateUsersFriendship(
+            req.session.userId,
+            req.params.id
+        );
+        console.log("----result in /accept-friend-request----");
+        console.log(result);
+        res.json(result);
+    } catch (err) {
+        console.log("ERROR IN /accept-friend-request/", err);
+    }
+});
+
+app.post("/end-friendship/:id", async (req, res) => {
+    try {
+        const result = await deleteFriendship(
+            req.session.userId,
+            req.params.id
+        );
+        console.log("----result in /end-friendship/:id----");
+        console.log(result);
+        res.json(result);
+    } catch (err) {
+        console.log("ERROR IN /end-friendship/:id", err);
     }
 });
 

@@ -7,10 +7,14 @@ export function useAuthSubmit(url, values) {
     const [error, setError] = useState(false);
 
     const handleClick = () => {
+        // console.log("----url, values)----");
+        // console.log(url, values);
         axios
             .post(url, values)
             .then(({ data }) => {
-                if (data.success) {
+                // console.log("this is working outside", data);
+                if (data.id) {
+                    // console.log("this is working inside");
                     location.replace("/");
                 } else {
                     setError(true);

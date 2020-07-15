@@ -42,7 +42,7 @@ export default class OtherProfile extends React.Component {
                     </h2>
                     <p>{this.state.officialBio}</p>
                 </div>
-                <FriendsButton id={this.state.id} />
+                <FriendsButton myId={this.props.myId} id={this.state.id} />
             </div>
         );
     }

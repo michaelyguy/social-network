@@ -12,6 +12,20 @@ export default function FriendsButton(props) {
             console.log(data);
             if (data.rows.length <= 0) {
                 setButtonText("Make Friend Request");
+            } else if (data.rows.length > 0 && data.rows[0].accepted == true) {
+                setButtonText("End Friendship");
+            } else if (
+                data.rows.length > 0 &&
+                data.rows[0].accepted == false &&
+                data.rows[0].sender_id == props.myId
+            ) {
+                setButtonText("Cancel Friend Request");
+            } else if (
+                data.rows.length > 0 &&
+                data.rows[0].accepted == false &&
+                data.rows[0].receiver_id == props.myId
+            ) {
+                setButtonText("Accept Friend Request");
             }
         });
     }, [props]);
@@ -19,11 +33,16 @@ export default function FriendsButton(props) {
     async function handleClick() {
         if (buttonText == "Make Friend Request") {
             const data = await axios.post(`/make-friend-request/${props.id}`);
-            console.log("----data in /make-friend-request/${props.id}----");
-            console.log(data);
+            // console.log("----data in /make-friend-request/${props.id}----");
+            // console.log(data);
             setButtonText("Cancel Friend Request");
+        } else if (buttonText == "Cancel Friend Request") {
+            const data = await axios.post(`/end-friendship/${props.id}`);
+            setButtonText("Make Friend Request");
+        } else if (buttonText == "Accept Friend Request") {
+            const data = await axios.post(`/accept-friend-request/${props.id}`);
+            setButtonText("End Friendship");
         }
     }
-
     return <button onClick={handleClick}>{buttonText}</button>;
 }

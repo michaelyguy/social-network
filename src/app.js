@@ -97,6 +97,7 @@ export default class App extends React.Component {
                         path="/user/:id"
                         render={(props) => (
                             <OtherProfile
+                                myId={this.state.id}
                                 profilePic={this.state.profilePic}
                                 key={props.match.url}
                                 match={props.match}
