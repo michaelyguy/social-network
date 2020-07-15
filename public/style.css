@@ -63,7 +63,12 @@ body {
     background-color: lightcoral;
 }
 
-.header-link {
+.users-link {
+    position: fixed;
+    top: 35px;
+    right: 210px;
+}
+.friends-link {
     position: fixed;
     top: 35px;
     right: 140px;

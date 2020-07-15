@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import OtherProfile from "./otherprofile";
 import ProfilePic from "./profilepic";
 import FindPeople from "./findpeople";
+import Friends from "./friends";
 import { Link } from "react-router-dom";
 
 export default class App extends React.Component {
@@ -67,8 +68,11 @@ export default class App extends React.Component {
                             toggleModal={this.state.toggleModal}
                             newProfilePic={this.state.newProfilePic}
                         />
-                        <Link className="header-link" to="/users">
+                        <Link className="users-link" to="/users">
                             Find ppl!
+                        </Link>
+                        <Link className="friends-link" to="/friends">
+                            Friends
                         </Link>
                         {this.state.uploaderIsVisible && (
                             <Uploader setImage={() => this.setImage()} />
@@ -105,6 +109,8 @@ export default class App extends React.Component {
                             />
                         )}
                     />
+
+                    <Route path="/friends" render={() => <Friends />} />
 
                     <Route exact path="/users" render={() => <FindPeople />} />
                 </div>

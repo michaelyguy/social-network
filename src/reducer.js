@@ -2,6 +2,18 @@
 // this is one big funtion with a bunch of conditionals = if action = x, change state to this.
 
 export default function reducer(state = {}, action) {
+    if (action.type == "RECEIVE_FRIENDS_WANNABES") {
+        ////do sonwthing
+    }
+
+    if (action.type == "ACCEPT_FRIEND_REQUEST") {
+        ////do sonwthing
+    }
+
+    if (action.type == "UNFRIEND") {
+        ////do sonwthing
+    }
+
     return state;
 }
 

@@ -18,6 +18,7 @@ const {
     addFriendReq,
     updateUsersFriendship,
     deleteFriendship,
+    getAllFriends,
 } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
@@ -38,6 +39,7 @@ app.use(
 const multer = require("multer");
 const uidSafe = require("uid-safe");
 const path = require("path");
+const { LakeFormation } = require("aws-sdk");
 
 const diskStorage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -231,8 +233,8 @@ app.get("/api/user/:id", async (req, res) => {
 });
 
 app.get("/user", (req, res) => {
-    console.log("----reqsession-----");
-    console.log(req.session);
+    // console.log("----reqsession-----");
+    // console.log(req.session);
     getUserImg(req.session.userId)
         .then((result) => {
             res.json(result.rows[0]);
@@ -246,8 +248,8 @@ app.post("/bio/editor", async (req, res) => {
     console.log("req.body: ", req.body);
     try {
         const result = await updateBio(req.body.bioText, req.session.userId);
-        console.log("----RESULT BIO EDITOR------");
-        console.log(result.rows[0]);
+        // console.log("----RESULT BIO EDITOR------");
+        // console.log(result.rows[0]);
         res.json(result.rows[0]);
     } catch (err) {
         console.log("ERROR IN BIO/EDITOR");
@@ -295,8 +297,8 @@ app.get("/api/match/users", async (req, res) => {
         // console.log("-----req.query in match/user-----");
         // console.log(req.query.name);
         const result = await getMatchingUsers(req.query.name);
-        console.log("----RESULT IN /api/match/users:id-----");
-        console.log(result.rows);
+        // console.log("----RESULT IN /api/match/users:id-----");
+        // console.log(result.rows);
         res.json(result.rows);
     } catch (err) {
         console.log("ERROR IN /api/more/users:id", err);
@@ -359,6 +361,19 @@ app.post("/end-friendship/:id", async (req, res) => {
         res.json(result);
     } catch (err) {
         console.log("ERROR IN /end-friendship/:id", err);
+    }
+});
+
+app.get("/friends-wannabes", async (req, res) => {
+    try {
+        console.log("----req.session.userId----");
+        console.log(req.session.userId);
+        const result = await getAllFriends(req.session.userId);
+        console.log("----RESULT IN /friends-wannabes----");
+        console.log(result);
+        res.json(result);
+    } catch (err) {
+        console.log("ERROR IN /friends-wannabes");
     }
 });
 
