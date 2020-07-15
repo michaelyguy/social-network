@@ -173,16 +173,12 @@ app.post("/register", (req, res) => {
         // console.log(hashedPw);
         insertRegister(req.body.first, req.body.last, req.body.email, hashedPw)
             .then((result) => {
-                // console.log("------RESULT IN /REGISTER POST-------");
-                // console.log(result);
-                req.session.userId = {
-                    userId: result.rows[0].id,
-                    first: result.rows[0].first,
-                    last: result.rows[0].last,
-                    email: result.rows[0].email,
-                    password: hashedPw,
-                };
+                console.log("------RESULT IN /REGISTER POST-------");
+                console.log(result);
+                req.session.userId = result.rows[0].id;
                 res.json(result.rows[0]);
+                console.log("----console.log(req.session.userId);----");
+                console.log(req.session.userId);
             })
             .catch((err) => {
                 console.log("-----ERROR IN CATCH /REGISTER POST-----", err);
@@ -202,7 +198,7 @@ app.post("/login", (req, res) => {
                     (match) => {
                         // console.log("PASSWORD CORRECT?: ", match);
                         if (match == true) {
-                            req.session.userId = { userId: result.rows[0].id };
+                            req.session.userId = result.rows[0].id;
                             // console.log(req.session);
                             if (!result.rows[0]) {
                                 res.json("PASSWORD DON'T MATCH");
@@ -237,7 +233,7 @@ app.get("/api/user/:id", async (req, res) => {
 app.get("/user", (req, res) => {
     console.log("----reqsession-----");
     console.log(req.session);
-    getUserImg(req.session.userId.userId)
+    getUserImg(req.session.userId)
         .then((result) => {
             res.json(result.rows[0]);
         })
@@ -313,10 +309,10 @@ app.get("/get-initial-status/:id", async (req, res) => {
     // console.log("----req.params.id----");
     // console.log(req.params.id);
     try {
-        console.log("---req.session---");
-        console.log(req.session);
+        // console.log("---req.session---");
+        // console.log(req.session);
         const result = await getInitialStatus(
-            req.session.userId.userId,
+            req.session.userId,
             req.params.id
         );
         // console.log("---result in get-initial-status---");
