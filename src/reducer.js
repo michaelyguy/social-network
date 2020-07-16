@@ -3,7 +3,10 @@
 
 export default function reducer(state = {}, action) {
     if (action.type == "RECEIVE_FRIENDS_WANNABES") {
-        ////do sonwthing
+        return {
+            ...state,
+            friendsWannabes: action.friendsWannabes,
+        };
     }
 
     if (action.type == "ACCEPT_FRIEND_REQUEST") {
@@ -18,23 +21,23 @@ export default function reducer(state = {}, action) {
 }
 
 ///// 3 useful methods you can use for making copies of objects and arrays
-var obj = {
-    name: "Andrea",
-};
+// var obj = {
+//     name: "Andrea",
+// };
 //#1 spread operator (works for obj and array)
 // create a clone/copy
-var newObj = {
-    ...obj,
-};
+// var newObj = {
+//     ...obj,
+// };
 //add properties to the clone
-var newObj = {
-    ...obj,
-    last: "Arias",
-};
+// var newObj = {
+//     ...obj,
+//     last: "Arias",
+// };
 
-var arr = [1, 2, 3];
-var newArr = [...arr]; // make clone
-var newArr = [...arr, 4]; // add
+// var arr = [1, 2, 3];
+// var newArr = [...arr]; // make clone
+// var newArr = [...arr, 4]; // add
 
 //#2 map
 // works only on arrays -it's a loop! useful for cloning, looping and changing each element in the array.
