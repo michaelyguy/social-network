@@ -27,6 +27,10 @@ const { sendEmail } = require("./ses.js");
 const s3 = require("./s3.js");
 const { s3Url } = require("./config.json");
 
+//// socket.io ////
+const server = require("http").Server(app);
+const io = require("socket.io")(server, { origins: "localhost:8080" });
+
 app.use(compression());
 app.use(
     cookieSession({
@@ -40,6 +44,7 @@ const multer = require("multer");
 const uidSafe = require("uid-safe");
 const path = require("path");
 const { LakeFormation } = require("aws-sdk");
+const { Socket } = require("dgram");
 
 const diskStorage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -386,6 +391,19 @@ app.get("*", function (req, res) {
     }
 });
 
-app.listen(8080, function () {
+server.listen(8080, function () {
     console.log("I'm listening.");
+});
+
+io.on("connection", (socket) => {
+    console.log(`socket with id ${socket.id} just CONNECTED!`);
+
+    socket.on("hello", (data) => {
+        console.log(data);
+        socket.emit("niceToSeeYou", { youAreGoodLooking: true });
+    });
+
+    socket.on("disconnect", () => {
+        console.log(`socket with id ${socket.id} just DISCONNECTED!`);
+    });
 });
