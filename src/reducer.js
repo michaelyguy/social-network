@@ -1,7 +1,7 @@
 // src/reducer.js
 // this is one big funtion with a bunch of conditionals = if action = x, change state to this.
 
-export default function reducer(state = {}, action) {
+export function reducer(state = {}, action) {
     if (action.type == "RECEIVE_FRIENDS_WANNABES") {
         return {
             ...state,
@@ -10,11 +10,22 @@ export default function reducer(state = {}, action) {
     }
 
     if (action.type == "ACCEPT_FRIEND_REQUEST") {
-        ////do sonwthing
+        return {
+            ...state,
+            friendsWannabes: state.friendsWannabes.map((user) => {
+                if (user.id == action.acceptedUserId) {
+                    user.accepted = true;
+                }
+
+                return user;
+            }),
+        };
     }
 
     if (action.type == "UNFRIEND") {
-        ////do sonwthing
+        return {
+            ...state,
+        };
     }
 
     return state;

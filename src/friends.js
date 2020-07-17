@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { receiveFriendsWannabes } from "./actions";
+import { receiveFriendsWannabes, acceptFriendRequest } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Friends() {
@@ -19,13 +19,16 @@ export default function Friends() {
     // console.log("----friends----");
     // console.log(friends);
 
-    const wannabes = useSelector(
-        (state) =>
+    const wannabes = useSelector((state) => {
+        console.log("----state----");
+        console.log(state);
+        return (
             state.friendsWannabes &&
             state.friendsWannabes.filter((wannabe) => {
                 return wannabe.accepted == false;
             })
-    );
+        );
+    });
 
     return (
         <div>
@@ -50,6 +53,13 @@ export default function Friends() {
                         <h2>
                             {wannabe.first} {wannabe.last}
                         </h2>
+                        <button
+                            onClick={() => {
+                                dispatch(acceptFriendRequest(wannabe.id));
+                            }}
+                        >
+                            accept friendship
+                        </button>
                     </div>
                 ))}
         </div>

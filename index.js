@@ -359,8 +359,8 @@ app.post("/accept-friend-request/:id", async (req, res) => {
             req.session.userId,
             req.params.id
         );
-        console.log("----result in /accept-friend-request----");
-        console.log(result);
+        // console.log("----result in /accept-friend-request----");
+        // console.log(result);
         res.json(result);
     } catch (err) {
         console.log("ERROR IN /accept-friend-request/", err);

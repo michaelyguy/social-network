@@ -73,7 +73,7 @@ module.exports.getInitialStatus = (myId, otherId) => {
     return db.query(
         `SELECT * FROM friendships
            WHERE (receiver_id = $1 AND sender_id = $2)
-           OR (receiver_id = $2 AND se snder_id = $1);`,
+           OR (receiver_id = $2 AND sender_id = $1);`,
         [myId, otherId]
     );
 };
