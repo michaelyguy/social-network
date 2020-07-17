@@ -112,7 +112,7 @@ module.exports.deleteFriendship = (myId, otherUserId) => {
 
 module.exports.getAllFriends = (id) => {
     return db.query(
-        `SELECT id, first, last, imgurl, accepted
+        `SELECT users.id, first, last, imgurl, accepted
   FROM friendships
   JOIN users
   ON (accepted = false AND receiver_id = $1 AND sender_id = users.id)

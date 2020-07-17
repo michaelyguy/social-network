@@ -8,6 +8,7 @@ import ProfilePic from "./profilepic";
 import FindPeople from "./findpeople";
 import Friends from "./friends";
 import { Link } from "react-router-dom";
+import Chat from "./chat";
 
 export default class App extends React.Component {
     constructor() {
@@ -22,8 +23,8 @@ export default class App extends React.Component {
     /// lifecyrcle methods - read! ///
     componentDidMount() {
         axios.get("/user").then((response) => {
-            console.log("----RESPONSE IN GET/USER---");
-            console.log(response.data);
+            // console.log("----RESPONSE IN GET/USER---");
+            // console.log(response.data);
             this.setState({
                 first: response.data.first,
                 last: response.data.last,
@@ -111,8 +112,8 @@ export default class App extends React.Component {
                     />
 
                     <Route path="/friends" render={() => <Friends />} />
-
                     <Route exact path="/users" render={() => <FindPeople />} />
+                    <Route path="/chat" component={Chat} />
                 </div>
             </BrowserRouter>
         );

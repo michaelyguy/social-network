@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Welcome from "./welcome";
 import App from "./app";
+import { init } from "./socket";
 
 //// for redux ////
 import { createStore, applyMiddleware } from "redux";
@@ -9,9 +10,6 @@ import { Provider } from "react-redux";
 import reduxPromise from "redux-promise";
 import { composeWithDevTools } from "redux-devtools-extension";
 import reducer from "./reducer";
-import * as io from "socket.io-client";
-
-const socket = io.connect();
 
 const store = createStore(
     reducer,
@@ -25,7 +23,7 @@ if (location.pathname === "/welcome") {
     elem = <Welcome />;
 } else {
     /// runs if the user is logged in ///
-
+    init(store);
     elem = (
         <Provider store={store}>
             <App />

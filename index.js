@@ -31,13 +31,25 @@ const { s3Url } = require("./config.json");
 const server = require("http").Server(app);
 const io = require("socket.io")(server, { origins: "localhost:8080" });
 
-app.use(compression());
-app.use(
-    cookieSession({
-        secret: `I'm always angry.`,
-        maxAge: 1000 * 60 * 24 * 14,
-    })
-);
+//// cookie session //////
+// app.use(compression());
+// app.use(
+//     cookieSession({
+//         secret: `I'm always angry.`,
+//         maxAge: 1000 * 60 * 24 * 14,
+//     })
+// );
+
+//// new cookie session for socket.io //////
+const cookieSessionMiddleware = cookieSession({
+    secret: `I'm always angry.`,
+    maxAge: 1000 * 60 * 60 * 24 * 90,
+});
+
+app.use(cookieSessionMiddleware);
+io.use(function (socket, next) {
+    cookieSessionMiddleware(socket.request, socket.request.res, next);
+});
 
 ////// FILE UPLOAD BOILERPLATE //////
 const multer = require("multer");
@@ -371,11 +383,11 @@ app.post("/end-friendship/:id", async (req, res) => {
 
 app.get("/friends-wannabes", async (req, res) => {
     try {
-        console.log("----req.session.userId----");
-        console.log(req.session.userId);
+        // console.log("----req.session.userId----");
+        // console.log(req.session.userId);
         const result = await getAllFriends(req.session.userId);
-        console.log("----RESULT IN /friends-wannabes----");
-        console.log(result);
+        // console.log("----RESULT IN /friends-wannabes----");
+        // console.log(result);
         res.json(result);
     } catch (err) {
         console.log("ERROR IN /friends-wannabes");
@@ -395,15 +407,47 @@ server.listen(8080, function () {
     console.log("I'm listening.");
 });
 
-io.on("connection", (socket) => {
+io.on("connection", async (socket) => {
+    //// all the socekt code need to be insdie of this block ////
     console.log(`socket with id ${socket.id} just CONNECTED!`);
 
-    socket.on("hello", (data) => {
-        console.log(data);
-        socket.emit("niceToSeeYou", { youAreGoodLooking: true });
+    /// we only want to do socekt when user is logged in! ////
+    if (!socket.request.session.userId) {
+        return socket.disconnect(true);
+    }
+
+    /// if user makes it at this point, then they're logged in ///
+    const userId = socket.request.session.userId;
+
+    //// this is a good place to go get the last 10 msgs ////
+
+    // db.getLastTenMsgs().then((data) => {
+    //     // we can reverse the result in the query or in the server ////
+    //     console.log(data.rows);
+    // });
+
+    //// the db query for getting the last 1- msg will need to be a JOIN
+    //// you'll need info fro, both users table and chats table! (user's first, last, image and chat msg)
+
+    ///once you have the msgs you need to send them to the client!
+
+    //// DONT USE AXIOS IN ACTION !!!! ///// - the action is just a middle man
+
+    // io.socket.emit("ChatMessages", data.rows);
+
+    socket.on("My amazing chat message", (newMsg) => {
+        console.log("this msg is coming from chat.js component", newMsg);
+        console.log("user who send new msg is: ", userID);
+
+        ///1 database q. to store the new chat msg into the chat table
+        ///2 database q, to get infoo abt the user (first, last, img) - will prob need to b a JOIN
+        /// once you have all that good data we want to EMIT out msg object to EVERYONE so everyone can see it immediately!!
+
+        /// add also user info- not just the msg itself! /////
+        io.sockets.emit("addChatMsg", newMsg);
     });
 
-    socket.on("disconnect", () => {
-        console.log(`socket with id ${socket.id} just DISCONNECTED!`);
-    });
+    // socket.on("disconnect", () => {
+    //     console.log(`socket with id ${socket.id} just DISCONNECTED!`);
+    // });
 });

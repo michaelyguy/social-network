@@ -2,22 +2,56 @@ import React, { useEffect } from "react";
 import { receiveFriendsWannabes } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
 
-export default function Friends(props) {
+export default function Friends() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(receiveFriendsWannabes);
-    });
+        dispatch(receiveFriendsWannabes());
+    }, []);
 
-    const friends = useSelector((state) => state.friendsWannabes);
+    const friends = useSelector(
+        (state) =>
+            state.friendsWannabes &&
+            state.friendsWannabes.filter((friend) => {
+                return friend.accepted == true;
+            })
+    );
+    // console.log("----friends----");
+    // console.log(friends);
+
+    const wannabes = useSelector(
+        (state) =>
+            state.friendsWannabes &&
+            state.friendsWannabes.filter((wannabe) => {
+                return wannabe.accepted == false;
+            })
+    );
 
     return (
         <div>
             <h3>Friends</h3>
-            {/* map here */}
+
+            {friends &&
+                friends.map((friend) => (
+                    <div key={friend.id}>
+                        <img className="userpic" src={friend.imgurl} />
+                        <h2>
+                            {friend.first} {friend.last}
+                        </h2>
+                    </div>
+                ))}
 
             <h3>Waiting to become friends</h3>
-            {/* map here */}
+
+            {wannabes &&
+                wannabes.map((wannabe) => (
+                    <div key={wannabe.id}>
+                        <img className="userpic" src={wannabe.imgurl} />
+                        <h2>
+                            {wannabe.first} {wannabe.last}
+                        </h2>
+                    </div>
+                ))}
         </div>
     );
 }
