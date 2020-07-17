@@ -34,11 +34,12 @@ export async function acceptFriendRequest(id) {
 
 export async function unfriend(id) {
     try {
-        const { data } = await axios.post(`/end-friendship/"${id}`);
+        const { data } = await axios.post(`/end-friendship/${id}`);
         console.log("----data in action unfriend----");
         console.log(data);
         return {
             type: "UNFRIEND",
+            cancelledUserId: id,
         };
     } catch (err) {
         console.log("ERROR IN action unfriend", err);

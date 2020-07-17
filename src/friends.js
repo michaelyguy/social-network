@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
-import { receiveFriendsWannabes, acceptFriendRequest } from "./actions";
+import {
+    receiveFriendsWannabes,
+    acceptFriendRequest,
+    unfriend,
+} from "./actions";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Friends() {
@@ -41,6 +45,13 @@ export default function Friends() {
                         <h2>
                             {friend.first} {friend.last}
                         </h2>
+                        <button
+                            onClick={() => {
+                                dispatch(unfriend(friend.id));
+                            }}
+                        >
+                            cancel friendship
+                        </button>
                     </div>
                 ))}
 

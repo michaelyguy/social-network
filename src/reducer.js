@@ -25,6 +25,13 @@ export function reducer(state = {}, action) {
     if (action.type == "UNFRIEND") {
         return {
             ...state,
+            friendsWannabes: state.friendsWannabes.filter((user) => {
+                if (user.id == action.cancelledUserId) {
+                    user.accepted = null;
+                }
+
+                return user;
+            }),
         };
     }
 
