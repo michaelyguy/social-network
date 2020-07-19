@@ -11,7 +11,7 @@ export default function Login() {
 
     return (
         <div className="inputs-fields">
-            {error && <p>somthing broke</p>}
+            {error && <p>Somthing went wrong. Please try again!</p>}
             <input name="email" placeholder="email" onChange={handleChange} />
             <input
                 name="password"

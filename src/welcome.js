@@ -7,7 +7,7 @@ import { HashRouter, Route } from "react-router-dom";
 export default function Welcome() {
     return (
         <div className="welcome-container">
-            <img src="glitch2.gif" />
+            {/* <img src="glitch2.gif" /> */}
             <h1 className="logo">anti-social</h1>
 
             {/* <img src="logo.png" className="logo" /> */}

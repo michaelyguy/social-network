@@ -81,6 +81,8 @@ export default class ResetPassword extends React.Component {
             return (
                 <div className="inputs-fields">
                     {this.state.error && <p>email don't match</p>}
+                    <h3>Reset Password</h3>
+                    <p>Please enter your email address</p>
                     <input
                         name="email"
                         type="text"
@@ -95,13 +97,17 @@ export default class ResetPassword extends React.Component {
             );
         } else if (this.state.currentDisplay == 1) {
             return (
-                <div>
+                <div className="inputs-fields">
+                    <h3>Reset Password</h3>
+                    <p>Please enter the code you received</p>
                     <input
                         name="code"
                         type="text"
                         placeholder="code"
                         onChange={(e) => this.handleChange(e)}
                     />
+
+                    <p>Please enter a new password</p>
                     <input
                         name="newPassword"
                         type="password"
@@ -116,8 +122,11 @@ export default class ResetPassword extends React.Component {
             );
         } else {
             return (
-                <div>
-                    <h3>Password reset</h3>
+                <div className="inputs-fields">
+                    <h3>Success</h3>
+                    <Link to="/login">
+                        You can now log in with your new password!
+                    </Link>
                 </div>
             );
         }

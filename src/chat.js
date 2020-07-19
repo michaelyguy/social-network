@@ -32,18 +32,18 @@ export default function Chat() {
 
     return (
         <div>
-            <p classNAme="chat-title'">Welcome to chat</p>
-
+            <h2 classNAme="chat-title'">Chat</h2>
             <div className="chat-messages-container" ref={elemRef}>
                 <p>Chat messages will go here</p>
                 <p>Chat messages will go here</p>
                 <p>Chat messages will go here</p>
                 <p>Chat messages will go here</p>
+
+                <textarea
+                    placeholder="add text here"
+                    onKeyDown={keyCheck}
+                ></textarea>
             </div>
-            <textarea
-                placeholder="add text here"
-                onKeyDown={keyCheck}
-            ></textarea>
         </div>
     );
 }

@@ -37,8 +37,8 @@ export default class Uploader extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="uploader-container">
+            <div className="uploader-container">
+                <div className="uploader-text">
                     <h3>Want to change your image?</h3>
                     <input
                         onChange={(e) => this.handleChange(e)}

@@ -61,7 +61,6 @@ export default class App extends React.Component {
                 <div className="container">
                     <header>
                         <h1 className="logo-small">anti-social</h1>
-                        {/* <img src="/logo.png" className="logo-small" /> */}
                         <ProfilePic
                             first={this.state.first}
                             last={this.state.last}
@@ -70,8 +69,11 @@ export default class App extends React.Component {
                             toggleModal={this.state.toggleModal}
                             newProfilePic={this.state.newProfilePic}
                         />
+                        <Link className="chat-link" to="/chat">
+                            Chat
+                        </Link>
                         <Link className="users-link" to="/users">
-                            Find ppl!
+                            Find people
                         </Link>
                         <Link className="friends-link" to="/friends">
                             Friends

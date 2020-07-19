@@ -28,7 +28,6 @@ export default function FindPeople({ id }) {
                 onChange={(e) => setUserInput(e.target.value)}
             />
             <div className="user-info">
-                {/* <div className="each-user"> */}
                 {user
                     .slice(0)
                     .reverse()
@@ -41,7 +40,6 @@ export default function FindPeople({ id }) {
                         </div>
                     ))}
             </div>
-            {/* </div> */}
         </div>
     );
 }

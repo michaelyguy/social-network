@@ -10,14 +10,22 @@ export default function Register() {
 
     return (
         <div className="inputs-fields">
-            {error && <p>somthing broke</p>}
-            <input name="first" placeholder="first" onChange={handleChange} />
-            <input name="last" placeholder="last" onChange={handleChange} />
-            <input name="email" placeholder="email" onChange={handleChange} />
+            {error && <p>Somthing went wrong. Please try again!</p>}
+            <input
+                name="first"
+                placeholder="First name"
+                onChange={handleChange}
+            />
+            <input
+                name="last"
+                placeholder="Last name"
+                onChange={handleChange}
+            />
+            <input name="email" placeholder="Email" onChange={handleChange} />
             <input
                 name="password"
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 onChange={handleChange}
             />
             <button onClick={handleClick}>Submit</button>
