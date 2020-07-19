@@ -21,14 +21,19 @@ export default function FindPeople({ id }) {
     }, [userInput]);
 
     return (
-        <div className="user-info">
+        <div className="find-ppl">
             <h2>Find People</h2>
-            <div className="each-user">
+            <input
+                placeholder="user name"
+                onChange={(e) => setUserInput(e.target.value)}
+            />
+            <div className="user-info">
+                {/* <div className="each-user"> */}
                 {user
                     .slice(0)
                     .reverse()
                     .map((user) => (
-                        <div key={user.id}>
+                        <div className="each-user" key={user.id}>
                             <img className="userpic" src={user.imgurl} />
                             <h2>
                                 {user.first} {user.last}
@@ -36,11 +41,7 @@ export default function FindPeople({ id }) {
                         </div>
                     ))}
             </div>
-
-            <input
-                placeholder="user name"
-                onChange={(e) => setUserInput(e.target.value)}
-            />
+            {/* </div> */}
         </div>
     );
 }

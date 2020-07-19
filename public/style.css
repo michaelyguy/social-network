@@ -27,28 +27,43 @@ body {
     }
 }
 
-.logo {
-    width: 230px;
+.welcome-container h1 {
+    position: absolute;
+    top: -40px;
+    left: -95px;
+    font-size: 60px;
+    transform: skew(55deg, -15deg) scaleY(0.66667);
+}
+
+.welcome-container h3 {
+    /* font-size: 60px; */
+    transform: skew(55deg, -15deg) scaleY(0.66667);
 }
 
 .logo-small {
+    /* transform: skew(55deg, -15deg) scaleY(0.66667); */
     position: fixed;
-    top: 5px;
-    left: 30px;
-    height: 100px;
+    top: 17px;
+    left: 15px;
+    /* height: 100px; */
 }
 
 .small-userpic {
     position: fixed;
-    top: 10px;
-    right: 50px;
-    height: 70px;
-    width: 70px;
+    top: 8px;
+    right: 20px;
+    height: 50px;
+    width: 50px;
     object-fit: cover;
-    border: 1px solid black;
+    border: 0.5px solid black;
+    border-radius: 25px;
 }
 
 .userpic {
+    margin: -1px;
+    /* border-radius: 25px; */
+    /* border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px; */
     padding: 10px;
     width: 200px;
     height: 200px;
@@ -59,15 +74,14 @@ body {
 .welcome-container {
     position: relative;
     margin: 0 auto;
-    top: 150px;
-    height: 500px;
+    top: 260px;
+    /* height: 300px; */
     width: 400px;
-    border: 2px solid grey;
-    background-color: gainsboro;
-    /* background-color: magenta; */
-    flex-direction: column;
-    text-align: center;
-    border-radius: 20px;
+    /* border: 2px solid grey; */
+    /* background-color: gainsboro; */
+    /* flex-direction: column; */
+    /* text-align: center; */
+    /* border-radius: 20px; */
     -webkit-animation: roll-in-top 0.6s ease-out both;
     animation: roll-in-top 0.6s ease-out both;
 }
@@ -97,45 +111,96 @@ body {
     }
 }
 
-/* .app-container {
-    background-color: lightskyblue;
+.container {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* background-color: lightskyblue; */
     height: 100vh;
-} */
-/* .each-user {
-    background-color: lightpink;
-} */
+}
 
-.header {
-    height: 100px;
+header {
+    /* position: fixed; */
+    height: 70px;
     border-bottom: 1px solid black;
-    /* background-color: lightcoral; */
+
+    background-color: lightgray;
 }
 
 .users-link {
+    /* transform: skew(55deg, -15deg) scaleY(0.66667); */
+
+    color: black;
+    text-decoration: none;
     position: fixed;
-    top: 35px;
-    right: 210px;
+    top: 25px;
+    right: 160px;
 }
 .friends-link {
+    /* transform: skew(55deg, -15deg) scaleY(0.66667); */
+
+    color: black;
+    text-decoration: none;
     position: fixed;
-    top: 35px;
-    right: 140px;
+    top: 25px;
+    right: 93px;
 }
 
 .user-info {
+    margin-top: 15px;
     display: flex;
-    flex-direction: row;
-    margin-top: 130px;
-    margin-left: 35px;
-    background-color: lavender;
-    width: 40vw;
+    /* border-radius: 25px; */
+    /* height: 250px; */
+    height: 80vh;
+
+    flex-direction: column;
+    /* margin-top: 130px;
+    margin-left: 35px; */
+    /* background-color: hotpink; */
+    /* border: 1px solid black; */
+    /* width: 500px; */
+    overflow-y: scroll;
 }
+
+.each-user h2 {
+    margin: 6px 10px;
+}
+
+.each-user {
+    display: flex;
+    margin-top: 30px;
+    background-color: lightgray;
+    border: 1px solid black;
+    /* text-align: center; */
+    /* background-color: lightpink; */
+    /* height: 80vh; */
+
+    /* background-color: blueviolet; */
+    width: 550px;
+}
+
+.find-ppl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* background-color: blue; */
+    margin: 30px 13px;
+    /* border-radius: 25px; */
+
+    /* flex-direction: row; */
+    /* margin-top: 130px;
+    margin-left: 35px; */
+    /* background-color: lightgray; */
+    /* border: 1px solid black; */
+    width: 500px;
+}
+
 .user-info-text {
     margin: 10px;
 }
 
 .components {
-    /* background-color: royalblue; */
+    background-color: royalblue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,20 +215,27 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    transform: skew(55deg, -15deg) scaleY(0.66667);
+
     /* height: 180px; */
     /* background-color: seagreen; */
 }
 
+.inputs-fields a {
+    color: black;
+}
+
 input {
-    border-radius: 5px;
+    /* color: black; */
+    /* border-radius: 5px; */
     height: 18px;
     margin: 5px;
     text-align: center;
 }
 
 button {
-    border-radius: 5px;
-    margin: 10px;
+    /* border-radius: 5px; */
+    margin: 15px;
 }
 
 .uploader-container {
@@ -186,4 +258,24 @@ textarea {
     height: 300px;
     width: 80%;
     overflow-y: scroll;
+}
+
+.user-big button {
+    color: black;
+    /* transform: skew(55deg, -15deg) scaleY(0.66667); */
+
+    position: relative;
+    /* position: absolute; */
+    top: -57px;
+    left: 190px;
+    /* background-color: blue; */
+
+    /* padding: 0;
+    border: none;
+    background: none; */
+}
+
+.user-info-text p {
+    margin-top: 10px;
+    font-size: 15px;
 }

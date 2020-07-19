@@ -58,9 +58,10 @@ export default class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                <div className="app-container">
-                    <div className="header">
-                        <img src="/logo.png" className="logo-small" />
+                <div className="container">
+                    <header>
+                        <h1 className="logo-small">anti-social</h1>
+                        {/* <img src="/logo.png" className="logo-small" /> */}
                         <ProfilePic
                             first={this.state.first}
                             last={this.state.last}
@@ -78,7 +79,7 @@ export default class App extends React.Component {
                         {this.state.uploaderIsVisible && (
                             <Uploader setImage={() => this.setImage()} />
                         )}
-                    </div>
+                    </header>
 
                     <Route
                         exact

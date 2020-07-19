@@ -7,8 +7,10 @@ import { HashRouter, Route } from "react-router-dom";
 export default function Welcome() {
     return (
         <div className="welcome-container">
-            <img src="logo.png" className="logo" />
-            <h3>Text about welcome to the...</h3>
+            <h1 className="logo">anti-social</h1>
+
+            {/* <img src="logo.png" className="logo" /> */}
+            <h3>Join the anti-social!</h3>
             <HashRouter>
                 <div>
                     <Route exact path="/" component={Register} />
