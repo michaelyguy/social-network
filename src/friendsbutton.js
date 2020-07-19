@@ -44,5 +44,9 @@ export default function FriendsButton(props) {
             setButtonText("End Friendship");
         }
     }
-    return <button onClick={handleClick}>{buttonText}</button>;
+    return (
+        <button className="status-btn" onClick={handleClick}>
+            {buttonText}
+        </button>
+    );
 }

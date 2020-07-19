@@ -34,17 +34,20 @@ export default class OtherProfile extends React.Component {
 
     render() {
         return (
-            <div className="user-big">
-                <div className="user-info">
-                    <img className="userpic" src={this.state.profilePic} />
+            <div className="my-user-container">
+                <div className="my-user-info">
+                    <img className="my-userpic" src={this.state.profilePic} />
                     <div className="user-info-text">
                         <h2>
                             {this.state.first} {this.state.last}
                         </h2>
                         <p>{this.state.officialBio}</p>
+                        <FriendsButton
+                            myId={this.props.myId}
+                            id={this.state.id}
+                        />
                     </div>
                 </div>
-                <FriendsButton myId={this.props.myId} id={this.state.id} />
             </div>
         );
     }

@@ -48,7 +48,12 @@ export default class BioEditor extends React.Component {
                         defaultValue={this.props.officialBio}
                         onChange={(e) => this.handleChange(e)}
                     />
-                    <button onClick={(e) => this.handleSubmit(e)}>Save</button>
+                    <button
+                        className="bio-btn"
+                        onClick={(e) => this.handleSubmit(e)}
+                    >
+                        Save
+                    </button>
                 </div>
             );
         } else {
@@ -56,7 +61,10 @@ export default class BioEditor extends React.Component {
                 return (
                     <div>
                         <p>{this.props.officialBio}</p>
-                        <button onClick={(e) => this.showBioArea(e)}>
+                        <button
+                            className="bio-btn"
+                            onClick={(e) => this.showBioArea(e)}
+                        >
                             Edit
                         </button>
                     </div>

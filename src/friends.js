@@ -35,44 +35,46 @@ export default function Friends() {
     });
 
     return (
-        <div>
-            <h3>Friends</h3>
+        <div className="friends-container">
+            <h2>Friends</h2>
+            <div className="friends">
+                {friends &&
+                    friends.map((friend) => (
+                        <div className="each-friend" key={friend.id}>
+                            <img className="userpic" src={friend.imgurl} />
+                            <h3>
+                                {friend.first} {friend.last}
+                            </h3>
+                            <button
+                                onClick={() => {
+                                    dispatch(unfriend(friend.id));
+                                }}
+                            >
+                                cancel friendship
+                            </button>
+                        </div>
+                    ))}
+            </div>
 
-            {friends &&
-                friends.map((friend) => (
-                    <div key={friend.id}>
-                        <img className="userpic" src={friend.imgurl} />
-                        <h2>
-                            {friend.first} {friend.last}
-                        </h2>
-                        <button
-                            onClick={() => {
-                                dispatch(unfriend(friend.id));
-                            }}
-                        >
-                            cancel friendship
-                        </button>
-                    </div>
-                ))}
-
-            <h3>Waiting to become friends</h3>
-
-            {wannabes &&
-                wannabes.map((wannabe) => (
-                    <div key={wannabe.id}>
-                        <img className="userpic" src={wannabe.imgurl} />
-                        <h2>
-                            {wannabe.first} {wannabe.last}
-                        </h2>
-                        <button
-                            onClick={() => {
-                                dispatch(acceptFriendRequest(wannabe.id));
-                            }}
-                        >
-                            accept friendship
-                        </button>
-                    </div>
-                ))}
+            <h2>Waiting to become friends</h2>
+            <div className="wannabes">
+                {wannabes &&
+                    wannabes.map((wannabe) => (
+                        <div className="each-friend" key={wannabe.id}>
+                            <img className="userpic" src={wannabe.imgurl} />
+                            <h3>
+                                {wannabe.first} {wannabe.last}
+                            </h3>
+                            <button
+                                onClick={() => {
+                                    dispatch(acceptFriendRequest(wannabe.id));
+                                }}
+                            >
+                                accept friendship
+                            </button>
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 }

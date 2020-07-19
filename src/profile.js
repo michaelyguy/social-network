@@ -8,25 +8,27 @@ export default function Profile(props) {
     console.log(props);
 
     return (
-        <div className="user-info">
-            <img className="userpic" src={props.profilePic} />
-            <div className="user-info-text">
-                <h2>
-                    {props.first} {props.last}
-                </h2>
+        <div className="my-user-container">
+            <div className="my-user-info">
+                <img className="my-userpic" src={props.profilePic} />
+                <div className="user-info-text">
+                    <h2>
+                        {props.first} {props.last}
+                    </h2>
 
-                <ProfilePic
-                    first={props.first}
-                    last={props.last}
-                    profilePic={props.profilePic}
-                    uploaderIsVisible={props.uploaderIsVisible}
-                    toggleModal={props.toggleModal}
-                    newProfilePic={props.newProfilePic}
-                />
-                <BioEditor
-                    setBio={props.setBio}
-                    officialBio={props.officialBio}
-                />
+                    <ProfilePic
+                        first={props.first}
+                        last={props.last}
+                        profilePic={props.profilePic}
+                        uploaderIsVisible={props.uploaderIsVisible}
+                        toggleModal={props.toggleModal}
+                        newProfilePic={props.newProfilePic}
+                    />
+                    <BioEditor
+                        setBio={props.setBio}
+                        officialBio={props.officialBio}
+                    />
+                </div>
             </div>
         </div>
     );
