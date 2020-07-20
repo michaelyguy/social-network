@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+}
+
+@font-face {
+    font-family: "Golia";
+    src: url("GoliaGolia-Regular.otf");
+}
+
+body {
+    font-family: "Golia";
+    /* font-family: Helvetica, sans-serif; */
+    -webkit-animation: body 2s linear infinite alternate both;
+    animation: body 2s linear infinite alternate both;
+}
+
+@-webkit-keyframes body {
+    0% {
+        background: #19dcea;
+    }
+    100% {
+        background: #b22cff;
+    }
+}
+@keyframes body {
+    0% {
+        background: #19dcea;
+    }
+    100% {
+        background: #b22cff;
+    }
+}
+
+.about-container {
+    background-color: chartreuse;
+    height: 90vh;
+
+    font-family: "Helvetica";
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    z-index: 2;
+    font-size: 40px;
+    width: 900px;
+    margin: 0 auto;
+    visibility: hidden;
+}
+
+.close-about {
+    z-index: 3;
+    font-size: 20px;
+}
+
+header {
+    margin: 0 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+//////// start flying pic /////////
+.flier {
+    pointer-events: none;
+}
+
+.flier > * {
+    animation: fly 50s linear infinite;
+    pointer-events: none !important;
+    top: 0;
+    left: 0;
+    transform: translateX(-120%) translateY(-120%) rotateZ(0);
+    position: fixed;
+    animation-delay: 1s;
+    z-index: 999999;
+}
+
+@keyframes fly {
+    98.001%,
+    0% {
+        display: block;
+        transform: translateX(-200%) translateY(100vh) rotateZ(0deg);
+    }
+
+    15% {
+        transform: translateX(100vw) translateY(-100%) rotateZ(180deg);
+    }
+
+    15.001%,
+    18% {
+        transform: translateX(100vw) translateY(-30%) rotateZ(0deg);
+    }
+
+    40% {
+        transform: translateX(-200%) translateY(3vh) rotateZ(-180deg);
+    }
+
+    40.001%,
+    43% {
+        transform: translateX(-200%) translateY(-100%) rotateZ(-180deg);
+    }
+
+    65% {
+        transform: translateX(100vw) translateY(50vh) rotateZ(0deg);
+    }
+
+    65.001%,
+    68% {
+        transform: translateX(20vw) translateY(-200%) rotateZ(180deg);
+    }
+
+    95% {
+        transform: translateX(10vw) translateY(100vh) rotateZ(0deg);
+    }
+}
+//////// end flying pic /////////
+
+.card {
+    width: 45ch;
+    height: 45ch;
+    background: grey;
+    border-radius: 5px;
+    background-image: url(https://drscdn.500px.org/photo/435236/q%3D80_m%3D1500/v2?webp=true&sig=67031bdff6f582f3e027311e2074be452203ab637c0bd21d89128844becf8e40);
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.5s;
+    will-change: transform;
+    border: 15px solid white;
+}
+
+.card:hover {
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+}
