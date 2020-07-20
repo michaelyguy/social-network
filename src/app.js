@@ -16,6 +16,7 @@ export default class App extends React.Component {
         this.state = {
             uploaderIsVisible: false,
         };
+        this.toggleModal = this.toggleModal.bind(this);
         // console.log("----THIS.STATE IN APP-----");
         // console.log(this.state);
     }
@@ -44,6 +45,7 @@ export default class App extends React.Component {
     }
 
     toggleModal() {
+        console.log("this is running!");
         this.setState({
             uploaderIsVisible: true,
         });
@@ -66,7 +68,7 @@ export default class App extends React.Component {
                             last={this.state.last}
                             profilePic={this.state.profilePic}
                             uploaderIsVisible={this.state.uploaderIsVisible}
-                            toggleModal={this.state.toggleModal}
+                            toggleModal={this.toggleModal}
                             newProfilePic={this.state.newProfilePic}
                         />
                         <Link className="chat-link" to="/chat">

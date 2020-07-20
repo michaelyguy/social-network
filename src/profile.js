@@ -16,14 +16,14 @@ export default function Profile(props) {
                         {props.first} {props.last}
                     </h2>
 
-                    <ProfilePic
+                    {/* <ProfilePic
                         first={props.first}
                         last={props.last}
                         profilePic={props.profilePic}
                         uploaderIsVisible={props.uploaderIsVisible}
                         toggleModal={props.toggleModal}
                         newProfilePic={props.newProfilePic}
-                    />
+                    /> */}
                     <BioEditor
                         setBio={props.setBio}
                         officialBio={props.officialBio}
