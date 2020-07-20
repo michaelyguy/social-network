@@ -121,3 +121,9 @@ module.exports.getAllFriends = (id) => {
         [id]
     );
 };
+
+module.exports.getLastTenMsgs = () => {
+    return db.query(
+        `SELECT users.id, chats.id AS message_id, first, last, imgurl, message, chats.created_at FROM chats JOIN users on (sender_id = users.id) LIMIT 10`
+    );
+};

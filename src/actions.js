@@ -45,3 +45,16 @@ export async function unfriend(id) {
         console.log("ERROR IN action unfriend", err);
     }
 }
+
+export async function chatMessages(msgs) {
+    try {
+        console.log("this is ourrr msgs in action", msgs);
+
+        return {
+            type: "LAST_MSGS",
+            chatmsgs: msgs,
+        };
+    } catch (err) {
+        console.log("ERROR IN action ");
+    }
+}

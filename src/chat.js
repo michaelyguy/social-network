@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 
 export default function Chat() {
     const elemRef = useRef();
-    const ChatMessages = useSelector((state) => state && state.ChatMessages);
-    //// this will be undefined at the moment ///
-    // console.log("here are my last 10 msgs", ChatMessages);
+    const chatMessages = useSelector((state) => {
+        console.log("here are my last 10 msgs", state.chatmsgs);
+        return state && state.chatmsgs;
+    });
 
     //// we want this to run everytime you get a new chat msg ////
     useEffect(() => {
@@ -29,15 +30,18 @@ export default function Chat() {
             e.target.value = "";
         }
     };
-
+    console.log("----chatMessages---");
+    console.log(chatMessages);
     return (
         <div>
-            <h2 classNAme="chat-title'">Chat</h2>
+            <h2 className="chat-title'">Chat</h2>
             <div className="chat-messages-container" ref={elemRef}>
-                <p>Chat messages will go here</p>
-                <p>Chat messages will go here</p>
-                <p>Chat messages will go here</p>
-                <p>Chat messages will go here</p>
+                {chatMessages &&
+                    chatMessages.map((msg) => {
+                        console.log("--msg---");
+                        console.log(msg);
+                        return <p key={msg.id}>{msg.message}</p>;
+                    })}
 
                 <textarea
                     placeholder="add text here"

@@ -19,6 +19,7 @@ const {
     updateUsersFriendship,
     deleteFriendship,
     getAllFriends,
+    getLastTenMsgs,
 } = require("./db.js");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc.js");
@@ -408,46 +409,49 @@ server.listen(8080, function () {
 });
 
 io.on("connection", async (socket) => {
-    //// all the socekt code need to be insdie of this block ////
-    console.log(`socket with id ${socket.id} just CONNECTED!`);
+    try {
+        //// all the socekt code need to be insdie of this block ////
+        console.log(`socket with id ${socket.id} just CONNECTED!`);
 
-    /// we only want to do socekt when user is logged in! ////
-    if (!socket.request.session.userId) {
-        return socket.disconnect(true);
-    }
+        /// we only want to do socekt when user is logged in! ////
+        if (!socket.request.session.userId) {
+            return socket.disconnect(true);
+        }
 
-    /// if user makes it at this point, then they're logged in ///
-    const userId = socket.request.session.userId;
+        /// if user makes it at this point, then they're logged in ///
+        const userId = socket.request.session.userId;
 
-    //// this is a good place to go get the last 10 msgs ////
+        //// this is a good place to go get the last 10 msgs ////
+        const result = await getLastTenMsgs();
+        console.log("----result in get last 10 msgs----");
+        console.log(result);
+        // we can reverse the result in the query or in the server ////
 
-    // db.getLastTenMsgs().then((data) => {
-    //     // we can reverse the result in the query or in the server ////
-    //     console.log(data.rows);
-    // });
+        //// the db query for getting the last 1- msg will need to be a JOIN
+        //// you'll need info fro, both users table and chats table! (user's first, last, image and chat msg)
 
-    //// the db query for getting the last 1- msg will need to be a JOIN
-    //// you'll need info fro, both users table and chats table! (user's first, last, image and chat msg)
+        ///once you have the msgs you need to send them to the client!
 
-    ///once you have the msgs you need to send them to the client!
+        //// DONT USE AXIOS IN ACTION !!!! ///// - the action is just a middle man
 
-    //// DONT USE AXIOS IN ACTION !!!! ///// - the action is just a middle man
+        io.sockets.emit("chatMessages", result.rows);
 
-    // io.socket.emit("ChatMessages", data.rows);
-
-    socket.on("My amazing chat message", (newMsg) => {
-        console.log("this msg is coming from chat.js component", newMsg);
-        console.log("user who send new msg is: ", userID);
+        // socket.on("My amazing chat message", (newMsg) => {
+        //     console.log("this msg is coming from chat.js component", newMsg);
+        //     console.log("user who send new msg is: ", userId);
 
         ///1 database q. to store the new chat msg into the chat table
         ///2 database q, to get infoo abt the user (first, last, img) - will prob need to b a JOIN
         /// once you have all that good data we want to EMIT out msg object to EVERYONE so everyone can see it immediately!!
 
         /// add also user info- not just the msg itself! /////
-        io.sockets.emit("addChatMsg", newMsg);
-    });
+        // io.sockets.emit("addChatMsg", newMsg);
+        // });
 
-    // socket.on("disconnect", () => {
-    //     console.log(`socket with id ${socket.id} just DISCONNECTED!`);
-    // });
+        socket.on("disconnect", () => {
+            console.log(`socket with id ${socket.id} just DISCONNECTED!`);
+        });
+    } catch (err) {
+        console.log("ERROR IN CONNECTION SOCKET", err);
+    }
 });

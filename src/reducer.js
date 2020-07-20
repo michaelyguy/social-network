@@ -35,6 +35,12 @@ export function reducer(state = {}, action) {
         };
     }
 
+    if (action.type == "LAST_MSGS") {
+        return {
+            ...state,
+            chatmsgs: action.chatmsgs,
+        };
+    }
     return state;
 }
 
