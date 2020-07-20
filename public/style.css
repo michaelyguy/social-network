@@ -32,9 +32,8 @@ body {
 }
 
 .about-container {
-    background-color: chartreuse;
-    height: 90vh;
-
+    /* background-color: chartreuse;
+    height: 90vh; */
     font-family: "Helvetica";
     position: absolute;
     left: 5px;
