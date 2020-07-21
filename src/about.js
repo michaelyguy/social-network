@@ -14,7 +14,6 @@ export default function About(props) {
 
     return (
         <div className="about-container">
-            <span className="close-about">close</span>
             <h2>Hi, I’m Guy, Berlin-based graphic designer.</h2>
             <br />
             <p>
