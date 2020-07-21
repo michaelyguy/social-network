@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import About from "./about";
 // import Toggle from "./toggle";
 import { useSpring, animated } from "react-spring";
+import Projects from "./projects";
 
 export default function Welcome() {
     const [isToggled, setToggle] = useState(false);
@@ -11,9 +12,9 @@ export default function Welcome() {
         from: { opacity: 0 },
     });
 
-    // const show = useSpring({
-    //     opacity: isToggled ? 1 : 0,
-    // });
+    const showAbout = useSpring({
+        opacity: isToggled ? 1 : 0,
+    });
 
     // const AnimatedAbout = animated(About);
 
@@ -26,7 +27,11 @@ export default function Welcome() {
             <div className="flier">
                 <img src="smile.png" />
             </div>
-            <About setToggle={setToggle} toggle={isToggled} />
+            <Projects />
+            <animated.div style={showAbout}>
+                {/* <About setToggle={setToggle} toggle={isToggled} /> */}
+                <About />
+            </animated.div>
         </div>
     );
 }

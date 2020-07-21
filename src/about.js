@@ -4,16 +4,16 @@ import { useSpring, animated } from "react-spring";
 export default function About(props) {
     console.log("props", props);
 
-    const showAbout = useSpring({
-        opacity: props.isToggled ? 1 : 0,
-    });
+    // const showAbout = useSpring({
+    //     opacity: props.isToggled ? 1 : 0,
+    // });
 
     useEffect(() => {
         console.log("About component useEffect");
     });
 
     return (
-        <animated.div style={showAbout} className="about-container">
+        <div className="about-container">
             <span className="close-about">close</span>
             <h2>Hi, I’m Guy, Berlin-based graphic designer.</h2>
             <br />
@@ -30,6 +30,6 @@ export default function About(props) {
                 conceptual solutions for editorials, visual identities for other
                 printed matter and web design.
             </p>
-        </animated.div>
+        </div>
     );
 }
