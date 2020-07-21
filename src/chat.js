@@ -11,11 +11,10 @@ export default function Chat() {
 
     //// we want this to run everytime you get a new chat msg ////
     useEffect(() => {
-        console.log("elemnt Ref: ", elemRef);
-        console.log("scroll top: ", elemRef.current.scrollTop);
-        console.log("client height: ", elemRef.current.clientHeight);
-        console.log("scroll height: ", elemRef.current.scrollHeight);
-
+        // console.log("elemnt Ref: ", elemRef);
+        // console.log("scroll top: ", elemRef.current.scrollTop);
+        // console.log("client height: ", elemRef.current.clientHeight);
+        // console.log("scroll height: ", elemRef.current.scrollHeight);
         elemRef.current.scrollTop =
             elemRef.current.scrollHeight - elemRef.current.clientHeight;
     }, []);
@@ -30,24 +29,28 @@ export default function Chat() {
             e.target.value = "";
         }
     };
-    console.log("----chatMessages---");
-    console.log(chatMessages);
+    // console.log("----chatMessages---");
+    // console.log(chatMessages);
     return (
-        <div>
-            <h2 className="chat-title'">Chat</h2>
+        <div className="chat-big">
+            <h2 className="chat-title">Chat</h2>
             <div className="chat-messages-container" ref={elemRef}>
                 {chatMessages &&
-                    chatMessages.map((msg) => {
-                        console.log("--msg---");
-                        console.log(msg);
-                        return <p key={msg.id}>{msg.message}</p>;
-                    })}
-
-                <textarea
-                    placeholder="add text here"
-                    onKeyDown={keyCheck}
-                ></textarea>
+                    chatMessages.map((msg) => (
+                        <div className="each-msg" key={msg.id}>
+                            <img className="chat-userpic" src={msg.imgurl} />
+                            <p>
+                                {msg.first} {msg.last}
+                            </p>
+                            <p>{msg.message}</p>
+                        </div>
+                    ))}
             </div>
+            <textarea
+                className="chat-area"
+                placeholder="add text here"
+                onKeyDown={keyCheck}
+            ></textarea>
         </div>
     );
 }
