@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import About from "./about";
 // import Toggle from "./toggle";
 import { useSpring, animated } from "react-spring";
@@ -6,67 +6,27 @@ import { useSpring, animated } from "react-spring";
 export default function Welcome() {
     const [isToggled, setToggle] = useState(false);
 
-    // const fade = useSpring({
-    //     opacity: 1,
-    //     from: { opacity: 0 },
-    // });
-
-    const show = useSpring({
-        opacity: isToggled ? 1 : 0,
+    const fadeHeader = useSpring({
+        opacity: 1,
+        from: { opacity: 0 },
     });
+
+    // const show = useSpring({
+    //     opacity: isToggled ? 1 : 0,
+    // });
 
     // const AnimatedAbout = animated(About);
 
     return (
         <div>
-            <header>
+            <animated.header style={fadeHeader}>
                 <h1>Guy Michaely</h1>
                 <h1 onClick={() => setToggle(!isToggled)}>About</h1>
-            </header>
-            {/* <Toggle /> */}
-
+            </animated.header>
             <div className="flier">
                 <img src="smile.png" />
             </div>
-            <animated.div style={show} id="about-check">
-                <About />
-            </animated.div>
-            {/* <AnimatedAbout style={show} /> */}
+            <About setToggle={setToggle} toggle={isToggled} />
         </div>
     );
 }
-
-// export default function Welcome() {
-//     const [isToggled, setToggle] = useState(false);
-//     const aboutRef = useRef();
-
-//     const handleClick = () => {
-//         aboutRef.current.style.visibility = "visible";
-//     };
-
-//     const fade = useSpring({
-//         opacity: 1,
-//         from: { opacity: 0 },
-//     });
-
-//     const hideShow = useSpring({
-//         opacity: isToggled ? 1 : 0,
-//     });
-
-//     return (
-//         <div>
-//             <animated.header style={fade}>
-//                 <h1>Guy Michaely</h1>
-//                 <h1 onClick={handleClick} id="about">
-//                     About
-//                 </h1>
-//             </animated.header>
-//             {/* <Toggle /> */}
-//             <div className="flier">
-//                 <img src="smile.png" />
-//             </div>
-//             {/* <About /> */}
-//             <About style={fade} elemRef={aboutRef} />
-//         </div>
-//     );
-// }

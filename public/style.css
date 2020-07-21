@@ -31,9 +31,7 @@ body {
 }
 
 .about-container {
-    /* opacity: 0; */
-    /* background-color: chartreuse; */
-    /* height: 90vh; */
+    background-color: chartreuse;
     font-family: "Helvetica";
     position: absolute;
     left: 5px;
@@ -42,8 +40,6 @@ body {
     font-size: 40px;
     width: 900px;
     margin: 0 auto;
-
-    /* visibility: hidden; */
 }
 
 .close-about {
