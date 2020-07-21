@@ -1,33 +1,37 @@
 import React, { useState, useRef } from "react";
 import About from "./about";
-import Toggle from "./toggle";
+// import Toggle from "./toggle";
 import { useSpring, animated } from "react-spring";
 
 export default function Welcome() {
     const [isToggled, setToggle] = useState(false);
 
-    const fade = useSpring({
-        opacity: 1,
-        from: { opacity: 0 },
+    // const fade = useSpring({
+    //     opacity: 1,
+    //     from: { opacity: 0 },
+    // });
+
+    const show = useSpring({
+        opacity: isToggled ? 1 : 0,
     });
 
-    // const hideShow = useSpring({
-    //     opacity: isToggled ? 1 : 0,
-    // });
+    // const AnimatedAbout = animated(About);
 
     return (
         <div>
-            <animated.header style={fade}>
+            <header>
                 <h1>Guy Michaely</h1>
-                <h1 onClick={() => setToggle(!isToggled)} id="about">
-                    About
-                </h1>
-            </animated.header>
-            <Toggle />
+                <h1 onClick={() => setToggle(!isToggled)}>About</h1>
+            </header>
+            {/* <Toggle /> */}
+
             <div className="flier">
                 <img src="smile.png" />
             </div>
-            <About toggle={isToggled} />
+            <animated.div style={show} id="about-check">
+                <About />
+            </animated.div>
+            {/* <AnimatedAbout style={show} /> */}
         </div>
     );
 }
