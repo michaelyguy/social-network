@@ -5,8 +5,10 @@ import { useSpring, animated } from "react-spring";
 import Projects from "./projects";
 import ProjectOne from "./projectone";
 import Nav from "./nav";
+import Checkout from "./checkout";
 
 export default function Welcome() {
+    //// NAVIGATION /////
     const [isNavOpen, setNavOpen] = useState(false);
     const navAnimation = useSpring({
         transform: isNavOpen
@@ -14,14 +16,13 @@ export default function Welcome() {
             : `translate3d(100%,0,0) scale(0.6)`,
     });
 
-    const [showAbout, setShowAbout] = useState(false);
-    const [projectIsVisible, setProjectIsVisible] = useState(false);
-
     const fadeHeader = useSpring({
         opacity: 1,
         from: { opacity: 0 },
     });
 
+    ///// ANIMATION FOR ABOUT SLIDE //////
+    const [showAbout, setShowAbout] = useState(false);
     const slideAbout = useSpring({
         opacity: showAbout ? 1 : 0,
         // color: showAbout ? "tomato" : "green",
@@ -29,6 +30,9 @@ export default function Welcome() {
         //     ? "translate3d(0,200px,0)"
         //     : "translate3d(0,-1050px,0)",
     });
+
+    //// TOGGEL A SINGLE PROJECT PAGE /////
+    const [projectIsVisible, setProjectIsVisible] = useState(false);
 
     const toggleModal = () => {
         console.log("this is running!");
@@ -44,17 +48,19 @@ export default function Welcome() {
                     Menu
                 </h1>
             </animated.header>
-
-            <Nav style={navAnimation} />
-            <div className="flier">
-                <img src="smile.png" />
-            </div>
-            <Projects toggleModal={toggleModal} />
-            {projectIsVisible && <ProjectOne />}
-            <animated.div style={slideAbout}>
-                {/* <About setToggle={setToggle} toggle={isToggled} /> */}
-                <About />
-            </animated.div>
+            <main>
+                {/* <Nav style={navAnimation} /> */}
+                <div className="flier">
+                    <img src="smile.png" />
+                </div>
+                <Checkout isOpen={isNavOpen} />
+                <Projects toggleModal={toggleModal} />
+                {projectIsVisible && <ProjectOne />}
+                <animated.div style={slideAbout}>
+                    {/* <About setToggle={setToggle} toggle={isToggled} /> */}
+                    <About />
+                </animated.div>
+            </main>
         </div>
     );
 }

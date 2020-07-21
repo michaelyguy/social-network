@@ -133,7 +133,7 @@ header {
     }
 }
 
-/* try */
+/* NAV MENU CODE */
 
 .menu-btn {
     z-index: 15;
@@ -180,4 +180,25 @@ header {
 
 .nav-wrapper a:hover {
     border-bottom: solid 4px var(--teal);
+}
+
+/* CHECK OUT CODE */
+
+.checkout {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+}
+.checkout-left {
+    width: 30%;
+    height: 100%;
+    background: white;
+}
+.checkout-right {
+    width: 70%;
+    height: 100%;
+    background: var(--purp);
 }
