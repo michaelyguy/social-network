@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import About from "./about";
-// import Toggle from "./toggle";
 import { useSpring, animated } from "react-spring";
 import Projects from "./projects";
 import ProjectOne from "./projectone";
 import Nav from "./nav";
 import Checkout from "./checkout";
+import Toggle from "./toggle";
 
 export default function Welcome() {
     //// NAVIGATION /////
@@ -49,11 +49,12 @@ export default function Welcome() {
                 </h1>
             </animated.header>
             <main>
+                <Toggle />
                 {/* <Nav style={navAnimation} /> */}
                 <div className="flier">
                     <img src="smile.png" />
                 </div>
-                <Checkout isOpen={isNavOpen} />
+                {/* <Checkout isOpen={isNavOpen} /> */}
                 <Projects toggleModal={toggleModal} />
                 {projectIsVisible && <ProjectOne />}
                 <animated.div style={slideAbout}>
