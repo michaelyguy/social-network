@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+// import ProjectOne from "./projectone";
 
-export default function Projects() {
+export default function Projects(props) {
+    console.log("props: ", props);
+
     return (
-        <div className="projects-container">
-            <div className="project">
+        <div id="projects-container">
+            <div onClick={props.toggleModal} className="project">
                 <h1>project1</h1>
                 <p>few words</p>
             </div>

@@ -3,9 +3,11 @@ import About from "./about";
 // import Toggle from "./toggle";
 import { useSpring, animated } from "react-spring";
 import Projects from "./projects";
+import ProjectOne from "./projectone";
 
 export default function Welcome() {
     const [isToggled, setToggle] = useState(false);
+    const [projectIsVisible, setProjectIsVisible] = useState(false);
 
     const fadeHeader = useSpring({
         opacity: 1,
@@ -16,7 +18,10 @@ export default function Welcome() {
         opacity: isToggled ? 1 : 0,
     });
 
-    // const AnimatedAbout = animated(About);
+    const toggleModal = () => {
+        console.log("this is running!");
+        setProjectIsVisible(true);
+    };
 
     return (
         <div>
@@ -27,7 +32,8 @@ export default function Welcome() {
             <div className="flier">
                 <img src="smile.png" />
             </div>
-            <Projects />
+            <Projects toggleModal={toggleModal} />
+            {projectIsVisible && <ProjectOne />}
             <animated.div style={showAbout}>
                 {/* <About setToggle={setToggle} toggle={isToggled} /> */}
                 <About />

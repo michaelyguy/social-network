@@ -1,29 +1,13 @@
 (function () {
-    const about = $(".about-container");
-    const closeAbout = $(".close-about");
-    const overlay = $(".overlay");
-    const showAbout = $("#about");
-    console.log(about);
-    console.log(closeAbout);
-    console.log(overlay);
+    console.log("yayyyyy");
+    // const parallax = document.getElementById("projects-container");
+    // const main = document.getElementsByTagName("main");
+    // console.log("this is main: ", main);
+    // console.log("this is parallax: ", parallax);
+    // console.log("this is document:", document);
 
-    showAbout.on("click", () => {
-        about.addClass("about-container-slide");
-    });
-
-    // showAbout.on("click", () => {
-    //     about.css({
-    //         visibility: "visible",
-    //     });
-    //     // overlay.css({
-    //     //     visibility: "visible",
-    //     // });
+    // window.addEventListener("scroll", function () {
+    //     let offset = window.pageYOffset;
+    //     parallax.style.backgroundPositionY = offset * 0.7 + "px";
     // });
-
-    closeAbout.on("click", () => {
-        about.addClass("about-container-slideout");
-        // overlay.css({
-        //     visibility: "hidden",
-        // });
-    });
 })();
