@@ -7,6 +7,7 @@ import Nav from "./Nav";
 import Checkout from "./Checkout";
 // import Toggle from "./Toggle";
 import Routes from "./Routes";
+import Modal from "./Modal";
 
 export default function App() {
     //// NAVIGATION /////
@@ -49,18 +50,21 @@ export default function App() {
                     Menu
                 </h1>
             </animated.header>
-            {/* <Routes /> */}
-            {/* <Toggle /> */}
-            {/* <Nav style={navAnimation} /> */}
-            <div className="flier">
-                <img src="smile.png" />
-            </div>
-            {/* <Checkout isOpen={isNavOpen} /> */}
-            <Projects toggleModal={toggleModal} />
-            {projectIsVisible && <ProjectOne />}
-            <animated.div style={slideAbout}>
-                <About />
-            </animated.div>
+            <main>
+                <Modal />
+                {/* <Routes /> */}
+                {/* <Toggle /> */}
+                {/* <Nav style={navAnimation} /> */}
+                <div className="flier">
+                    <img src="smile.png" />
+                </div>
+                {/* <Checkout isOpen={isNavOpen} /> */}
+                {/* <Projects toggleModal={toggleModal} /> */}
+                {/* {projectIsVisible && <ProjectOne />} */}
+                {/* <animated.div style={slideAbout}>
+                    <About />
+                </animated.div> */}
+            </main>
         </div>
     );
 }
