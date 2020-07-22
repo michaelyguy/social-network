@@ -55,5 +55,8 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "resize-observer-polyfill": "^1.5.1"
+    }
 }

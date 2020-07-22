@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 
 export default function Checkout({ isOpen }) {
     const { x } = useSpring({
         x: isOpen ? 0 : 100,
-        // transform: isOpen ? `translate3d(0,0,0) ` : `translate3d(100%,0,0) `,
+
+        config: config.wobbly,
     });
     return (
         <div

@@ -8,6 +8,7 @@ import Checkout from "./Checkout";
 // import Toggle from "./Toggle";
 import Routes from "./Routes";
 import Modal from "./Modal";
+import Accordion from "./Accordion";
 
 export default function App() {
     //// NAVIGATION /////
@@ -51,7 +52,8 @@ export default function App() {
                 </h1>
             </animated.header>
             <main>
-                <Modal />
+                {/* <Modal /> */}
+                <Accordion />
                 {/* <Routes /> */}
                 {/* <Toggle /> */}
                 {/* <Nav style={navAnimation} /> */}
