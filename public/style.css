@@ -202,3 +202,31 @@ header {
     height: 100%;
     background: var(--purp);
 }
+
+/* ROUTES */
+
+.page-route {
+    height: 60vh;
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-route.two {
+    background: blueviolet;
+}
+.page-route.three {
+    background: teal;
+}
+
+.router-nav {
+    display: flex;
+    list-style: none;
+}
+.router-nav a {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 10px;
+}

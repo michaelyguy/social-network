@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import About from "./about";
+import About from "./About";
 import { useSpring, animated } from "react-spring";
-import Projects from "./projects";
-import ProjectOne from "./projectone";
-import Nav from "./nav";
-import Checkout from "./checkout";
-import Toggle from "./toggle";
+import Projects from "./Projects";
+import ProjectOne from "./Projectone";
+import Nav from "./Nav";
+import Checkout from "./Checkout";
+// import Toggle from "./Toggle";
+import Routes from "./Routes";
 
 export default function App() {
     //// NAVIGATION /////
@@ -48,20 +49,18 @@ export default function App() {
                     Menu
                 </h1>
             </animated.header>
-            <main>
-                <Toggle />
-                {/* <Nav style={navAnimation} /> */}
-                <div className="flier">
-                    <img src="smile.png" />
-                </div>
-                {/* <Checkout isOpen={isNavOpen} /> */}
-                <Projects toggleModal={toggleModal} />
-                {projectIsVisible && <ProjectOne />}
-                <animated.div style={slideAbout}>
-                    {/* <About setToggle={setToggle} toggle={isToggled} /> */}
-                    {/* <About /> */}
-                </animated.div>
-            </main>
+            {/* <Routes /> */}
+            {/* <Toggle /> */}
+            {/* <Nav style={navAnimation} /> */}
+            <div className="flier">
+                <img src="smile.png" />
+            </div>
+            {/* <Checkout isOpen={isNavOpen} /> */}
+            <Projects toggleModal={toggleModal} />
+            {projectIsVisible && <ProjectOne />}
+            <animated.div style={slideAbout}>
+                <About />
+            </animated.div>
         </div>
     );
 }
