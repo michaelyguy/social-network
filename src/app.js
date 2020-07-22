@@ -7,7 +7,7 @@ import Nav from "./nav";
 import Checkout from "./checkout";
 import Toggle from "./toggle";
 
-export default function Welcome() {
+export default function App() {
     //// NAVIGATION /////
     const [isNavOpen, setNavOpen] = useState(false);
     const navAnimation = useSpring({
