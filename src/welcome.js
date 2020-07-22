@@ -59,7 +59,7 @@ export default function Welcome() {
                 {projectIsVisible && <ProjectOne />}
                 <animated.div style={slideAbout}>
                     {/* <About setToggle={setToggle} toggle={isToggled} /> */}
-                    <About />
+                    {/* <About /> */}
                 </animated.div>
             </main>
         </div>
