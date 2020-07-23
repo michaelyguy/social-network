@@ -9,6 +9,8 @@ import Checkout from "./Checkout";
 import Routes from "./Routes";
 import Modal from "./Modal";
 import Accordion from "./Accordion";
+import Waypoints from "./Waypoints";
+import Gesture from "./Gesture";
 
 export default function App() {
     //// NAVIGATION /////
@@ -53,13 +55,17 @@ export default function App() {
             </animated.header>
             <main>
                 {/* <Modal /> */}
-                <Accordion />
+                {/* <Accordion /> */}
+                {/* <Waypoints /> */}
                 {/* <Routes /> */}
                 {/* <Toggle /> */}
                 {/* <Nav style={navAnimation} /> */}
-                <div className="flier">
+                <Gesture />
+
+                {/* <div className="flier">
                     <img src="smile.png" />
-                </div>
+                </div> */}
+
                 {/* <Checkout isOpen={isNavOpen} /> */}
                 {/* <Projects toggleModal={toggleModal} /> */}
                 {/* {projectIsVisible && <ProjectOne />} */}

@@ -231,7 +231,7 @@ header {
     margin: 0 10px;
 }
 
-/* MODAL */
+/* 14 */
 .modal {
     position: fixed;
     width: 100%;
@@ -256,9 +256,25 @@ header {
     color: black;
 }
 
+/* 15 */
 .accordion {
     background: white;
     padding: 20px;
     border: solid 1px #eee;
     overflow: hidden;
+}
+/* 16 */
+.waypoints {
+    background: white;
+    font-size: 2rem;
+    padding: 20px;
+}
+
+/* 17 */
+
+.box {
+    background: var(--teal);
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
 }
