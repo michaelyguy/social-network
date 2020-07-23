@@ -11,6 +11,7 @@ import Modal from "./Modal";
 import Accordion from "./Accordion";
 import Waypoints from "./Waypoints";
 import Gesture from "./Gesture";
+import Boxes from "./boxes";
 
 export default function App() {
     //// NAVIGATION /////
@@ -60,7 +61,8 @@ export default function App() {
                 {/* <Routes /> */}
                 {/* <Toggle /> */}
                 {/* <Nav style={navAnimation} /> */}
-                <Gesture />
+                {/* <Gesture /> */}
+                <Boxes />
 
                 {/* <div className="flier">
                     <img src="smile.png" />
