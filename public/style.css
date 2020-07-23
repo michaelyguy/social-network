@@ -206,7 +206,7 @@ header {
 /* ROUTES */
 
 .page-route {
-    height: 60vh;
+    height: 100vh;
     background: grey;
     display: flex;
     justify-content: center;
@@ -285,4 +285,22 @@ header {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 20px;
+}
+
+.einproject {
+    /* background-color: greenyellow; */
+    display: flex;
+}
+
+.img-project {
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+}
+
+.project-text {
+    /* background-color: hotpink; */
+
+    width: 40vw;
+    margin-left: 40px;
 }

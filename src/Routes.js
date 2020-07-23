@@ -7,8 +7,11 @@ import {
     useLocation,
 } from "react-router-dom";
 import { animated, useTransition } from "react-spring";
+import One from "./One";
+import Two from "./Two";
+import Three from "./Three";
 
-const Routes = () => {
+export default function Routes() {
     return (
         <Router>
             <ul className="router-nav">
@@ -19,7 +22,7 @@ const Routes = () => {
             <Main />
         </Router>
     );
-};
+}
 
 const Main = () => {
     const location = useLocation();
@@ -54,27 +57,3 @@ function NavLink(props) {
         </li>
     );
 }
-
-const One = () => {
-    return (
-        <div className="page-route">
-            <h1>One</h1>
-        </div>
-    );
-};
-const Two = () => {
-    return (
-        <div className="page-route two">
-            <h1>Two</h1>
-        </div>
-    );
-};
-const Three = () => {
-    return (
-        <div className="page-route three">
-            <h1>Three</h1>
-        </div>
-    );
-};
-
-export default Routes;

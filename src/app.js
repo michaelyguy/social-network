@@ -57,12 +57,12 @@ export default function App() {
             <main>
                 {/* <Modal /> */}
                 {/* <Accordion /> */}
-                {/* <Waypoints /> */}
+                <Waypoints />
                 {/* <Routes /> */}
                 {/* <Toggle /> */}
                 {/* <Nav style={navAnimation} /> */}
                 {/* <Gesture /> */}
-                <Boxes />
+                {/* <Boxes /> */}
 
                 {/* <div className="flier">
                     <img src="smile.png" />
