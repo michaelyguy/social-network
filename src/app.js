@@ -13,6 +13,7 @@ import Waypoints from "./Waypoints";
 import Gesture from "./Gesture";
 import Boxes from "./boxes";
 import Ticker from "./Ticker";
+import Main from "./Main";
 
 export default function App() {
     //// NAVIGATION /////
@@ -51,17 +52,20 @@ export default function App() {
             <Ticker />
             {/* <Modal /> */}
 
-            <animated.header style={fadeHeader}>
+            {/* <animated.header style={fadeHeader}>
                 <h1>Guy Michaely</h1>
                 <h1 onClick={() => setShowAbout(!showAbout)}>About</h1>
                 <h1 className="menu-btn" onClick={() => setNavOpen(!isNavOpen)}>
                     Menu
                 </h1>
-            </animated.header>
+            </animated.header> */}
+
             <main>
                 {/* <Accordion /> */}
-                <Waypoints />
-                {/* <Routes /> */}
+                {/* <Waypoints /> */}
+
+                <Routes />
+
                 {/* <Toggle /> */}
                 <Nav style={navAnimation} />
                 {/* <Gesture /> */}
@@ -78,6 +82,7 @@ export default function App() {
                     <About />
                 </animated.div>
             </main>
+            <Main />
         </div>
     );
 }
