@@ -11,8 +11,9 @@ body {
     height: 100vh;
     /* overflow: hidden; */
     font-family: Helvetica, sans-serif;
-    -webkit-animation: body 2s linear infinite alternate both;
-    animation: body 2s linear infinite alternate both;
+    background-color: lightgray;
+    /* -webkit-animation: body 2s linear infinite alternate both;
+    animation: body 2s linear infinite alternate both; */
 }
 @-webkit-keyframes body {
     0% {
@@ -50,9 +51,8 @@ body {
     align-content: flex-end;
     flex-wrap: wrap;
     /* background-color: coral; */
-    height: 200vh;
+    /* height: 200vh; */
     width: 80vw;
-    overflow-y: scroll;
 }
 
 .project-page {
@@ -73,14 +73,17 @@ body {
 }
 
 header {
-    font-family: "Golia";
-    margin: 0 5px;
+    /* width: 99.5vw; */
+    /* font-family: "Golia"; */
+    margin: 5px 5px;
     display: flex;
     justify-content: space-between;
+    /* position: fixed; */
 }
 
 .flier {
     pointer-events: none;
+    z-index: 9;
 }
 
 .flier > * {
@@ -91,7 +94,7 @@ header {
     transform: translateX(-120%) translateY(-120%) rotateZ(0);
     position: fixed;
     animation-delay: 1s;
-    z-index: 999999;
+    z-index: 9;
 }
 
 @keyframes fly {
@@ -136,7 +139,7 @@ header {
 /* NAV MENU CODE */
 
 .menu-btn {
-    z-index: 15;
+    z-index: 20;
     /* background-color: greenyellow; */
 }
 
@@ -191,16 +194,19 @@ header {
     top: 0;
     bottom: 0;
     display: flex;
+    z-index: 10;
 }
 .checkout-left {
-    width: 30%;
+    z-index: 5;
+    width: 50%;
     height: 100%;
     background: white;
 }
 .checkout-right {
-    width: 70%;
+    z-index: 5;
+    width: 50%;
     height: 100%;
-    background: var(--purp);
+    background: white;
 }
 
 /* ROUTES */
@@ -241,6 +247,7 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: lawngreen;
 }
 
 .modal-card {
@@ -250,6 +257,7 @@ header {
     padding: 20px;
     max-width: 400px;
     width: 100%;
+    background-color: lightcoral;
 }
 
 .modal-card h1 {
@@ -304,3 +312,27 @@ header {
     width: 40vw;
     margin-left: 40px;
 }
+
+/* ticker */
+#ticker {
+    overflow: hidden;
+    background-color: lightgray;
+    border-bottom: 1.5px solid black;
+    height: 60px;
+    position: relative;
+}
+
+#links {
+    white-space: nowrap;
+    position: absolute;
+    left: 100%;
+    top: 0px;
+}
+#links a {
+    font-family: "Helvetica";
+    padding-right: 600px;
+    color: black;
+    text-decoration: none;
+    font-size: 50px;
+}
+/* ticker */

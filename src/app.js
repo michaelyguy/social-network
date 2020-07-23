@@ -12,6 +12,7 @@ import Accordion from "./Accordion";
 import Waypoints from "./Waypoints";
 import Gesture from "./Gesture";
 import Boxes from "./boxes";
+import Ticker from "./Ticker";
 
 export default function App() {
     //// NAVIGATION /////
@@ -47,6 +48,9 @@ export default function App() {
 
     return (
         <div>
+            <Ticker />
+            {/* <Modal /> */}
+
             <animated.header style={fadeHeader}>
                 <h1>Guy Michaely</h1>
                 <h1 onClick={() => setShowAbout(!showAbout)}>About</h1>
@@ -55,25 +59,24 @@ export default function App() {
                 </h1>
             </animated.header>
             <main>
-                {/* <Modal /> */}
                 {/* <Accordion /> */}
                 <Waypoints />
                 {/* <Routes /> */}
                 {/* <Toggle /> */}
-                {/* <Nav style={navAnimation} /> */}
+                <Nav style={navAnimation} />
                 {/* <Gesture /> */}
                 {/* <Boxes /> */}
 
-                {/* <div className="flier">
+                <div className="flier">
                     <img src="smile.png" />
-                </div> */}
+                </div>
 
                 {/* <Checkout isOpen={isNavOpen} /> */}
                 {/* <Projects toggleModal={toggleModal} /> */}
                 {/* {projectIsVisible && <ProjectOne />} */}
-                {/* <animated.div style={slideAbout}>
+                <animated.div style={slideAbout}>
                     <About />
-                </animated.div> */}
+                </animated.div>
             </main>
         </div>
     );
