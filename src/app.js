@@ -13,7 +13,6 @@ import Waypoints from "./Waypoints";
 import Gesture from "./Gesture";
 import Boxes from "./boxes";
 import Ticker from "./Ticker";
-import Main from "./Main";
 
 export default function App() {
     //// NAVIGATION /////
@@ -82,7 +81,6 @@ export default function App() {
                     <About />
                 </animated.div>
             </main>
-            <Main />
         </div>
     );
 }

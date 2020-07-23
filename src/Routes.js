@@ -14,12 +14,12 @@ import Three from "./Three";
 export default function Routes() {
     return (
         <Router>
-            <Main />
             <ul className="router-nav">
                 <NavLink to="/">One</NavLink>
                 <NavLink to="/two">Two</NavLink>
                 <NavLink to="/three">Three</NavLink>
             </ul>
+            <Main />
         </Router>
     );
 }

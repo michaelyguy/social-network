@@ -211,8 +211,34 @@ header {
 
 /* ROUTES */
 
-.page-route {
+/* .page-route {
     height: 100vh;
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-route.two {
+    background: blueviolet;
+}
+.page-route.three {
+    background: teal;
+}
+
+.router-nav {
+    display: flex;
+    list-style: none;
+}
+.router-nav a {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 10px;
+} */
+
+.page-route {
+    height: 60vh;
     background: grey;
     display: flex;
     justify-content: center;
