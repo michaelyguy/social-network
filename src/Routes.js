@@ -6,7 +6,7 @@ import {
     Link,
     useLocation,
 } from "react-router-dom";
-import { animated, useTransition } from "react-spring";
+import { animated, useTransition, config } from "react-spring";
 import One from "./One";
 import Two from "./Two";
 import Three from "./Three";
@@ -36,7 +36,10 @@ const Main = () => {
             transform: "translate3d(100%,0,0)",
         },
         enter: { opacity: 1, transform: "translate3d(0,0,0)" },
-        leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
+        leave: {
+            opacity: 0,
+            transform: "translate3d(-50%,0,0)",
+        },
     });
 
     return transitions.map(({ item, props: transition, key }) => (

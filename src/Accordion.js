@@ -13,11 +13,20 @@ export default function Accordion() {
     return (
         <div>
             <h1>
-                <button onClick={() => toggle(!on)}>Toggle</button>
+                <button onClick={() => toggle(!on)}>I can do better..</button>
             </h1>
             <animated.div style={animation}>
                 <div {...bind} className="accordion">
-                    <p>Hello, i'm in the accordion</p>
+                    <p>
+                        In case you were wondering, I am also a
+                        <a
+                            className="grapic-link"
+                            target="_blank"
+                            href="https://guymichaely.com/"
+                        >
+                            graphic designer
+                        </a>
+                    </p>
                 </div>
             </animated.div>
         </div>

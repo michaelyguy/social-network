@@ -16,7 +16,7 @@ import Ticker from "./Ticker";
 
 export default function App() {
     //// NAVIGATION /////
-    const [isNavOpen, setNavOpen] = useState(false);
+    const [isNavOpen, setNavOpen] = useState(true);
     const navAnimation = useSpring({
         transform: isNavOpen
             ? `translate3d(0,0,0) scale(1)`
@@ -54,13 +54,19 @@ export default function App() {
             {/* <animated.header style={fadeHeader}>
                 <h1>Guy Michaely</h1>
                 <h1 onClick={() => setShowAbout(!showAbout)}>About</h1>
-                <h1 className="menu-btn" onClick={() => setNavOpen(!isNavOpen)}>
-                    Menu
-                </h1>
+                <h3 className="menu-btn" onClick={() => setNavOpen(!isNavOpen)}>
+                    Mav
+                </h3>
             </animated.header> */}
 
+            <animated.header style={fadeHeader}>
+                <h3 className="menu-btn" onClick={() => setNavOpen(!isNavOpen)}>
+                    -> Please let me in
+                </h3>
+            </animated.header>
+
             <main>
-                {/* <Accordion /> */}
+                <Accordion />
 
                 {/* <Waypoints /> */}
 
@@ -78,7 +84,7 @@ export default function App() {
                     <img src="smile.png" />
                 </div>
 
-                <Checkout isOpen={isNavOpen} />
+                {/* <Checkout isOpen={isNavOpen} /> */}
 
                 {/* <Projects toggleModal={toggleModal} /> */}
                 {/* {projectIsVisible && <ProjectOne />} */}

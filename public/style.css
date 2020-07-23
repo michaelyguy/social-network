@@ -14,8 +14,9 @@
 body {
     height: 100vh;
     /* overflow: hidden; */
-    /* font-family: Helvetica, sans-serif; */
-    font-family: "Continua";
+    /* font-family: "Continua"; */
+    font-family: Helvetica, sans-serif;
+
     background-color: lightgray;
     /* -webkit-animation: body 2s linear infinite alternate both;
     animation: body 2s linear infinite alternate both; */
@@ -147,6 +148,12 @@ header {
     z-index: 20;
     /* background-color: greenyellow; */
 }
+/* .let-me-in {
+    z-index: 21;
+    position: absolute;
+    top: 400px;
+    left: 600px;
+} */
 
 :root {
     --purp: #524763;
@@ -303,6 +310,7 @@ header {
     padding: 20px;
     border: solid 1px #eee;
     overflow: hidden;
+    font-size: 50px;
 }
 /* 16 */
 .waypoints {
@@ -369,3 +377,9 @@ header {
     font-size: 50px;
 }
 /* ticker */
+
+.grapic-link {
+    color: black;
+    /* font-size: 20px; */
+    font-weight: bold;
+}
