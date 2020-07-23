@@ -6,11 +6,16 @@
     font-family: "Golia";
     src: url("GoliaGolia-Regular.otf");
 }
+@font-face {
+    font-family: "Continua";
+    src: url("Continua-Regular.otf");
+}
 
 body {
     height: 100vh;
     /* overflow: hidden; */
-    font-family: Helvetica, sans-serif;
+    /* font-family: Helvetica, sans-serif; */
+    font-family: "Continua";
     background-color: lightgray;
     /* -webkit-animation: body 2s linear infinite alternate both;
     animation: body 2s linear infinite alternate both; */
@@ -253,12 +258,14 @@ header {
 }
 
 .router-nav {
+    position: absolute;
+    bottom: 15px;
     display: flex;
     list-style: none;
 }
 .router-nav a {
-    color: white;
-    font-size: 2rem;
+    color: black;
+    font-size: 20px;
     font-weight: bold;
     margin: 0 10px;
 }
@@ -355,7 +362,7 @@ header {
     top: 0px;
 }
 #links a {
-    font-family: "Helvetica";
+    /* font-family: "Helvetica"; */
     padding-right: 600px;
     color: black;
     text-decoration: none;

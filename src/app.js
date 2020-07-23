@@ -61,25 +61,31 @@ export default function App() {
 
             <main>
                 {/* <Accordion /> */}
+
                 {/* <Waypoints /> */}
 
                 <Routes />
 
                 {/* <Toggle /> */}
-                <Nav style={navAnimation} />
+
+                {/* <Nav style={navAnimation} /> */}
+
                 {/* <Gesture /> */}
+
                 {/* <Boxes /> */}
 
                 <div className="flier">
                     <img src="smile.png" />
                 </div>
 
-                {/* <Checkout isOpen={isNavOpen} /> */}
+                <Checkout isOpen={isNavOpen} />
+
                 {/* <Projects toggleModal={toggleModal} /> */}
                 {/* {projectIsVisible && <ProjectOne />} */}
-                <animated.div style={slideAbout}>
+
+                {/* <animated.div style={slideAbout}>
                     <About />
-                </animated.div>
+                </animated.div> */}
             </main>
         </div>
     );

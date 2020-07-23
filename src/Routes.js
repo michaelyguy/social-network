@@ -15,9 +15,9 @@ export default function Routes() {
     return (
         <Router>
             <ul className="router-nav">
-                <NavLink to="/">One</NavLink>
-                <NavLink to="/two">Two</NavLink>
-                <NavLink to="/three">Three</NavLink>
+                <NavLink to="/">Project 1</NavLink>
+                <NavLink to="/two">Project 2</NavLink>
+                <NavLink to="/three">Project 3</NavLink>
             </ul>
             <Main />
         </Router>
