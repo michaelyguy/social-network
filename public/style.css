@@ -16,8 +16,9 @@ body {
     /* overflow: hidden; */
     /* font-family: "Continua"; */
     font-family: Helvetica, sans-serif;
+    background-color: #f5f5f5;
 
-    background-color: lightgray;
+    /* background-color: lightgray; */
     /* -webkit-animation: body 2s linear infinite alternate both;
     animation: body 2s linear infinite alternate both; */
 }
@@ -154,6 +155,10 @@ header {
     top: 400px;
     left: 600px;
 } */
+
+.graphic-designer-btn {
+    background-color: greenyellow;
+}
 
 :root {
     --purp: #524763;
@@ -398,7 +403,7 @@ header {
 /* ticker */
 #ticker {
     overflow: hidden;
-    background-color: lightgray;
+    background-color: #f5f5f5;
     border-bottom: 1.5px solid black;
     height: 60px;
     position: relative;
@@ -426,8 +431,8 @@ header {
 }
 
 /* hover btn try*/
-/* 
-html,
+
+/* html,
 body {
     width: 100%;
     height: 100%;
@@ -444,13 +449,11 @@ div[class*="box"] {
     display: flex;
     justify-content: center;
     align-items: center;
-} */
-
-/* .box-2 {
+}
+.box-2 {
     background-color: #3c3c3c;
-} */
+}
 
-/* 
 .btn {
     line-height: 50px;
     height: 50px;
@@ -504,3 +507,66 @@ div[class*="box"] {
 } */
 
 /* hover btn try end*/
+
+.clock {
+    z-index: 10;
+    /* background-color: greenyellow; */
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+}
+
+/* trying 3d btn */
+
+.btn-flip {
+    font-family: "Helvetica";
+    font-size: 50px;
+    opacity: 1;
+    outline: 0;
+    color: #fff;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    /* letter-spacing: 1px; */
+    /* display: inline-block; */
+    text-decoration: none;
+    /* text-transform: uppercase; */
+}
+.btn-flip:hover:after {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+.btn-flip:hover:before {
+    opacity: 0;
+    transform: translateY(50%) rotateX(90deg);
+}
+.btn-flip:after {
+    text-align: center;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: red;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    background: purple;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+}
+.btn-flip:before {
+    height: 60px;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    /* color: #adadaf; */
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: 0.5s;
+    position: relative;
+    background: black;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+}
+/* trying 3d btn */

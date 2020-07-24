@@ -49,6 +49,17 @@ export default function App() {
     return (
         <div>
             <Ticker />
+            <Accordion />
+
+            <iframe
+                className="clock"
+                src="http://free.timeanddate.com/clock/i7dvxyp2/n37/fs48/tct/pct/th1"
+                frameborder="0"
+                width="189"
+                height="57"
+                allowTransparency="true"
+            ></iframe>
+
             {/* <Modal /> */}
 
             {/* <animated.header style={fadeHeader}>
@@ -66,8 +77,6 @@ export default function App() {
             </animated.header>
 
             <main>
-                <Accordion />
-
                 <Waypoints />
 
                 {/* <Routes /> */}

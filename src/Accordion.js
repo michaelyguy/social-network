@@ -12,9 +12,21 @@ export default function Accordion() {
 
     return (
         <div>
-            <h1>
-                <button onClick={() => toggle(!on)}>I can do better..</button>
-            </h1>
+            {/* <h1>
+                <button
+                    className="graphic-designer-btn"
+                    onClick={() => toggle(!on)}
+                >
+                    I can do better..
+                </button>
+            </h1> */}
+            <a
+                onClick={() => toggle(!on)}
+                href="#"
+                class="btn-flip"
+                data-back="Click"
+                data-front="I can do better.."
+            ></a>
 
             {/* cool hover btn */}
 

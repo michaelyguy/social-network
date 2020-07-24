@@ -120,7 +120,7 @@ const Waypoints = () => {
             </animated.div>
 
             <Waypoint
-                bottomOffset="40%"
+                bottomOffset="30%"
                 onEnter={() => {
                     if (!three) toggleThree(true);
                 }}
