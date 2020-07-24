@@ -48,6 +48,22 @@ import { Waypoint } from "react-waypoint";
 import { animated, useSpring, config } from "react-spring";
 
 const Waypoints = () => {
+    ////CARD/////
+    const calc = (x, y) => [
+        -(y - window.innerHeight / 2) / 20,
+        (x - window.innerWidth / 2) / 20,
+        1.1,
+    ];
+    const trans = (x, y, s) =>
+        `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+
+    const [props, set] = useSpring(() => ({
+        xys: [0, 0, 1],
+        config: config.default,
+    }));
+
+    ///////CARD//////
+
     const [one, toggleOne] = useState(false);
     const animation = useSpring({
         opacity: one ? 1 : 0,
@@ -79,7 +95,14 @@ const Waypoints = () => {
             />
             <animated.div style={animation} className="project-wrapper-one">
                 <div className="project-box">
-                    <div className="img-project" />
+                    <animated.div
+                        class="img-project"
+                        onMouseMove={({ clientX: x, clientY: y }) =>
+                            set({ xys: calc(x, y) })
+                        }
+                        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                        style={{ transform: props.xys.interpolate(trans) }}
+                    />
                     <div className="project-text">
                         <h1>Project One</h1>
                         <p>

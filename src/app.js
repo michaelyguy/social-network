@@ -69,7 +69,6 @@ export default function App() {
                     Mav
                 </h3>
             </animated.header> */}
-
             <header>
                 <h3 className="menu-btn" onClick={() => setNavOpen(!isNavOpen)}>
                     -> Please let me in
