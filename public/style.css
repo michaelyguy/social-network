@@ -249,6 +249,38 @@ header {
     margin: 0 10px;
 } */
 
+.project-wrapper-one {
+    height: 50vh;
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.project-wrapper-two {
+    height: 50vh;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.project-wrapper-three {
+    height: 50vh;
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 25px; */
+}
+
+.project-box {
+    /* background-color: greenyellow; */
+    display: flex;
+}
+
 .page-route {
     height: 60vh;
     background: grey;
@@ -315,8 +347,7 @@ header {
 /* 16 */
 .waypoints {
     background: white;
-    font-size: 2rem;
-    padding: 20px;
+    padding: 25px;
 }
 
 /* 17 */

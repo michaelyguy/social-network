@@ -68,9 +68,9 @@ export default function App() {
             <main>
                 <Accordion />
 
-                {/* <Waypoints /> */}
+                <Waypoints />
 
-                <Routes />
+                {/* <Routes /> */}
 
                 {/* <Toggle /> */}
 
