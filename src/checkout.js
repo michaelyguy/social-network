@@ -4,7 +4,7 @@ import { useSpring, animated, config } from "react-spring";
 export default function Checkout({ isOpen }) {
     const { x } = useSpring({
         x: isOpen ? 0 : 100,
-        config: config.gentle,
+        config: config.slow,
     });
     return (
         <div

@@ -47,7 +47,7 @@ export default function App() {
     };
 
     return (
-        <div>
+        <animated.div style={fadeHeader}>
             <Ticker />
             <Accordion />
 
@@ -70,11 +70,11 @@ export default function App() {
                 </h3>
             </animated.header> */}
 
-            <animated.header style={fadeHeader}>
+            <header>
                 <h3 className="menu-btn" onClick={() => setNavOpen(!isNavOpen)}>
                     -> Please let me in
                 </h3>
-            </animated.header>
+            </header>
 
             <main>
                 <Waypoints />
@@ -93,7 +93,7 @@ export default function App() {
                     <img src="smile.png" />
                 </div>
 
-                {/* <Checkout isOpen={isNavOpen} /> */}
+                <Checkout isOpen={isNavOpen} />
 
                 {/* <Projects toggleModal={toggleModal} /> */}
                 {/* {projectIsVisible && <ProjectOne />} */}
@@ -102,6 +102,6 @@ export default function App() {
                     <About />
                 </animated.div> */}
             </main>
-        </div>
+        </animated.div>
     );
 }

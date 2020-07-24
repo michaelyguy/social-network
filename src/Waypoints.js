@@ -52,21 +52,21 @@ const Waypoints = () => {
     const animation = useSpring({
         opacity: one ? 1 : 0,
         transform: one ? "translate3d(0,0,0)" : "translate3d(50%,0,0)",
-        config: config.wobbly,
+        config: config.slow,
     });
 
     const [two, toggleTwo] = useState(false);
     const animationTwo = useSpring({
         opacity: two ? 1 : 0,
         transform: two ? "translate3d(0,0,0)" : "translate3d(-50%,0,0)",
-        config: config.wobbly,
+        config: config.slow,
     });
 
     const [three, toggleThree] = useState(false);
     const animationThree = useSpring({
         opacity: three ? 1 : 0,
         transform: three ? "translate3d(0,0,0)" : "translate3d(50%,0,0)",
-        config: config.wobbly,
+        config: config.slow,
     });
 
     return (

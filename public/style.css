@@ -146,6 +146,7 @@ header {
 /* NAV MENU CODE */
 
 .menu-btn {
+    color: white;
     z-index: 20;
     /* background-color: greenyellow; */
 }
@@ -217,13 +218,13 @@ header {
     z-index: 5;
     width: 50%;
     height: 100%;
-    background: white;
+    background: hotpink;
 }
 .checkout-right {
     z-index: 5;
     width: 50%;
     height: 100%;
-    background: white;
+    background: black;
 }
 
 /* ROUTES */
@@ -343,9 +344,9 @@ header {
 
 /* 15 */
 .accordion {
-    background: white;
+    background-color: #f5f5f5;
     padding: 20px;
-    border: solid 1px #eee;
+    /* border: solid 1.5px #eee; */
     overflow: hidden;
     font-size: 50px;
 }
@@ -412,7 +413,7 @@ header {
 #links {
     white-space: nowrap;
     position: absolute;
-    left: 100%;
+    left: 40%;
     top: 0px;
 }
 #links a {
