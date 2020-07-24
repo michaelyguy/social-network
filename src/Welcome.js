@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSpring, animated, config } from "react-spring";
 
-export default function Checkout({ isOpen }) {
+export default function Welcome({ isOpen }) {
     const { x } = useSpring({
         x: isOpen ? 0 : 100,
         config: config.slow,

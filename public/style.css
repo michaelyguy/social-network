@@ -419,33 +419,6 @@ header {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
 }
 
-/* ///// flip card ///// */
-
-.c {
-    position: absolute;
-    max-width: 500px;
-    max-height: 500px;
-    width: 50ch;
-    height: 80ch;
-    cursor: pointer;
-    will-change: transform, opacity;
-}
-
-.front,
-.back {
-    background-size: cover;
-}
-
-.back {
-    background-color: hotpink;
-}
-
-.front {
-    background-color: palegreen;
-}
-
-/* ///// flip card ///// */
-
 .project-text {
     width: 40vw;
     margin-left: 40px;
@@ -575,8 +548,8 @@ div[class*="box"] {
     z-index: 10;
     /* background-color: greenyellow; */
     position: fixed;
-    bottom: 5px;
-    left: 5px;
+    bottom: 14px;
+    left: 25px;
 }
 
 /* trying 3d btn */
@@ -595,6 +568,7 @@ div[class*="box"] {
 } */
 
 .btn-flip {
+    /* width: 100vw; */
     opacity: 1;
     outline: 0;
     color: #fff;
@@ -604,8 +578,7 @@ div[class*="box"] {
     letter-spacing: 1px;
     display: inline-block;
     text-decoration: none;
-    /* font-family: "Open Sans";
-    text-transform: uppercase; */
+    font-size: 25px;
 }
 .btn-flip:hover:after {
     opacity: 1;

@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import About from "./About";
 import { useSpring, animated } from "react-spring";
-import Projects from "./Projects";
-import ProjectOne from "./Projectone";
 import Nav from "./Nav";
-import Checkout from "./Checkout";
+import Welcome from "./Welcome";
 // import Toggle from "./Toggle";
 import Routes from "./Routes";
 import Modal from "./Modal";
 import Accordion from "./Accordion";
-import Waypoints from "./Waypoints";
+import Projects from "./Projects";
 import Gesture from "./Gesture";
 import Boxes from "./boxes";
 import Ticker from "./Ticker";
@@ -37,14 +35,6 @@ export default function App() {
         //     ? "translate3d(0,200px,0)"
         //     : "translate3d(0,-1050px,0)",
     });
-
-    //// TOGGEL A SINGLE PROJECT PAGE /////
-    const [projectIsVisible, setProjectIsVisible] = useState(false);
-
-    const toggleModal = () => {
-        console.log("this is running!");
-        setProjectIsVisible(true);
-    };
 
     return (
         <animated.div style={fadeHeader}>
@@ -76,7 +66,7 @@ export default function App() {
             </header>
 
             <main>
-                <Waypoints />
+                <Projects />
 
                 {/* <Routes /> */}
 
@@ -92,10 +82,7 @@ export default function App() {
                     <img src="smile.png" />
                 </div>
 
-                {/* <Checkout isOpen={isNavOpen} /> */}
-
-                {/* <Projects toggleModal={toggleModal} /> */}
-                {/* {projectIsVisible && <ProjectOne />} */}
+                {/* <Welcome isOpen={isNavOpen} /> */}
 
                 {/* <animated.div style={slideAbout}>
                     <About />
