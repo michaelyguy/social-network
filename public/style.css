@@ -215,16 +215,24 @@ header {
     z-index: 10;
 }
 .checkout-left {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     z-index: 5;
     width: 50%;
     height: 100%;
     background: hotpink;
+    font-size: 200px;
 }
 .checkout-right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     z-index: 5;
     width: 50%;
     height: 100%;
-    background: black;
+    background: hotpink;
+    font-size: 200px;
 }
 
 /* ROUTES */
@@ -410,6 +418,33 @@ header {
 .card:hover {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
 }
+
+/* ///// flip card ///// */
+
+.c {
+    position: absolute;
+    max-width: 500px;
+    max-height: 500px;
+    width: 50ch;
+    height: 50ch;
+    cursor: pointer;
+    will-change: transform, opacity;
+}
+
+.front,
+.back {
+    background-size: cover;
+}
+
+.back {
+    background-image: url(https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop);
+}
+
+.front {
+    background-image: url(https://images.unsplash.com/photo-1540206395-68808572332f?ixlib=rb-1.2.1&w=1181&q=80&auto=format&fit=crop);
+}
+
+/* ///// flip card ///// */
 
 .project-text {
     width: 40vw;

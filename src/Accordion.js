@@ -23,7 +23,7 @@ export default function Accordion() {
             <a
                 onClick={() => toggle(!on)}
                 href="#"
-                class="btn-flip"
+                className="btn-flip"
                 data-back="Click Me"
                 data-front="I can do better.."
             ></a>

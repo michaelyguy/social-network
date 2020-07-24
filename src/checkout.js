@@ -18,13 +18,17 @@ export default function Checkout({ isOpen }) {
                     ),
                 }}
                 className="checkout-left"
-            />
+            >
+                <h1>HEL</h1>
+            </animated.div>
             <animated.div
                 style={{
                     transform: x.interpolate((x) => `translate3d(${x}%,0,0)`),
                 }}
                 className="checkout-right"
-            />
+            >
+                <h1>LO!</h1>
+            </animated.div>
         </div>
     );
 }

@@ -64,6 +64,10 @@ const Waypoints = () => {
 
     ///////CARD//////
 
+    ////// FLIP///////
+
+    ////// FLIP///////
+
     const [one, toggleOne] = useState(false);
     const animation = useSpring({
         opacity: one ? 1 : 0,
@@ -96,12 +100,14 @@ const Waypoints = () => {
             <animated.div style={animation} className="project-wrapper-one">
                 <div className="project-box">
                     <animated.div
-                        class="img-project"
+                        className="img-project"
                         onMouseMove={({ clientX: x, clientY: y }) =>
                             set({ xys: calc(x, y) })
                         }
                         onMouseLeave={() => set({ xys: [0, 0, 1] })}
-                        style={{ transform: props.xys.interpolate(trans) }}
+                        style={{
+                            transform: props.xys.interpolate(trans),
+                        }}
                     />
                     <div className="project-text">
                         <h1>Project One</h1>

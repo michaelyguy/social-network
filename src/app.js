@@ -54,10 +54,10 @@ export default function App() {
             <iframe
                 className="clock"
                 src="http://free.timeanddate.com/clock/i7dvxyp2/n37/fs48/tct/pct/th1"
-                frameborder="0"
+                frameBorder="0"
                 width="189"
                 height="57"
-                allowTransparency="true"
+                allowtransparency="true"
             ></iframe>
 
             {/* <Modal /> */}
@@ -92,7 +92,7 @@ export default function App() {
                     <img src="smile.png" />
                 </div>
 
-                <Checkout isOpen={isNavOpen} />
+                {/* <Checkout isOpen={isNavOpen} /> */}
 
                 {/* <Projects toggleModal={toggleModal} /> */}
                 {/* {projectIsVisible && <ProjectOne />} */}
