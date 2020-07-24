@@ -4,7 +4,8 @@ export default function Two() {
     return (
         <div className="page-route">
             <div className="einproject">
-                <img className="img-project" src="/one.png" />
+                {/* <img className="img-project" src="/one.png" /> */}
+                <div className="img-project" />{" "}
                 <div className="project-text">
                     <h1>Image Board</h1>
                     <p>
