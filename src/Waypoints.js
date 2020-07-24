@@ -43,6 +43,8 @@
 
 //////// shotting project end ////////
 
+///////// THIS IS THE HOVER ON VIDEO VERSION!!!!!???///////
+
 import React, { useState } from "react";
 import { Waypoint } from "react-waypoint";
 import { animated, useSpring, config } from "react-spring";
@@ -63,10 +65,6 @@ const Waypoints = () => {
     }));
 
     ///////CARD//////
-
-    ////// FLIP///////
-
-    ////// FLIP///////
 
     const [one, toggleOne] = useState(false);
     const animation = useSpring({
@@ -97,6 +95,7 @@ const Waypoints = () => {
                     if (!one) toggleOne(true);
                 }}
             />
+
             <animated.div style={animation} className="project-wrapper-one">
                 <div className="project-box">
                     <animated.div
@@ -129,7 +128,6 @@ const Waypoints = () => {
                     if (!two) toggleTwo(true);
                 }}
             />
-
             <animated.div style={animationTwo} className="project-wrapper-two">
                 <div className="project-box">
                     <div className="img-project" />
@@ -147,14 +145,12 @@ const Waypoints = () => {
                     </div>
                 </div>
             </animated.div>
-
             <Waypoint
                 bottomOffset="30%"
                 onEnter={() => {
                     if (!three) toggleThree(true);
                 }}
             />
-
             <animated.div
                 style={animationThree}
                 className="project-wrapper-three"
