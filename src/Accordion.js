@@ -16,15 +16,15 @@ export default function Accordion() {
                 <button onClick={() => toggle(!on)}>I can do better..</button>
             </h1>
 
-            {/* try */}
+            {/* cool hover btn */}
 
-            <div class="box-2">
+            {/* <div class="box-2">
                 <div class="btn btn-two">
-                    <span>HOVER ME</span>
+                    <span onClick={() => toggle(!on)}>I can do better..</span>
                 </div>
-            </div>
+            </div> */}
 
-            {/* try */}
+            {/* cool hover btn end */}
 
             <animated.div style={animation}>
                 <div {...bind} className="accordion">
