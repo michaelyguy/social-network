@@ -24,6 +24,15 @@ export default function Projects() {
 
     ///////CARD//////
 
+    //////FLIP///////
+    const [flipped, setFlipped] = useState(false);
+    const { transform, opacity } = useSpring({
+        opacity: flipped ? 1 : 0,
+        transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
+        config: config.slow,
+    });
+    ////////FLIP////////
+
     const [one, toggleOne] = useState(false);
     const animation = useSpring({
         opacity: one ? 1 : 0,
@@ -54,33 +63,102 @@ export default function Projects() {
                 }}
             />
 
-            <animated.div style={animation} className="project-wrapper-one">
-                <div className="project-box">
-                    <animated.div
-                        className="img-project"
-                        onMouseMove={({ clientX: x, clientY: y }) =>
-                            set({ xys: calc(x, y) })
-                        }
-                        onMouseLeave={() => set({ xys: [0, 0, 1] })}
-                        style={{
-                            transform: props.xys.interpolate(trans),
-                            config: config.slow,
-                        }}
-                    />
-                    <div className="project-text">
-                        <h1>Project One</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Nullam euismod felis quis ultrices eleifend.
-                            Quisque placerat vehicula purus, at dapibus mi
-                            dignissim at. In mi ex, consectetur quis vulputate
-                            id, blandit quis nisi. Mauris nec urna vel nisl
-                            fringilla iaculis. Nullam feugiat interdum ante
-                            vitae lobortis. Aenean fringilla leo a purus egestas
-                        </p>
+            {/* <div onClick={() => setFlipped((state) => !state)}>
+                <a.div
+                    class="c back"
+                    style={{
+                        opacity: opacity.interpolate((o) => 1 - o),
+                        transform,
+                    }}
+                />
+                <a.div
+                    class="c front"
+                    style={{
+                        opacity,
+                        transform: transform.interpolate(
+                            (t) => `${t} rotateX(180deg)`
+                        ),
+                    }}
+                />
+            </div> */}
+            <div
+                style={animation}
+                onClick={() => setFlipped((state) => !state)}
+                className="flip"
+            >
+                <animated.div
+                    style={{
+                        opacity,
+                        transform: transform.interpolate(
+                            (t) => `${t} rotateX(180deg)`
+                        ),
+                    }}
+                    className="project-wrapper-one front"
+                >
+                    <div className="project-box">
+                        <animated.div
+                            className="img-project"
+                            onMouseMove={({ clientX: x, clientY: y }) =>
+                                set({ xys: calc(x, y) })
+                            }
+                            onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                            style={{
+                                transform: props.xys.interpolate(trans),
+                                config: config.slow,
+                            }}
+                        />
+                        <div className="project-text">
+                            <h1>Project One</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nullam euismod felis quis
+                                ultrices eleifend. Quisque placerat vehicula
+                                purus, at dapibus mi dignissim at. In mi ex,
+                                consectetur quis vulputate id, blandit quis
+                                nisi. Mauris nec urna vel nisl fringilla
+                                iaculis. Nullam feugiat interdum ante vitae
+                                lobortis. Aenean fringilla leo a purus egestas
+                            </p>
+                        </div>
+                    </div>
+                </animated.div>
+
+                <div
+                    className="project-wrapper-one back"
+                    style={{
+                        opacity: opacity.interpolate((o) => 1 - o),
+                        transform,
+                    }}
+                >
+                    <div className="project-box">
+                        <animated.div
+                            className="img-project"
+                            onMouseMove={({ clientX: x, clientY: y }) =>
+                                set({ xys: calc(x, y) })
+                            }
+                            onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                            style={{
+                                transform: props.xys.interpolate(trans),
+                                config: config.slow,
+                            }}
+                        />
+                        <div className="project-text">
+                            <h1>Project One</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nullam euismod felis quis
+                                ultrices eleifend. Quisque placerat vehicula
+                                purus, at dapibus mi dignissim at. In mi ex,
+                                consectetur quis vulputate id, blandit quis
+                                nisi. Mauris nec urna vel nisl fringilla
+                                iaculis. Nullam feugiat interdum ante vitae
+                                lobortis. Aenean fringilla leo a purus egestas
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </animated.div>
+            </div>
+
             <Waypoint
                 bottomOffset="40%"
                 onEnter={() => {

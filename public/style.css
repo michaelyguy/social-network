@@ -263,6 +263,10 @@ header {
     margin: 0 10px;
 } */
 
+.flip {
+    cursor: pointer;
+    will-change: transform, opacity;
+}
 .project-wrapper-one {
     height: 50vh;
     background: lightgray;
@@ -546,4 +550,30 @@ header {
     -webkit-transform: translateY(0) rotateX(0);
     transform: translateY(0) rotateX(0);
 }
-/* trying 3d btn */
+
+/* flip carddddd */
+
+.c {
+    position: absolute;
+    max-width: 500px;
+    max-height: 500px;
+    width: 50ch;
+    height: 50ch;
+    cursor: pointer;
+    will-change: transform, opacity;
+}
+
+.front,
+.back {
+    background-size: cover;
+}
+
+.back {
+    background-color: palevioletred;
+    position: relative;
+    top: -100%;
+}
+
+.front {
+    background-color: palegreen;
+}
