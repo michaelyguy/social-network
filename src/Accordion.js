@@ -28,16 +28,6 @@ export default function Accordion() {
                 data-front="I can do better.."
             ></a>
 
-            {/* cool hover btn */}
-
-            {/* <div class="box-2">
-                <div class="btn btn-two">
-                    <span onClick={() => toggle(!on)}>I can do better..</span>
-                </div>
-            </div> */}
-
-            {/* cool hover btn end */}
-
             <animated.div style={animation}>
                 <div {...bind} className="accordion">
                     <p>

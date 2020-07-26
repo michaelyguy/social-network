@@ -14,7 +14,12 @@ export default function Projects() {
 
     const [props, set] = useSpring(() => ({
         xys: [0, 0, 1],
-        config: config.default,
+        config: config.slow,
+    }));
+
+    const [propsTwo, setTwo] = useSpring(() => ({
+        xys: [0, 0, 1],
+        config: config.slow,
     }));
 
     ///////CARD//////
@@ -59,6 +64,7 @@ export default function Projects() {
                         onMouseLeave={() => set({ xys: [0, 0, 1] })}
                         style={{
                             transform: props.xys.interpolate(trans),
+                            config: config.slow,
                         }}
                     />
                     <div className="project-text">
@@ -83,7 +89,18 @@ export default function Projects() {
             />
             <animated.div style={animationTwo} className="project-wrapper-two">
                 <div className="project-box">
-                    <div className="img-project" />
+                    {/* <div className="img-project" /> */}
+                    <animated.div
+                        className="img-project"
+                        onMouseMove={({ clientX: x, clientY: y }) =>
+                            setTwo({ xys: calc(x, y) })
+                        }
+                        onMouseLeave={() => setTwo({ xys: [0, 0, 1] })}
+                        style={{
+                            transform: propsTwo.xys.interpolate(trans),
+                            config: config.slow,
+                        }}
+                    />
                     <div className="project-text">
                         <h1>Project Two</h1>
                         <p>

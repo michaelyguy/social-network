@@ -40,7 +40,6 @@ export default function App() {
         <animated.div style={fadeHeader}>
             <Ticker />
             <Accordion />
-
             <iframe
                 className="clock"
                 src="http://free.timeanddate.com/clock/i7dvxyp2/n37/fs48/tct/pct/th1"
@@ -51,7 +50,6 @@ export default function App() {
             ></iframe>
 
             {/* <Modal /> */}
-
             {/* <animated.header style={fadeHeader}>
                 <h1>Guy Michaely</h1>
                 <h1 onClick={() => setShowAbout(!showAbout)}>About</h1>
@@ -64,7 +62,6 @@ export default function App() {
                     -> Please let me in
                 </h3>
             </header>
-
             <main>
                 <Projects />
 
@@ -82,7 +79,7 @@ export default function App() {
                     <img src="smile.png" />
                 </div>
 
-                {/* <Welcome isOpen={isNavOpen} /> */}
+                <Welcome isOpen={isNavOpen} />
 
                 {/* <animated.div style={slideAbout}>
                     <About />

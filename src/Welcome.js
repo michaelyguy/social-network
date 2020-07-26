@@ -9,7 +9,8 @@ export default function Welcome({ isOpen }) {
     return (
         <div
             className="checkout"
-            style={{ PointerEvent: isOpen ? "all" : "none" }}
+            // style={{ PointerEvent: isOpen ? "all" : "none" }}
+            style={{ display: isOpen ? "flex" : "none" }}
         >
             <animated.div
                 style={{
