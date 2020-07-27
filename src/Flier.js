@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTransition, animated } from "react-spring";
 
 export default function Flier() {
-    const [whatMood, setWhatMood] = useState(false);
+    const [whatMood, setWhatMood] = useState(true);
     const transition = useTransition(whatMood, null, {
         from: { opacity: 0 },
         enter: { opacity: 1 },
