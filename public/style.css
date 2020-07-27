@@ -146,7 +146,7 @@ header {
 /* NAV MENU CODE */
 
 .menu-btn {
-    color: white;
+    color: black;
     z-index: 20;
     /* background-color: greenyellow; */
 }
@@ -566,6 +566,7 @@ header {
 .front,
 .back {
     background-size: cover;
+    position: absolute;
 }
 
 .back {
@@ -576,4 +577,5 @@ header {
 
 .front {
     background-color: palegreen;
+    width: 100%;
 }

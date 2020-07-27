@@ -63,24 +63,6 @@ export default function Projects() {
                 }}
             />
 
-            {/* <div onClick={() => setFlipped((state) => !state)}>
-                <a.div
-                    class="c back"
-                    style={{
-                        opacity: opacity.interpolate((o) => 1 - o),
-                        transform,
-                    }}
-                />
-                <a.div
-                    class="c front"
-                    style={{
-                        opacity,
-                        transform: transform.interpolate(
-                            (t) => `${t} rotateX(180deg)`
-                        ),
-                    }}
-                />
-            </div> */}
             <div
                 style={animation}
                 onClick={() => setFlipped((state) => !state)}
@@ -96,7 +78,8 @@ export default function Projects() {
                     className="project-wrapper-one front"
                 >
                     <div className="project-box">
-                        <animated.div
+                        <animated.img
+                            src="petition.png"
                             className="img-project"
                             onMouseMove={({ clientX: x, clientY: y }) =>
                                 set({ xys: calc(x, y) })
@@ -108,7 +91,7 @@ export default function Projects() {
                             }}
                         />
                         <div className="project-text">
-                            <h1>Project One</h1>
+                            <h1>Petiton FRONT</h1>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit. Nullam euismod felis quis
@@ -123,7 +106,7 @@ export default function Projects() {
                     </div>
                 </animated.div>
 
-                <div
+                <animated.div
                     className="project-wrapper-one back"
                     style={{
                         opacity: opacity.interpolate((o) => 1 - o),
@@ -131,7 +114,8 @@ export default function Projects() {
                     }}
                 >
                     <div className="project-box">
-                        <animated.div
+                        <animated.img
+                            src="petition.png"
                             className="img-project"
                             onMouseMove={({ clientX: x, clientY: y }) =>
                                 set({ xys: calc(x, y) })
@@ -143,7 +127,7 @@ export default function Projects() {
                             }}
                         />
                         <div className="project-text">
-                            <h1>Project One</h1>
+                            <h1>Petition BACK</h1>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit. Nullam euismod felis quis
@@ -156,7 +140,7 @@ export default function Projects() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </animated.div>
             </div>
 
             <Waypoint

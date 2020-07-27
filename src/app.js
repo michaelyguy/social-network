@@ -58,9 +58,14 @@ export default function App() {
                 </h3>
             </animated.header> */}
             <header>
-                <h3 className="menu-btn" onClick={() => setNavOpen(!isNavOpen)}>
-                    -> Please let me in
-                </h3>
+                {isNavOpen && (
+                    <h3
+                        className="menu-btn"
+                        onClick={() => setNavOpen(!isNavOpen)}
+                    >
+                        Please let me in
+                    </h3>
+                )}
             </header>
             <main>
                 <Projects />
