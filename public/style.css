@@ -572,3 +572,12 @@ header {
     /* background-color: palegreen; */
     width: 100%;
 }
+
+.mood {
+    position: absolute;
+    top: 50px;
+    background-color: darkmagenta;
+    z-index: 299;
+    height: 200px;
+    width: 200px;
+}

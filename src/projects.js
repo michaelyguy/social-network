@@ -210,7 +210,6 @@ export default function Projects() {
                         <img src="petition.png" className="gif-project" />
                     </div>
                 </animated.div>
-
                 <animated.div
                     style={animationTwo}
                     className="project-wrapper-two back"

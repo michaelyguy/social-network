@@ -11,6 +11,7 @@ import Projects from "./Projects";
 import Gesture from "./Gesture";
 import Boxes from "./boxes";
 import Ticker from "./Ticker";
+import Flier from "./Flier";
 
 export default function App() {
     //// NAVIGATION /////
@@ -80,11 +81,13 @@ export default function App() {
 
                 {/* <Boxes /> */}
 
-                <div className="flier">
+                {/* <div className="flier">
                     <img src="smile.png" />
-                </div>
+                </div> */}
 
                 <Welcome isOpen={isNavOpen} />
+
+                <Flier />
 
                 {/* <animated.div style={slideAbout}>
                     <About />
