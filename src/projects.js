@@ -22,6 +22,11 @@ export default function Projects() {
         config: config.slow,
     }));
 
+    const [HoverThree, setHoverThree] = useSpring(() => ({
+        xys: [0, 0, 1],
+        config: config.slow,
+    }));
+
     ///////CARD ON HOVER END//////
 
     //////FLIP PROJECT///////
@@ -32,7 +37,9 @@ export default function Projects() {
         config: config.slow,
     });
 
-    const [flippedTWO, setFlippedTWO] = useState(false);
+    const [flippedTwo, setFlippedTwo] = useState(false);
+
+    const [flippedThree, setFlippedThree] = useState(false);
 
     ////////FLIP PROJECT END////////
 
@@ -65,6 +72,7 @@ export default function Projects() {
                     if (!one) toggleOne(true);
                 }}
             />
+
             <div
                 style={animation}
                 onClick={() => setFlipped((state) => !state)}
@@ -128,47 +136,180 @@ export default function Projects() {
                 }}
             />
 
-            <div
-                style={animation}
-                onClick={() => setFlipped((state) => !state)}
+            <animated.div
+                style={animationTwo}
+                onClick={() => setFlippedTwo((state) => !state)}
                 className="flip"
-            ></div>
-
-            <animated.div style={animationTwo} className="project-wrapper-two">
-                <div className="project-box">
-                    {/* <div className="img-project" /> */}
-                    <animated.div
-                        className="img-project"
-                        onMouseMove={({ clientX: x, clientY: y }) =>
-                            setHoverTwo({ xys: calc(x, y) })
-                        }
-                        onMouseLeave={() => setHoverTwo({ xys: [0, 0, 1] })}
-                        style={{
-                            transform: HoverTwo.xys.interpolate(trans),
-                            config: config.slow,
-                        }}
-                    />
-                    <div className="project-text">
-                        <h1>Project Two</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Nullam euismod felis quis ultrices eleifend.
-                            Quisque placerat vehicula purus, at dapibus mi
-                            dignissim at. In mi ex, consectetur quis vulputate
-                            id, blandit quis nisi. Mauris nec urna vel nisl
-                            fringilla iaculis. Nullam feugiat interdum ante
-                            vitae lobortis. Aenean fringilla leo a purus egestas
-                        </p>
+            >
+                <animated.div
+                    style={{
+                        opacity,
+                        transform: transform.interpolate(
+                            (t) => `${t} rotateX(180deg)`
+                        ),
+                    }}
+                    className="project-wrapper-two front"
+                >
+                    <div className="project-box">
+                        <img src="image-board.png" className="gif-project" />
                     </div>
-                </div>
+                </animated.div>
+
+                <animated.div
+                    className="project-wrapper-two back"
+                    style={{
+                        opacity: opacity.interpolate((o) => 1 - o),
+                        transform,
+                    }}
+                >
+                    <div className="project-box">
+                        <animated.img
+                            src="image-board.png"
+                            className="img-project"
+                            onMouseMove={({ clientX: x, clientY: y }) =>
+                                setHoverTwo({ xys: calc(x, y) })
+                            }
+                            onMouseLeave={() => setHoverTwo({ xys: [0, 0, 1] })}
+                            style={{
+                                transform: HoverTwo.xys.interpolate(trans),
+                                config: config.slow,
+                            }}
+                        />
+                        <div className="project-text">
+                            <h1>Image Board</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nullam euismod felis quis
+                                ultrices eleifend. Quisque placerat vehicula
+                                purus, at dapibus mi dignissim at. In mi ex,
+                                consectetur quis vulputate id, blandit quis
+                                nisi. Mauris nec urna vel nisl fringilla
+                                iaculis. Nullam feugiat interdum ante vitae
+                                lobortis. Aenean fringilla leo a purus egestas
+                            </p>
+                        </div>
+                    </div>
+                </animated.div>
             </animated.div>
+
+            {/* <div
+                style={animation}
+                onClick={() => setFlippedTwo((state) => !state)}
+                className="flip"
+            >
+                <animated.div
+                    style={{
+                        opacity,
+                        transform: transform.interpolate(
+                            (t) => `${t} rotateX(180deg)`
+                        ),
+                    }}
+                    className="project-wrapper-two front"
+                >
+                    <div className="project-box">
+                        <img src="petition.png" className="gif-project" />
+                    </div>
+                </animated.div>
+
+                <animated.div
+                    style={animationTwo}
+                    className="project-wrapper-two back"
+                >
+                    <div className="project-box">
+                        <animated.div
+                            className="img-project"
+                            onMouseMove={({ clientX: x, clientY: y }) =>
+                                setHoverTwo({ xys: calc(x, y) })
+                            }
+                            onMouseLeave={() => setHoverTwo({ xys: [0, 0, 1] })}
+                            style={{
+                                transform: HoverTwo.xys.interpolate(trans),
+                                config: config.slow,
+                            }}
+                        />
+                        <div className="project-text">
+                            <h1>Project Two</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nullam euismod felis quis
+                                ultrices eleifend. Quisque placerat vehicula
+                                purus, at dapibus mi dignissim at. In mi ex,
+                                consectetur quis vulputate id, blandit quis
+                                nisi. Mauris nec urna vel nisl fringilla
+                                iaculis. Nullam feugiat interdum ante vitae
+                                lobortis. Aenean fringilla leo a purus egestas
+                            </p>
+                        </div>
+                    </div>
+                </animated.div>
+            </div> */}
+
             <Waypoint
                 bottomOffset="30%"
                 onEnter={() => {
                     if (!three) toggleThree(true);
                 }}
             />
+
             <animated.div
+                style={animationThree}
+                onClick={() => setFlippedThree((state) => !state)}
+                className="flip"
+            >
+                <animated.div
+                    style={{
+                        opacity,
+                        transform: transform.interpolate(
+                            (t) => `${t} rotateX(180deg)`
+                        ),
+                    }}
+                    className="project-wrapper-three front"
+                >
+                    <div className="project-box">
+                        <img src="image-board.png" className="gif-project" />
+                    </div>
+                </animated.div>
+
+                <animated.div
+                    className="project-wrapper-three back"
+                    style={{
+                        opacity: opacity.interpolate((o) => 1 - o),
+                        transform,
+                    }}
+                >
+                    <div className="project-box">
+                        <animated.img
+                            src="image-board.png"
+                            className="img-project"
+                            onMouseMove={({ clientX: x, clientY: y }) =>
+                                setHoverThree({ xys: calc(x, y) })
+                            }
+                            onMouseLeave={() =>
+                                setHoverThree({ xys: [0, 0, 1] })
+                            }
+                            style={{
+                                transform: HoverThree.xys.interpolate(trans),
+                                config: config.slow,
+                            }}
+                        />
+                        <div className="project-text">
+                            <h1>Social Network</h1>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nullam euismod felis quis
+                                ultrices eleifend. Quisque placerat vehicula
+                                purus, at dapibus mi dignissim at. In mi ex,
+                                consectetur quis vulputate id, blandit quis
+                                nisi. Mauris nec urna vel nisl fringilla
+                                iaculis. Nullam feugiat interdum ante vitae
+                                lobortis. Aenean fringilla leo a purus egestas
+                            </p>
+                        </div>
+                    </div>
+                </animated.div>
+            </animated.div>
+
+            {/* <animated.div
                 style={animationThree}
                 className="project-wrapper-three"
             >
@@ -187,7 +328,7 @@ export default function Projects() {
                         </p>
                     </div>
                 </div>
-            </animated.div>
+            </animated.div> */}
         </div>
     );
 }
