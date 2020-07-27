@@ -22,9 +22,9 @@ export default function Flier() {
                     </animated.div>
                 )
             )}
-            <button className="mood" onClick={() => setWhatMood(!whatMood)}>
+            <h1 className="mood" onClick={() => setWhatMood(!whatMood)}>
                 Change Mood
-            </button>
+            </h1>
         </div>
     );
 }

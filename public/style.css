@@ -95,7 +95,7 @@ header {
 }
 
 .flier > * {
-    animation: fly 50s linear infinite;
+    animation: fly 100s linear infinite;
     pointer-events: none !important;
     top: 0;
     left: 0;
@@ -152,15 +152,8 @@ header {
     left: 730px;
     color: black;
     z-index: 20;
-    /* background-color: greenyellow; */
+    cursor: pointer;
 }
-
-/* .let-me-in {
-    z-index: 21;
-    position: absolute;
-    top: 400px;
-    left: 600px;
-} */
 
 .graphic-designer-btn {
     background-color: greenyellow;
@@ -477,14 +470,6 @@ header {
     font-weight: bold;
 }
 
-.clock {
-    z-index: 10;
-    /* background-color: greenyellow; */
-    position: fixed;
-    bottom: 14px;
-    left: 20px;
-}
-
 .btn-flip {
     width: 100vw;
     /* height: 60px; */
@@ -498,6 +483,7 @@ header {
     display: inline-block;
     text-decoration: none;
     font-size: 50px;
+    font-weight: normal;
 }
 .btn-flip:hover:after {
     opacity: 1;
@@ -516,7 +502,7 @@ header {
     width: 100%;
     padding: 10px 30px;
 
-    color: #323237;
+    color: black;
     display: block;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -530,7 +516,6 @@ header {
     top: 0;
     left: 0;
     opacity: 1;
-    /* color: #adadaf; */
     display: block;
     padding: 10px 30px;
     line-height: 40px;
@@ -543,18 +528,6 @@ header {
     transform: translateY(0) rotateX(0);
 }
 
-/* flip carddddd */
-
-/* .c {
-    position: absolute;
-    max-width: 500px;
-    max-height: 500px;
-    width: 50ch;
-    height: 50ch;
-    cursor: pointer;
-    will-change: transform, opacity;
-} */
-
 .front,
 .back {
     background-size: cover;
@@ -562,22 +535,37 @@ header {
 }
 
 .back {
-    /* background-color: palevioletred; */
     position: relative;
-    /* top: -100%; */
     object-fit: cover;
 }
 
 .front {
-    /* background-color: palegreen; */
     width: 100%;
 }
 
 .mood {
-    position: absolute;
-    top: 50px;
-    background-color: darkmagenta;
-    z-index: 299;
-    height: 200px;
-    width: 200px;
+    font-size: 50px;
+    position: fixed;
+    bottom: 14px;
+    right: 20px;
+    font-weight: normal;
+    cursor: pointer;
 }
+
+.clock {
+    z-index: 10;
+    position: fixed;
+    bottom: 14px;
+    left: 20px;
+}
+
+/* footer {
+    position: relative;
+}
+.footer {
+    z-index: 200;
+    background-color: darksalmon;
+    position: absolute;
+    top: 200px;
+    height: 60px;
+} */

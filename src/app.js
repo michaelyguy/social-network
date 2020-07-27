@@ -99,6 +99,9 @@ export default function App() {
                     <About />
                 </animated.div> */}
             </main>
+            <footer>
+                <div className="footer"></div>
+            </footer>
         </animated.div>
     );
 }
