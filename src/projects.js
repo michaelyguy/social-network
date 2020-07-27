@@ -266,7 +266,7 @@ export default function Projects() {
                     className="project-wrapper-three front"
                 >
                     <div className="project-box">
-                        <img src="image-board.png" className="gif-project" />
+                        <img src="social-network.png" className="gif-project" />
                     </div>
                 </animated.div>
 
@@ -279,7 +279,7 @@ export default function Projects() {
                 >
                     <div className="project-box">
                         <animated.img
-                            src="image-board.png"
+                            src="social-network.png"
                             className="img-project"
                             onMouseMove={({ clientX: x, clientY: y }) =>
                                 setHoverThree({ xys: calc(x, y) })
