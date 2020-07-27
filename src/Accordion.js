@@ -25,13 +25,13 @@ export default function Accordion() {
                 href="#"
                 className="btn-flip"
                 data-back="Click Me"
-                data-front="I can do better.."
+                data-front="A bit more..."
             ></a>
 
             <animated.div style={animation}>
                 <div {...bind} className="accordion">
                     <p>
-                        In case you were wondering, I am also a
+                        In case you were wondering, I am also a <space />
                         <a
                             className="grapic-link"
                             target="_blank"
