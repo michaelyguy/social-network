@@ -364,33 +364,29 @@ header {
 }
 /* 16 */
 
-.waypoints {
+.project-container {
     /* width: 80vw; */
     /* background: white; */
     padding: 25px;
 }
 
-/* 17 */
-
-.box {
+/* .box {
     background: var(--teal);
     height: 100px;
     width: 100px;
     margin: 0 auto;
-}
-
-/* 19 */
-
+} */
+/* 
 .boxes-grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 20px;
-}
+} */
 
-.einproject {
-    /* background-color: greenyellow; */
+/* .einproject {
+    background-color: greenyellow;
     display: flex;
-}
+} */
 
 /* .img-project {
     height: 400px;

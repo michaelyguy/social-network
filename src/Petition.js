@@ -37,7 +37,7 @@ export default function Petition() {
     });
 
     return (
-        <div className="waypoints">
+        <div className="project-container">
             <Waypoint
                 bottomOffset="30%"
                 onEnter={() => {

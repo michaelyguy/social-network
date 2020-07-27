@@ -36,7 +36,7 @@ export default function ImageBoard() {
     });
 
     return (
-        <div className="waypoints">
+        <div className="project-container">
             <Waypoint
                 bottomOffset="40%"
                 onEnter={() => {

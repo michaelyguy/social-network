@@ -72,7 +72,6 @@ export default function App() {
                 )}
             </header>
             <main>
-                {/* <Projects /> */}
                 <Petition />
                 <ImageBoard />
                 <SocialNetwork />
