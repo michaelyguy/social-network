@@ -31,7 +31,7 @@ export default function Accordion() {
             <animated.div style={animation}>
                 <div {...bind} className="accordion">
                     <p>
-                        In case you were wondering, I am also a <space />
+                        In case you were wondering, I am also a{" "}
                         <a
                             className="grapic-link"
                             target="_blank"

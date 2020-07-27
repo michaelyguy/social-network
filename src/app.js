@@ -63,7 +63,7 @@ export default function App() {
                         className="menu-btn"
                         onClick={() => setNavOpen(!isNavOpen)}
                     >
-                        Please let me in
+                        {`->`} Please let me in
                     </h3>
                 )}
             </header>

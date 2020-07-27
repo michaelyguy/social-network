@@ -3,7 +3,7 @@ import { Waypoint } from "react-waypoint";
 import { animated, useSpring, config } from "react-spring";
 
 export default function Projects() {
-    ////CARD/////
+    ////CARD ON HOVER/////
     const calc = (x, y) => [
         -(y - window.innerHeight / 2) / 20,
         (x - window.innerWidth / 2) / 20,
@@ -12,26 +12,29 @@ export default function Projects() {
     const trans = (x, y, s) =>
         `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-    const [props, set] = useSpring(() => ({
+    const [hover, setHover] = useSpring(() => ({
         xys: [0, 0, 1],
         config: config.slow,
     }));
 
-    const [propsTwo, setTwo] = useSpring(() => ({
+    const [HoverTwo, setHoverTwo] = useSpring(() => ({
         xys: [0, 0, 1],
         config: config.slow,
     }));
 
-    ///////CARD//////
+    ///////CARD ON HOVER END//////
 
-    //////FLIP///////
+    //////FLIP PROJECT///////
     const [flipped, setFlipped] = useState(false);
     const { transform, opacity } = useSpring({
         opacity: flipped ? 1 : 0,
         transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
         config: config.slow,
     });
-    ////////FLIP////////
+
+    const [flippedTWO, setFlippedTWO] = useState(false);
+
+    ////////FLIP PROJECT END////////
 
     const [one, toggleOne] = useState(false);
     const animation = useSpring({
@@ -62,7 +65,6 @@ export default function Projects() {
                     if (!one) toggleOne(true);
                 }}
             />
-
             <div
                 style={animation}
                 onClick={() => setFlipped((state) => !state)}
@@ -78,31 +80,7 @@ export default function Projects() {
                     className="project-wrapper-one front"
                 >
                     <div className="project-box">
-                        <animated.img
-                            src="petition.png"
-                            className="img-project"
-                            onMouseMove={({ clientX: x, clientY: y }) =>
-                                set({ xys: calc(x, y) })
-                            }
-                            onMouseLeave={() => set({ xys: [0, 0, 1] })}
-                            style={{
-                                transform: props.xys.interpolate(trans),
-                                config: config.slow,
-                            }}
-                        />
-                        <div className="project-text">
-                            <h1>Petiton FRONT</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nullam euismod felis quis
-                                ultrices eleifend. Quisque placerat vehicula
-                                purus, at dapibus mi dignissim at. In mi ex,
-                                consectetur quis vulputate id, blandit quis
-                                nisi. Mauris nec urna vel nisl fringilla
-                                iaculis. Nullam feugiat interdum ante vitae
-                                lobortis. Aenean fringilla leo a purus egestas
-                            </p>
-                        </div>
+                        <img src="petition.png" className="gif-project" />
                     </div>
                 </animated.div>
 
@@ -118,16 +96,16 @@ export default function Projects() {
                             src="petition.png"
                             className="img-project"
                             onMouseMove={({ clientX: x, clientY: y }) =>
-                                set({ xys: calc(x, y) })
+                                setHover({ xys: calc(x, y) })
                             }
-                            onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                            onMouseLeave={() => setHover({ xys: [0, 0, 1] })}
                             style={{
-                                transform: props.xys.interpolate(trans),
+                                transform: hover.xys.interpolate(trans),
                                 config: config.slow,
                             }}
                         />
                         <div className="project-text">
-                            <h1>Petition BACK</h1>
+                            <h1>Petition</h1>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur
                                 adipiscing elit. Nullam euismod felis quis
@@ -149,17 +127,24 @@ export default function Projects() {
                     if (!two) toggleTwo(true);
                 }}
             />
+
+            <div
+                style={animation}
+                onClick={() => setFlipped((state) => !state)}
+                className="flip"
+            ></div>
+
             <animated.div style={animationTwo} className="project-wrapper-two">
                 <div className="project-box">
                     {/* <div className="img-project" /> */}
                     <animated.div
                         className="img-project"
                         onMouseMove={({ clientX: x, clientY: y }) =>
-                            setTwo({ xys: calc(x, y) })
+                            setHoverTwo({ xys: calc(x, y) })
                         }
-                        onMouseLeave={() => setTwo({ xys: [0, 0, 1] })}
+                        onMouseLeave={() => setHoverTwo({ xys: [0, 0, 1] })}
                         style={{
-                            transform: propsTwo.xys.interpolate(trans),
+                            transform: HoverTwo.xys.interpolate(trans),
                             config: config.slow,
                         }}
                     />

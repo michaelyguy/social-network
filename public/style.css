@@ -146,10 +146,14 @@ header {
 /* NAV MENU CODE */
 
 .menu-btn {
+    position: absolute;
+    bottom: 200px;
+    left: 730px;
     color: black;
     z-index: 20;
     /* background-color: greenyellow; */
 }
+
 /* .let-me-in {
     z-index: 21;
     position: absolute;
@@ -268,7 +272,7 @@ header {
     will-change: transform, opacity;
 }
 .project-wrapper-one {
-    height: 50vh;
+    height: 60vh;
     background: lightgray;
     display: flex;
     justify-content: center;
@@ -277,7 +281,7 @@ header {
 }
 
 .project-wrapper-two {
-    height: 50vh;
+    height: 60vh;
     background: gray;
     display: flex;
     justify-content: center;
@@ -286,7 +290,7 @@ header {
 }
 
 .project-wrapper-three {
-    height: 50vh;
+    height: 60vh;
     background: lightgray;
     display: flex;
     justify-content: center;
@@ -301,7 +305,7 @@ header {
     justify-content: space-evenly;
 }
 
-.page-route {
+/* .page-route {
     height: 60vh;
     background: grey;
     display: flex;
@@ -327,10 +331,10 @@ header {
     font-size: 20px;
     font-weight: bold;
     margin: 0 10px;
-}
+} */
 
 /* 14 */
-.modal {
+/* .modal {
     position: fixed;
     width: 100%;
     display: flex;
@@ -354,7 +358,7 @@ header {
 
 .modal-card h1 {
     color: black;
-}
+} */
 
 /* 15 */
 .accordion {
@@ -404,20 +408,24 @@ header {
 /* CARD TRYINGGG */
 
 .img-project {
-    height: 300px;
-    width: 500px;
-    /* background: grey; */
-    /* border-radius: 5px; */
-    /* background-image: url(https://drscdn.500px.org/photo/435236/q%3D80_m%3D1500/v2?webp=true&sig=67031bdff6f582f3e027311e2074be452203ab637c0bd21d89128844becf8e40); */
-    /* background-size: cover; */
-    /* background-position: center center; */
+    background-color: coral;
+    height: 370px;
+    width: 600px;
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.5s;
     will-change: transform;
-    border: 1.5px solid black;
+    /* border: 1.5px solid black; */
+    object-fit: cover;
 }
 
-/* CARD TRYINGGG */
+.gif-project {
+    position: relative;
+    /* background-color: coral; */
+    /* height: 530px;
+    width: 900px; */
+    /* height: 50%; */
+    width: 55%;
+}
 
 .card:hover {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
@@ -439,7 +447,6 @@ header {
     font-weight: normal;
 }
 
-/* ticker */
 #ticker {
     /* z-index: 30; */
     overflow: hidden;
@@ -462,7 +469,6 @@ header {
     text-decoration: none;
     font-size: 50px;
 }
-/* ticker */
 
 .grapic-link {
     color: black;
@@ -477,21 +483,6 @@ header {
     bottom: 14px;
     left: 20px;
 }
-
-/* trying 3d btn */
-
-/* HTML CSSResult EDIT ON body {
-    width: 100vw;
-    height: 100vh;
-    display: -webkit-box;
-    display: flex;
-    position: relative;
-    background: #1e1e24;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-} */
 
 .btn-flip {
     width: 100vw;
@@ -553,7 +544,7 @@ header {
 
 /* flip carddddd */
 
-.c {
+/* .c {
     position: absolute;
     max-width: 500px;
     max-height: 500px;
@@ -561,7 +552,7 @@ header {
     height: 50ch;
     cursor: pointer;
     will-change: transform, opacity;
-}
+} */
 
 .front,
 .back {
@@ -570,12 +561,13 @@ header {
 }
 
 .back {
-    background-color: palevioletred;
+    /* background-color: palevioletred; */
     position: relative;
-    top: -100%;
+    /* top: -100%; */
+    object-fit: cover;
 }
 
 .front {
-    background-color: palegreen;
+    /* background-color: palegreen; */
     width: 100%;
 }
