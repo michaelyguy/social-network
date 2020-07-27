@@ -1,17 +1,20 @@
 import React, { useState } from "react";
-import About from "./About";
+// import About from "./About";
 import { useSpring, animated } from "react-spring";
-import Nav from "./Nav";
+// import Nav from "./Nav";
 import Welcome from "./Welcome";
 // import Toggle from "./Toggle";
-import Routes from "./Routes";
-import Modal from "./Modal";
+// import Routes from "./Routes";
+// import Modal from "./Modal";
 import Accordion from "./Accordion";
-import Projects from "./Projects";
-import Gesture from "./Gesture";
-import Boxes from "./boxes";
+// import Projects from "./Projects";
+// import Gesture from "./Gesture";
+// import Boxes from "./boxes";
 import Ticker from "./Ticker";
 import Flier from "./Flier";
+import Petition from "./Petition";
+import ImageBoard from "./ImageBoard";
+import SocialNetwork from "./SocialNetwork";
 
 export default function App() {
     //// NAVIGATION /////
@@ -69,7 +72,10 @@ export default function App() {
                 )}
             </header>
             <main>
-                <Projects />
+                {/* <Projects /> */}
+                <Petition />
+                <ImageBoard />
+                <SocialNetwork />
 
                 {/* <Routes /> */}
 
