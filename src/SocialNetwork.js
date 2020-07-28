@@ -59,7 +59,14 @@ export default function SocialNetwork() {
                     className="project-wrapper-three front"
                 >
                     <div className="project-box">
-                        <img src="social-network.png" className="gif-project" />
+                        <video
+                            autoPlay="autoplay"
+                            muted
+                            loop
+                            className="gif-project"
+                        >
+                            <source src="social-network.mp4" type="video/mp4" />
+                        </video>
                     </div>
                 </animated.div>
 

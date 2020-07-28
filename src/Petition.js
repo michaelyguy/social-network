@@ -60,7 +60,14 @@ export default function Petition() {
                     className="project-wrapper-one front"
                 >
                     <div className="project-box">
-                        <img src="petition.gif" className="gif-project" />
+                        <video
+                            autoPlay="autoplay"
+                            muted
+                            loop
+                            className="gif-project"
+                        >
+                            <source src="petition.mp4" type="video/mp4" />
+                        </video>
                     </div>
                 </animated.div>
 

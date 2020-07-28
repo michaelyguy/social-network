@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import About from "./About";
 import { useSpring, animated } from "react-spring";
-// import Nav from "./Nav";
+import Nav from "./Nav";
 import Welcome from "./Welcome";
 // import Toggle from "./Toggle";
 // import Routes from "./Routes";
@@ -24,6 +24,14 @@ export default function App() {
             ? `translate3d(0,0,0) scale(1)`
             : `translate3d(100%,0,0) scale(0.6)`,
     });
+
+    //////ABOUT/////////
+    // const [isNavOpen, setNavOpen] = useState(true);
+    // const navAnimation = useSpring({
+    //     transform: isNavOpen
+    //         ? `translate3d(0,0,0) scale(1)`
+    //         : `translate3d(100%,0,0) scale(0.6)`,
+    // });
 
     const fadeHeader = useSpring({
         opacity: 1,
@@ -80,7 +88,7 @@ export default function App() {
 
                 {/* <Toggle /> */}
 
-                {/* <Nav style={navAnimation} /> */}
+                <Nav style={navAnimation} />
 
                 {/* <Gesture /> */}
 

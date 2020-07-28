@@ -1,5 +1,6 @@
 * {
     margin: 0;
+
     /* overflow-x: hidden; */
 }
 
@@ -149,6 +150,7 @@ header {
     color: black;
     z-index: 20;
     cursor: pointer;
+    /* overflow: hidden; */
 }
 
 .graphic-designer-btn {
@@ -207,6 +209,7 @@ header {
     bottom: 0;
     display: flex;
     z-index: 10;
+    /* overflow: hidden; */
 }
 .checkout-left {
     display: flex;
@@ -217,6 +220,7 @@ header {
     height: 100%;
     background: hotpink;
     font-size: 200px;
+    /* overflow: hidden; */
 }
 .checkout-right {
     display: flex;
@@ -227,6 +231,7 @@ header {
     height: 100%;
     background: hotpink;
     font-size: 200px;
+    /* overflow: hidden; */
 }
 
 /* ROUTES */
