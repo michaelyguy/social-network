@@ -144,7 +144,7 @@ header {
 /* NAV MENU CODE */
 
 .menu-btn {
-    position: absolute;
+    position: fixed;
     bottom: 200px;
     left: 730px;
     color: black;
@@ -373,7 +373,7 @@ header {
 .project-container {
     /* width: 80vw; */
     /* background: white; */
-    padding: 25px;
+    /* padding: 25px; */
 }
 
 /* .box {
@@ -448,7 +448,7 @@ header {
     overflow: hidden;
     /* background-color: white; */
     /* border-bottom: 1.5px solid black; */
-    height: 60px;
+    height: 75px;
     position: relative;
 }
 
@@ -456,7 +456,7 @@ header {
     white-space: nowrap;
     position: absolute;
     left: 40%;
-    top: 0px;
+    top: 14px;
 }
 #links a {
     /* font-family: "Helvetica"; */
