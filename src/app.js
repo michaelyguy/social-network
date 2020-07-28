@@ -6,7 +6,7 @@ import Welcome from "./Welcome";
 // import Toggle from "./Toggle";
 // import Routes from "./Routes";
 // import Modal from "./Modal";
-import Accordion from "./Accordion";
+// import Accordion from "./Accordion";
 // import Projects from "./Projects";
 // import Gesture from "./Gesture";
 // import Boxes from "./boxes";
@@ -26,12 +26,12 @@ export default function App() {
     });
 
     //////ABOUT/////////
-    // const [isNavOpen, setNavOpen] = useState(true);
-    // const navAnimation = useSpring({
-    //     transform: isNavOpen
-    //         ? `translate3d(0,0,0) scale(1)`
-    //         : `translate3d(100%,0,0) scale(0.6)`,
-    // });
+    const [isAboutOpen, setAbout] = useState(false);
+    const aboutAnimation = useSpring({
+        transform: isAboutOpen
+            ? `translate3d(0,0,0) scale(1)`
+            : `translate3d(0,100%,0) scale(0.6)`,
+    });
 
     const fadeHeader = useSpring({
         opacity: 1,
@@ -51,7 +51,7 @@ export default function App() {
     return (
         <animated.div style={fadeHeader}>
             <Ticker />
-            <Accordion />
+            {/* <Accordion /> */}
             <iframe
                 className="clock"
                 src="http://free.timeanddate.com/clock/i7dvxyp2/n37/fs48/tct/pct/th1"
@@ -87,8 +87,10 @@ export default function App() {
                 {/* <Routes /> */}
 
                 {/* <Toggle /> */}
-
-                <Nav style={navAnimation} />
+                <h3 className="abt-btn" onClick={() => setAbout(!isAboutOpen)}>
+                    About
+                </h3>
+                <Nav style={aboutAnimation} />
 
                 {/* <Gesture /> */}
 

@@ -5,9 +5,7 @@ export default function Nav({ style }) {
     return (
         <animated.div className="nav-wrapper" style={style}>
             <nav>
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Store</a>
+                <a href="#">Here I will write abot myself</a>
             </nav>
         </animated.div>
     );

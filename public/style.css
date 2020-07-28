@@ -17,8 +17,8 @@ body {
     height: 100vh;
     font-family: Helvetica, sans-serif;
     background-color: #f5f5f5;
-    /* -webkit-animation: body 2s linear infinite alternate both;
-    animation: body 2s linear infinite alternate both; */
+    -webkit-animation: body 2s linear infinite alternate both;
+    animation: body 2s linear infinite alternate both;
 }
 @-webkit-keyframes body {
     0% {
@@ -181,15 +181,16 @@ header {
     top: 0;
     bottom: 0;
     padding: 100px;
-    background: var(--purp);
+    -webkit-animation: body 2s linear infinite alternate both;
+    animation: body 2s linear infinite alternate both;
     z-index: 10;
 }
 
 .nav-wrapper a {
     display: block;
     text-align: left;
-    font-size: 4rem;
-    color: white;
+    font-size: 50px;
+    color: black;
     text-decoration: none;
     transition: 0.3s ease border;
     border-bottom: solid 4px transparent;
@@ -208,7 +209,7 @@ header {
     top: 0;
     bottom: 0;
     display: flex;
-    z-index: 10;
+    z-index: 15;
     /* overflow: hidden; */
 }
 .checkout-left {
@@ -218,7 +219,9 @@ header {
     z-index: 5;
     width: 50%;
     height: 100%;
-    background: hotpink;
+    /* background: hotpink; */
+    -webkit-animation: body 2s linear infinite alternate both;
+    animation: body 2s linear infinite alternate both;
     font-size: 200px;
     /* overflow: hidden; */
 }
@@ -229,7 +232,9 @@ header {
     z-index: 5;
     width: 50%;
     height: 100%;
-    background: hotpink;
+    /* background: hotpink; */
+    -webkit-animation: body 2s linear infinite alternate both;
+    animation: body 2s linear infinite alternate both;
     font-size: 200px;
     /* overflow: hidden; */
 }
@@ -268,7 +273,7 @@ header {
 }
 .project-wrapper-one {
     height: 60vh;
-    background: lightgray;
+    /* background: lightgray; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,7 +282,7 @@ header {
 
 .project-wrapper-two {
     height: 60vh;
-    background: gray;
+    /* background: gray; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -286,7 +291,7 @@ header {
 
 .project-wrapper-three {
     height: 60vh;
-    background: lightgray;
+    /* background: lightgray; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -357,7 +362,7 @@ header {
 
 /* 15 */
 .accordion {
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
     padding: 20px;
     /* border: solid 1.5px #eee; */
     overflow: hidden;
@@ -439,10 +444,10 @@ header {
 }
 
 #ticker {
-    /* z-index: 30; */
+    z-index: 11;
     overflow: hidden;
-    background-color: #f5f5f5;
-    border-bottom: 1.5px solid black;
+    /* background-color: white; */
+    /* border-bottom: 1.5px solid black; */
     height: 60px;
     position: relative;
 }
@@ -550,10 +555,20 @@ header {
 }
 
 .clock {
-    z-index: 10;
+    z-index: 12;
     position: fixed;
     bottom: 14px;
     left: 20px;
+}
+
+.abt-btn {
+    z-index: 15;
+    font-size: 50px;
+    position: fixed;
+    bottom: 14px;
+    right: 830px;
+    font-weight: normal;
+    cursor: pointer;
 }
 
 /* footer {
