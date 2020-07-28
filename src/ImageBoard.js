@@ -59,7 +59,7 @@ export default function ImageBoard() {
                     className="project-wrapper-two front"
                 >
                     <div className="project-box">
-                        <img src="image-board.png" className="gif-project" />
+                        <img src="image-board.gif" className="gif-project" />
                     </div>
                 </animated.div>
 

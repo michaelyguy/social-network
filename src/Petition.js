@@ -60,7 +60,7 @@ export default function Petition() {
                     className="project-wrapper-one front"
                 >
                     <div className="project-box">
-                        <img src="petition.png" className="gif-project" />
+                        <img src="petition.gif" className="gif-project" />
                     </div>
                 </animated.div>
 
