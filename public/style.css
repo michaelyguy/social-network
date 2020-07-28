@@ -300,9 +300,36 @@ header {
 
 .project-box {
     width: 100%;
-    /* background-color: greenyellow; */
+    /* height: 100%; */
+    background-color: greenyellow;
     display: flex;
     justify-content: space-evenly;
+    /* justify-content: center; */
+}
+
+.project-text {
+    width: 40%;
+    /* margin-left: 60px; */
+    background-color: #19dcea;
+}
+
+.project-text p {
+    font-size: 18px;
+    font-weight: lighter;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.project-text h1 {
+    font-size: 50px;
+    font-weight: lighter;
+
+    /* font-weight: normal; */
+}
+
+.technologies {
+    font-weight: bold;
+    font-size: 30px;
 }
 
 /* .page-route {
@@ -425,22 +452,6 @@ header {
 
 .card:hover {
     box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
-}
-
-.project-text {
-    width: 40vw;
-    margin-left: 40px;
-}
-
-.project-text p {
-    font-size: 20px;
-    margin-top: 15px;
-    line-height: 1.3;
-}
-
-.project-text h1 {
-    font-size: 50px;
-    font-weight: normal;
 }
 
 #ticker {

@@ -94,14 +94,21 @@ export default function Petition() {
                         <div className="project-text">
                             <h1>Petition</h1>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nullam euismod felis quis
-                                ultrices eleifend. Quisque placerat vehicula
-                                purus, at dapibus mi dignissim at. In mi ex,
-                                consectetur quis vulputate id, blandit quis
-                                nisi. Mauris nec urna vel nisl fringilla
-                                iaculis. Nullam feugiat interdum ante vitae
-                                lobortis. Aenean fringilla leo a purus egestas
+                                An online petition - at the time created in
+                                support of the Black Lives Matters movement -
+                                which enables the supporters of the cause to
+                                register on the site, sign up with their log in
+                                details and submit their signature to give their
+                                support for the cause. As soon as they have
+                                signed, they can view other supporters based in
+                                their city, or any other city showing up in the
+                                list of supporters. They can update their
+                                personal details, or withdraw their support by
+                                deleting their signature.
+                            </p>
+                            <p className="technologies">
+                                technologies used - jQuery, Handlebars, Node,
+                                Express and PostgreSQL
                             </p>
                         </div>
                     </div>
