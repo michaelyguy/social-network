@@ -4,9 +4,9 @@ import { useTransition, animated, useSpring } from "react-spring";
 export default function Flier() {
     const [whatMood, setWhatMood] = useState(true);
     const transition = useTransition(whatMood, null, {
-        from: { opacity: 0 },
+        from: { opacity: 1 },
         enter: { opacity: 1 },
-        leave: { opacity: 0 },
+        leave: { opacity: 1 },
     });
 
     /////animation on the btn/////
@@ -19,24 +19,14 @@ export default function Flier() {
 
     return (
         <div>
-            {transition.map(({ item, key, props }) =>
-                item ? (
-                    <animated.div key={key} style={props} className="flier">
-                        <img src="smile.png" />
-                    </animated.div>
-                ) : (
-                    <animated.div key={key} style={props} className="flier">
-                        <img src="smile2.png" />
-                    </animated.div>
-                )
-            )}
+            {transition.map(({ item, key, props }) => (
+                <animated.div key="1" style={props} className="flier">
+                    <img src={item ? "smile.png" : "smile2.png"} />
+                </animated.div>
+            ))}
             <div onClick={() => setClick(!click)}>
                 <animated.h1
                     style={{
-                        opacity: x.interpolate({
-                            range: [0, 1],
-                            output: [0.3, 1],
-                        }),
                         transform: x
                             .interpolate({
                                 range: [

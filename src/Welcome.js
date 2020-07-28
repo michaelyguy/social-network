@@ -19,7 +19,7 @@ export default function Welcome({ isOpen }) {
                 }}
                 className="checkout-left"
             >
-                <h1>HEL</h1>
+                <h1 className="open">he</h1>
             </animated.div>
             <animated.div
                 style={{
@@ -27,7 +27,7 @@ export default function Welcome({ isOpen }) {
                 }}
                 className="checkout-right"
             >
-                <h1>LO!</h1>
+                <h1 className="open">llo</h1>
             </animated.div>
         </div>
     );

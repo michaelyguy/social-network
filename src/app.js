@@ -51,6 +51,7 @@ export default function App() {
     return (
         <animated.div style={fadeHeader}>
             <Ticker />
+
             {/* <Accordion /> */}
             <iframe
                 className="clock"
