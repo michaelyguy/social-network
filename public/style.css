@@ -145,8 +145,8 @@ header {
 
 .menu-btn {
     position: fixed;
-    bottom: 200px;
-    left: 730px;
+    bottom: 230px;
+    left: 44%;
     /* color: black; */
     z-index: 20;
     cursor: pointer;
@@ -183,23 +183,10 @@ header {
     top: 0;
     bottom: 0;
     padding: 100px;
-    -webkit-animation: body 2s linear infinite alternate both;
-    animation: body 2s linear infinite alternate both;
+    background-color: white;
+    /* -webkit-animation: body 2s linear infinite alternate both;
+    animation: body 2s linear infinite alternate both; */
     z-index: 10;
-}
-
-.nav-wrapper a {
-    display: block;
-    text-align: left;
-    font-size: 50px;
-    color: black;
-    text-decoration: none;
-    transition: 0.3s ease border;
-    border-bottom: solid 4px transparent;
-}
-
-.nav-wrapper a:hover {
-    border-bottom: solid 4px var(--teal);
 }
 
 /* CHECK OUT CODE */
@@ -418,10 +405,17 @@ header {
 }
 /* 16 */
 
-.project-container {
+.project-container-one {
     /* width: 80vw; */
     /* background: white; */
     padding-top: 100px;
+    margin-bottom: 20px;
+}
+.project-container {
+    /* width: 80vw;
+    background: white;
+    padding-top: 100px; */
+    margin-bottom: 20px;
 }
 
 /* .box {

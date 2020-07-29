@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import About from "./About";
 import { useSpring, animated } from "react-spring";
-import Nav from "./Nav";
+import About from "./About";
 import Welcome from "./Welcome";
 // import Toggle from "./Toggle";
 // import Routes from "./Routes";
@@ -91,7 +91,7 @@ export default function App() {
                 <h3 className="abt-btn" onClick={() => setAbout(!isAboutOpen)}>
                     About
                 </h3>
-                <Nav style={aboutAnimation} />
+                <About style={aboutAnimation} />
 
                 {/* <Gesture /> */}
 
