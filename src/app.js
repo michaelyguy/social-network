@@ -48,6 +48,14 @@ export default function App() {
         //     : "translate3d(0,-1050px,0)",
     });
 
+    /////animation on the btn/////
+    const [click, setClick] = useState(true);
+    const { x } = useSpring({
+        from: { x: 0 },
+        x: click ? 1 : 0,
+        config: { duration: 1000 },
+    });
+
     return (
         <animated.div style={fadeHeader}>
             <Ticker />
@@ -88,9 +96,40 @@ export default function App() {
                 {/* <Routes /> */}
 
                 {/* <Toggle /> */}
-                <h3 className="abt-btn" onClick={() => setAbout(!isAboutOpen)}>
-                    About
-                </h3>
+                <div onClick={() => setClick(!click)}>
+                    <animated.h3
+                        style={{
+                            transform: x
+                                .interpolate({
+                                    range: [
+                                        0,
+                                        0.25,
+                                        0.35,
+                                        0.45,
+                                        0.55,
+                                        0.65,
+                                        0.75,
+                                        1,
+                                    ],
+                                    output: [
+                                        1,
+                                        0.97,
+                                        0.9,
+                                        1.1,
+                                        0.9,
+                                        1.1,
+                                        1.03,
+                                        1,
+                                    ],
+                                })
+                                .interpolate((x) => `scale(${x})`),
+                        }}
+                        className="abt-btn"
+                        onClick={() => setAbout(!isAboutOpen)}
+                    >
+                        About
+                    </animated.h3>
+                </div>
                 <About style={aboutAnimation} />
 
                 {/* <Gesture /> */}
