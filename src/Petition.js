@@ -93,7 +93,7 @@ export default function Petition() {
                         />
                         <div className="project-text">
                             <h1>Petition</h1>
-                            <p>
+                            <p className="text">
                                 An online petition - created in support of the
                                 Black Lives Matters movement - which enables the
                                 supporters of the cause to register on the site,
@@ -104,6 +104,7 @@ export default function Petition() {
                                 personal details, or withdraw their support by
                                 deleting their signature.
                             </p>
+
                             <p className="technologies">
                                 technologies used - jQuery, Handlebars, Node,
                                 Express and PostgreSQL

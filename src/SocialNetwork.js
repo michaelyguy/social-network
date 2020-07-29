@@ -92,14 +92,17 @@ export default function SocialNetwork() {
                         />
                         <div className="project-text">
                             <h1>Social Network</h1>
-                            <p>
+                            <p className="text">
                                 The Social Network is a single-page web
                                 application designed to bring people together.
                                 It enables the user to create a personal
                                 profile, upload a profile picture and connect
                                 with other users by friend requests as well as a
-                                chat room. technologies used - JavaScript, AWS
-                                S3, Node, PostgreSQL, Socket.IO, React and Redux
+                                chat room.
+                            </p>
+                            <p className="technologies">
+                                technologies used - JavaScript, AWS S3, Node,
+                                PostgreSQL, Socket.IO, React and Redux
                             </p>
                         </div>
                     </div>

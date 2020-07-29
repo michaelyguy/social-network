@@ -171,7 +171,7 @@ header {
     right: 0;
     top: 0;
     bottom: 0;
-    padding-top: 100px;
+    padding-top: 120px;
     background-color: white;
     z-index: 10;
 }
@@ -317,24 +317,12 @@ header {
     /* background-color: #19dcea; */
 }
 
-.project-text p {
+/* .project-text p {
     font-size: 18px;
     font-weight: lighter;
     margin-top: 15px;
     line-height: 1.4;
-}
-
-.project-text h1 {
-    font-size: 50px;
-    font-weight: lighter;
-
-    /* font-weight: normal; */
-}
-
-.technologies {
-    font-weight: bold;
-    font-size: 30px;
-}
+} */
 
 /* .page-route {
     height: 60vh;
@@ -609,3 +597,25 @@ header {
     top: 200px;
     height: 60px;
 } */
+
+.project-text h1 {
+    font-size: 50px;
+    /* font-weight: lighter; */
+    /* font-family: "Golia"; */
+
+    font-weight: normal;
+}
+
+.technologies {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+.text {
+    font-size: 25px;
+    font-weight: normal;
+    margin-top: 15px;
+    line-height: 1.4;
+}
