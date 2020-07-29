@@ -36,7 +36,7 @@ export default function SocialNetwork() {
     });
 
     return (
-        <div className="project-container">
+        <div className="project-container-three">
             <Waypoint
                 bottomOffset="30%"
                 onEnter={() => {
@@ -93,14 +93,13 @@ export default function SocialNetwork() {
                         <div className="project-text">
                             <h1>Social Network</h1>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nullam euismod felis quis
-                                ultrices eleifend. Quisque placerat vehicula
-                                purus, at dapibus mi dignissim at. In mi ex,
-                                consectetur quis vulputate id, blandit quis
-                                nisi. Mauris nec urna vel nisl fringilla
-                                iaculis. Nullam feugiat interdum ante vitae
-                                lobortis. Aenean fringilla leo a purus egestas
+                                The Social Network is a single-page web
+                                application designed to bring people together.
+                                It enables the user to create a personal
+                                profile, upload a profile picture and connect
+                                with other users by friend requests as well as a
+                                chat room. technologies used - JavaScript, AWS
+                                S3, Node, PostgreSQL, Socket.IO, React and Redux
                             </p>
                         </div>
                     </div>

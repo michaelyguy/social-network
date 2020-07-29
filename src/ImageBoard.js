@@ -93,15 +93,14 @@ export default function ImageBoard() {
                         <div className="project-text">
                             <h1>Image Board</h1>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nullam euismod felis quis
-                                ultrices eleifend. Quisque placerat vehicula
-                                purus, at dapibus mi dignissim at. In mi ex,
-                                consectetur quis vulputate id, blandit quis
-                                nisi. Mauris nec urna vel nisl fringilla
-                                iaculis. Nullam feugiat interdum ante vitae
-                                lobortis. Aenean fringilla leo a purus egestas
+                                Photo Diary is a collection of memories about
+                                Berlin's nightlife. Users can upload images with
+                                a title and description, for others to see and
+                                comment on. All brought together in a clean yet
+                                unconventional design.
                             </p>
+                            technologies used - JavaScript, Handlebars, Vue, AWS
+                            S3, Node, Express and PostgreSQL
                         </div>
                     </div>
                 </animated.div>
