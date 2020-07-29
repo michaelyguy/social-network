@@ -59,7 +59,14 @@ export default function ImageBoard() {
                     className="project-wrapper-two front"
                 >
                     <div className="project-box">
-                        <img src="image-board.gif" className="gif-project" />
+                        <video
+                            autoPlay="autoplay"
+                            muted
+                            loop
+                            className="gif-project"
+                        >
+                            <source src="image-board.mp4" type="video/mp4" />
+                        </video>
                     </div>
                 </animated.div>
 
