@@ -600,16 +600,17 @@ header {
 
 .project-text h1 {
     font-size: 50px;
-    /* font-weight: lighter; */
+    /* font-weight: bold; */
     /* font-family: "Golia"; */
 
     font-weight: normal;
 }
 
 .technologies {
-    font-style: italic;
-    font-weight: lighter;
-    font-size: 25px;
+    margin-top: 1.17em;
+    /* font-style: italic; */
+    /* font-weight: bold; */
+    font-size: 19px;
     line-height: 1.4;
 }
 

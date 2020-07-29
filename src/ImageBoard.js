@@ -101,7 +101,7 @@ export default function ImageBoard() {
                             </p>
 
                             <p className="technologies">
-                                technologies used - JavaScript, Handlebars, Vue,
+                                Technologies used - JavaScript, Handlebars, Vue,
                                 AWS S3, Node, Express and PostgreSQL
                             </p>
                         </div>

@@ -106,7 +106,7 @@ export default function Petition() {
                             </p>
 
                             <p className="technologies">
-                                technologies used - jQuery, Handlebars, Node,
+                                Technologies used - jQuery, Handlebars, Node,
                                 Express and PostgreSQL
                             </p>
                         </div>
