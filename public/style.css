@@ -190,7 +190,7 @@ header {
 
 /* CHECK OUT CODE */
 
-.checkout {
+.welcome-container {
     position: fixed;
     left: 0;
     right: 0;
@@ -200,7 +200,7 @@ header {
     z-index: 15;
     /* background-color: black; */
 }
-.checkout-left {
+.welcome-left {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -208,17 +208,15 @@ header {
     width: 50%;
     height: 100%;
     background: black;
-
     font-size: 200px;
 }
-.checkout-right {
+.welcome-right {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     z-index: 5;
     width: 50%;
     height: 100%;
-
     background: black;
     font-size: 200px;
 }

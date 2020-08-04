@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSpring, animated, config } from "react-spring";
 
 export default function Welcome({ isOpen }) {
@@ -8,7 +8,7 @@ export default function Welcome({ isOpen }) {
     });
     return (
         <div
-            className="checkout"
+            className="welcome-container"
             style={{ pointerEvents: isOpen ? "all" : "none" }}
         >
             <animated.div
@@ -17,7 +17,7 @@ export default function Welcome({ isOpen }) {
                         (x) => `translate3d(${x * -1}%,0,0)`
                     ),
                 }}
-                className="checkout-left"
+                className="welcome-left"
             >
                 <h1 className="open">he</h1>
             </animated.div>
@@ -25,7 +25,7 @@ export default function Welcome({ isOpen }) {
                 style={{
                     transform: x.interpolate((x) => `translate3d(${x}%,0,0)`),
                 }}
-                className="checkout-right"
+                className="welcome-right"
             >
                 <h1 className="open">llo</h1>
             </animated.div>
