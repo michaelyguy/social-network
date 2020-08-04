@@ -81,12 +81,6 @@ export default function App() {
                 )}
             </header>
             <main>
-                <Petition />
-
-                <ImageBoard />
-
-                <SocialNetwork />
-
                 <div onClick={() => setClick(!click)}>
                     <animated.h3
                         style={{
@@ -121,6 +115,12 @@ export default function App() {
                         About
                     </animated.h3>
                 </div>
+                <Petition />
+
+                <ImageBoard />
+
+                <SocialNetwork />
+
                 <About style={aboutAnimation} />
 
                 <Welcome isOpen={isNavOpen} />

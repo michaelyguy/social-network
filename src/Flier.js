@@ -21,7 +21,10 @@ export default function Flier() {
         <div>
             {transition.map(({ item, key, props }) => (
                 <animated.div key="1" style={props} className="flier">
-                    <img src={item ? "smile.png" : "smile2.png"} />
+                    <img
+                        className="smile"
+                        src={item ? "smile.png" : "smile2.png"}
+                    />
                 </animated.div>
             ))}
             <div onClick={() => setClick(!click)}>
@@ -52,34 +55,3 @@ export default function Flier() {
         </div>
     );
 }
-
-// import React, { useState } from "react";
-// import { useTransition, animated } from "react-spring";
-
-// export default function Flier() {
-//     const [whatMood, setWhatMood] = useState(true);
-//     const transition = useTransition(whatMood, null, {
-//         from: { opacity: 0 },
-//         enter: { opacity: 1 },
-//         leave: { opacity: 0 },
-//     });
-
-//     return (
-//         <div>
-//             {transition.map(({ item, key, props }) =>
-//                 item ? (
-//                     <animated.div key={key} style={props} className="flier">
-//                         <img src="smile.png" />
-//                     </animated.div>
-//                 ) : (
-//                     <animated.div key={key} style={props} className="flier">
-//                         <img src="smile2.png" />
-//                     </animated.div>
-//                 )
-//             )}
-//             <h1 className="mood" onClick={() => setWhatMood(!whatMood)}>
-//                 Change Mood
-//             </h1>
-//         </div>
-//     );
-// }
