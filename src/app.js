@@ -22,9 +22,7 @@ export default function App() {
     //////ABOUT/////////
     const [isAboutOpen, setAbout] = useState(false);
     const aboutAnimation = useSpring({
-        transform: isAboutOpen
-            ? `translate3d(0,0,0) scale(1)`
-            : `translate3d(0,100%,0) scale(0.6)`,
+        transform: isAboutOpen ? `translate3d(0,0,0)` : `translate3d(0,100%,0)`,
     });
 
     // const fadeHeader = useSpring({
