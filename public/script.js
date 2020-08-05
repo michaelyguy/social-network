@@ -16,14 +16,4 @@
     }
 
     move();
-    // for (var i = 0; i < link.length; i++) {
-    //     link[i].addEventListener("mouseover", function (event) {
-    //         cancelAnimationFrame(reqId);
-    //         event.target.style.color = "black";
-    //     });
-    //     link[i].addEventListener("mouseout", function (event) {
-    //         requestAnimationFrame(move);
-    //         event.target.style.color = "saddlebrown";
-    //     });
-    // }
 })();
