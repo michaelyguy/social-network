@@ -6,15 +6,20 @@ export default function About({ style }) {
         <animated.div className="about-wrapper" style={style}>
             <div className="about-container">
                 <div className="about-position">
-                    {/* <h1 className="nice-to-meet">nice to meet you!</h1> */}
-
                     <p>
-                        I am a developer who is a designer first. I believe that
-                        websites and web apps should not only be functional but
-                        also pleasing to look at. My approach is UI/UX-driven.
-                        For me, to make sure that the user gets results with
-                        ease and comfort is as important as getting the correct
-                        results.
+                        I am a developer who is a{" "}
+                        <a
+                            className="designer-link"
+                            href="https://guymichaely.com/"
+                            target="_blank"
+                        >
+                            designer
+                        </a>{" "}
+                        first. I believe that websites and web apps should not
+                        only be functional but also pleasing to look at. My
+                        approach is UI/UX-driven. For me, to make sure that the
+                        user gets results with ease and comfort is as important
+                        as getting the correct results.
                     </p>
                     <br />
                     <p>

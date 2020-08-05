@@ -7,6 +7,7 @@ import Flier from "./Flier";
 import Petition from "./Petition";
 import ImageBoard from "./ImageBoard";
 import SocialNetwork from "./SocialNetwork";
+import Try from "./Try";
 // import Modal from "./Modal";
 // import Accordion from "./Accordion";
 
@@ -80,56 +81,45 @@ export default function App() {
                     </h3>
                 )}
             </header>
-            <main>
-                <div onClick={() => setClick(!click)}>
-                    <animated.h3
-                        style={{
-                            transform: x
-                                .interpolate({
-                                    range: [
-                                        0,
-                                        0.25,
-                                        0.35,
-                                        0.45,
-                                        0.55,
-                                        0.65,
-                                        0.75,
-                                        1,
-                                    ],
-                                    output: [
-                                        1,
-                                        0.97,
-                                        0.9,
-                                        1.1,
-                                        0.9,
-                                        1.1,
-                                        1.03,
-                                        1,
-                                    ],
-                                })
-                                .interpolate((x) => `scale(${x})`),
-                        }}
-                        className="abt-btn"
-                        onClick={() => setAbout(!isAboutOpen)}
-                    >
-                        About
-                    </animated.h3>
-                </div>
-                <Petition />
 
-                <ImageBoard />
+            <div onClick={() => setClick(!click)}>
+                <animated.h3
+                    style={{
+                        transform: x
+                            .interpolate({
+                                range: [
+                                    0,
+                                    0.25,
+                                    0.35,
+                                    0.45,
+                                    0.55,
+                                    0.65,
+                                    0.75,
+                                    1,
+                                ],
+                                output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
+                            })
+                            .interpolate((x) => `scale(${x})`),
+                    }}
+                    className="abt-btn"
+                    onClick={() => setAbout(!isAboutOpen)}
+                >
+                    About
+                </animated.h3>
+            </div>
+            {/* <Try /> */}
 
-                <SocialNetwork />
+            <Petition />
 
-                <About style={aboutAnimation} />
+            <ImageBoard />
 
-                <Welcome isOpen={isNavOpen} />
+            <SocialNetwork />
 
-                <Flier />
-            </main>
-            <footer>
-                <div className="footer"></div>
-            </footer>
+            <About style={aboutAnimation} />
+
+            <Welcome isOpen={isNavOpen} />
+
+            <Flier />
         </div>
     );
 }
