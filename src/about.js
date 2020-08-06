@@ -31,6 +31,30 @@ export default function About({ style }) {
                         aspects of web development—from planning to deployment.
                         I love art and I love to code.
                     </p>
+                    <br />
+                    <h1>
+                        <a
+                            className="say-hey"
+                            href="mailto: michaelyguy@gmail.com"
+                        >
+                            Let's talk!
+                        </a>
+                    </h1>
+                    <a
+                        className="designer-link"
+                        href="https://www.linkedin.com/in/guymichaely/"
+                        target="_blank"
+                    >
+                        linkdin
+                    </a>{" "}
+                    <a
+                        className="designer-link"
+                        href="https://github.com/michaelyguy"
+                        target="_blank"
+                    >
+                        {" "}
+                        github
+                    </a>
                 </div>
             </div>
             <img src="me.png" className="my-pic" />

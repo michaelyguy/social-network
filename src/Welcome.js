@@ -19,7 +19,7 @@ export default function Welcome({ isOpen }) {
                 }}
                 className="welcome-left"
             >
-                <h1 className="open">he</h1>
+                <h1 id="open">he</h1>
             </animated.div>
             <animated.div
                 style={{
@@ -27,7 +27,7 @@ export default function Welcome({ isOpen }) {
                 }}
                 className="welcome-right"
             >
-                <h1 className="open">llo</h1>
+                <h1 id="open">llo</h1>
             </animated.div>
         </div>
     );

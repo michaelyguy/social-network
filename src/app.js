@@ -7,7 +7,6 @@ import Flier from "./Flier";
 import Petition from "./Petition";
 import ImageBoard from "./ImageBoard";
 import SocialNetwork from "./SocialNetwork";
-import Try from "./Try";
 // import Modal from "./Modal";
 // import Accordion from "./Accordion";
 
@@ -52,7 +51,6 @@ export default function App() {
     return (
         <div>
             <Ticker />
-
             {/* <Accordion /> */}
             <iframe
                 className="clock"
@@ -62,7 +60,6 @@ export default function App() {
                 height="57"
                 allowtransparency="true"
             ></iframe>
-
             {/* <Modal /> */}
             {/* <animated.header style={fadeHeader}>
                 <h1>Guy Michaely</h1>
@@ -74,14 +71,13 @@ export default function App() {
             <header>
                 {isNavOpen && (
                     <h3
-                        className="menu-btn"
+                        className="let-me-in"
                         onClick={() => setNavOpen(!isNavOpen)}
                     >
                         {`->`} Please let me in
                     </h3>
                 )}
             </header>
-
             <div onClick={() => setClick(!click)}>
                 <animated.h3
                     style={{
@@ -107,18 +103,12 @@ export default function App() {
                     About
                 </animated.h3>
             </div>
-            {/* <Try /> */}
-
             <Petition />
-
             <ImageBoard />
-
             <SocialNetwork />
 
             <About style={aboutAnimation} />
-
             <Welcome isOpen={isNavOpen} />
-
             <Flier />
         </div>
     );
