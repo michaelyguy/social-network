@@ -24,10 +24,10 @@ export default function App() {
         transform: isAboutOpen ? `translate3d(0,0,0)` : `translate3d(0,100%,0)`,
     });
 
-    // const fadeHeader = useSpring({
-    //     opacity: 1,
-    //     from: { opacity: 0 },
-    // });
+    const fade = useSpring({
+        opacity: 1,
+        from: { opacity: 0 },
+    });
 
     ///// ANIMATION FOR ABOUT SLIDE //////
     // const [showAbout, setShowAbout] = useState(false);
@@ -67,16 +67,17 @@ export default function App() {
                     Mav
                 </h3>
             </animated.header> */}
-            <header>
-                {isWelcomeOpen && (
-                    <h3
-                        className="let-me-in"
-                        onClick={() => setWelcome(!isWelcomeOpen)}
-                    >
-                        {`->`} Please let me in
-                    </h3>
-                )}
-            </header>
+
+            {isWelcomeOpen && (
+                <animated.h3
+                    style={fade}
+                    className="let-me-in"
+                    onClick={() => setWelcome(!isWelcomeOpen)}
+                >
+                    {`->`} Please let me in
+                </animated.h3>
+            )}
+
             <div onClick={() => setClick(!click)}>
                 <animated.h3
                     style={{

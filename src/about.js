@@ -34,7 +34,7 @@ export default function About({ style }) {
                     <br />
                     <h1>
                         <a
-                            className="say-hey"
+                            className="lets-talk"
                             href="mailto: michaelyguy@gmail.com"
                         >
                             Let's talk!

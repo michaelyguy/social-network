@@ -6,10 +6,18 @@ export default function Welcome({ isOpen }) {
         x: isOpen ? 0 : 100,
         config: config.slow,
     });
+
+    const fade = useSpring({
+        opacity: 1,
+        from: { opacity: 0 },
+    });
+
     return (
         <div
             className="welcome-container"
-            style={{ pointerEvents: isOpen ? "all" : "none" }}
+            style={{
+                pointerEvents: isOpen ? "all" : "none",
+            }}
         >
             <animated.div
                 style={{
@@ -19,7 +27,9 @@ export default function Welcome({ isOpen }) {
                 }}
                 className="welcome-left"
             >
-                <h1 id="open">he</h1>
+                <animated.h1 style={fade} id="open">
+                    he
+                </animated.h1>
             </animated.div>
             <animated.div
                 style={{
@@ -27,7 +37,9 @@ export default function Welcome({ isOpen }) {
                 }}
                 className="welcome-right"
             >
-                <h1 id="open">llo</h1>
+                <animated.h1 style={fade} id="open">
+                    llo
+                </animated.h1>
             </animated.div>
         </div>
     );
