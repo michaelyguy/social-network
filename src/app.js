@@ -29,7 +29,6 @@ export default function App() {
         from: { opacity: 0 },
     });
 
-    ///// ANIMATION FOR ABOUT SLIDE //////
     // const [showAbout, setShowAbout] = useState(false);
     // const slideAbout = useSpring({
     //     opacity: showAbout ? 1 : 0,
