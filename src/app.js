@@ -52,7 +52,7 @@ export default function App() {
             {/* <Accordion /> */}
             <iframe
                 className="clock"
-                src="http://free.timeanddate.com/clock/i7dvxyp2/n37/fs48/tct/pct/th1"
+                src="https://free.timeanddate.com/clock/i7dvxyp2/n37/fs48/tct/pct/th1"
                 frameBorder="0"
                 width="189"
                 height="57"
