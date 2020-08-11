@@ -13,7 +13,6 @@ body {
     font-family: Helvetica, sans-serif;
     -webkit-animation: body 2s linear infinite alternate both;
     animation: body 2s linear infinite alternate both;
-    background-color: blue;
 }
 @-webkit-keyframes body {
     0% {
