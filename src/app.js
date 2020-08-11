@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
-import About from "./About";
+import About from "./about";
 import Welcome from "./Welcome";
 import Ticker from "./Ticker";
 import Flier from "./Flier";
