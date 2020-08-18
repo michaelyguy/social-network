@@ -17,18 +17,18 @@ body {
 }
 @-webkit-keyframes body {
     0% {
-        background: brown;
+        background: #19dcea;
     }
     100% {
-        background: burlywood;
+        background: #b22cff;
     }
 }
 @keyframes body {
     0% {
-        background: blueviolet;
+        background: #19dcea;
     }
     100% {
-        background: hotpink;
+        background: #b22cff;
     }
 }
 
