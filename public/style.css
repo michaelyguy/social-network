@@ -13,8 +13,8 @@ body {
     font-family: Helvetica, sans-serif;
     -webkit-animation: body 2s linear infinite alternate both;
     animation: body 2s linear infinite alternate both;
-    cursor: url("/click.png"), auto;
 }
+
 @-webkit-keyframes body {
     0% {
         background: #19dcea;
@@ -135,7 +135,7 @@ header {
     animation: welcome 2s linear infinite alternate both;
 }
 
-:root {
+/* :root {
     --purp: #524763;
     --darkPurp: #373142;
     --xtraPurp: #191324;
@@ -150,7 +150,7 @@ header {
     --white-40: #f2f2f2;
     --white-20: #f5f4f6;
     --white: #fff;
-}
+} */
 
 .about-wrapper {
     position: fixed;
@@ -260,7 +260,7 @@ header {
 }
 
 .flip {
-    cursor: pointer;
+    /* cursor: pointer; */
     will-change: transform, opacity;
 }
 .project-wrapper-one {
@@ -300,6 +300,8 @@ header {
 
 .project-text {
     width: 40%;
+    cursor: url("flip-btn.png"), auto;
+
     /* margin-left: 60px; */
     /* background-color: #19dcea; */
 }
@@ -327,16 +329,15 @@ header {
 .img-project {
     height: 370px;
     width: 600px;
-    /* box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.5s; */
     will-change: transform;
-    /* border: 1.5px solid black; */
     object-fit: cover;
+    cursor: url("flip-btn.png"), auto;
 }
 
 .gif-project {
     position: relative;
     width: 55%;
+    cursor: url("flip-btn.png"), auto;
 }
 
 .card:hover {
@@ -347,8 +348,6 @@ header {
     z-index: 11;
     width: 100%;
     overflow: hidden;
-    /* background-color: white; */
-    /* border-bottom: 1.5px solid black; */
     height: 75px;
     position: fixed;
     top: 15px;
