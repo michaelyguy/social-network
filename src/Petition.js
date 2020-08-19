@@ -80,7 +80,7 @@ export default function Petition() {
                 >
                     <div className="project-box">
                         <animated.img
-                            src="petition.png"
+                            src="petition.jpg"
                             className="img-project"
                             onMouseMove={({ clientX: x, clientY: y }) =>
                                 setHover({ xys: calc(x, y) })
