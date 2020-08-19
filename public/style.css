@@ -13,6 +13,7 @@ body {
     font-family: Helvetica, sans-serif;
     -webkit-animation: body 2s linear infinite alternate both;
     animation: body 2s linear infinite alternate both;
+    cursor: url("cursors-01.svg"), auto;
 }
 
 @-webkit-keyframes body {
