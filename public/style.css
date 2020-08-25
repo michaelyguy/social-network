@@ -244,6 +244,7 @@ header {
     animation: welcome 2s linear infinite alternate both;
     font-family: "Golia";
     cursor: pointer;
+    cursor: url("cursor-open.png"), auto;
 }
 
 @-webkit-keyframes welcome {
