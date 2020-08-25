@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSpring, animated, config } from "react-spring";
 
 export default function Welcome() {
