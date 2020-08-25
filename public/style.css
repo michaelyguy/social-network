@@ -126,7 +126,7 @@ header {
     }
 }
 
-.let-me-in {
+/* .let-me-in {
     position: fixed;
     bottom: 230px;
     left: 44%;
@@ -134,7 +134,7 @@ header {
     cursor: pointer;
     -webkit-animation: welcome 2s linear infinite alternate both;
     animation: welcome 2s linear infinite alternate both;
-}
+} */
 
 /* :root {
     --purp: #524763;
@@ -214,6 +214,7 @@ header {
     bottom: 0;
     display: flex;
     z-index: 15;
+    overflow: hidden;
     /* background-color: black; */
 }
 .welcome-left {
@@ -224,7 +225,8 @@ header {
     width: 50%;
     height: 100%;
     background: black;
-    font-size: 200px;
+    font-size: 165px;
+    overflow: hidden;
 }
 .welcome-right {
     display: flex;
@@ -234,13 +236,13 @@ header {
     width: 50%;
     height: 100%;
     background: black;
-    font-size: 200px;
+    font-size: 165px;
+    overflow: hidden;
 }
 #open {
     -webkit-animation: welcome 2s linear infinite alternate both;
     animation: welcome 2s linear infinite alternate both;
     font-family: "Golia";
-    margin-top: -35px;
 }
 
 @-webkit-keyframes welcome {
