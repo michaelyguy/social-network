@@ -1,9 +1,11 @@
 import React from "react";
 import { useSpring, animated, config } from "react-spring";
 
-export default function Welcome({ isOpen }) {
+export default function Welcome() {
+    const [isWelcomeOpen, setWelcome] = useState(true);
+
     const { x } = useSpring({
-        x: isOpen ? 0 : 100,
+        x: isWelcomeOpen ? 0 : 100,
         config: config.slow,
     });
 
@@ -16,7 +18,7 @@ export default function Welcome({ isOpen }) {
         <div
             className="welcome-container"
             style={{
-                pointerEvents: isOpen ? "all" : "none",
+                pointerEvents: isWelcomeOpen ? "all" : "none",
             }}
         >
             <animated.div
@@ -27,7 +29,11 @@ export default function Welcome({ isOpen }) {
                 }}
                 className="welcome-left"
             >
-                <animated.h1 style={fade} id="open">
+                <animated.h1
+                    onClick={() => setWelcome(!isWelcomeOpen)}
+                    style={fade}
+                    id="open"
+                >
                     he
                 </animated.h1>
             </animated.div>
@@ -37,7 +43,11 @@ export default function Welcome({ isOpen }) {
                 }}
                 className="welcome-right"
             >
-                <animated.h1 style={fade} id="open">
+                <animated.h1
+                    onClick={() => setWelcome(!isWelcomeOpen)}
+                    style={fade}
+                    id="open"
+                >
                     llo
                 </animated.h1>
             </animated.div>

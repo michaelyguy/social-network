@@ -11,7 +11,7 @@ import SocialNetwork from "./SocialNetwork";
 // import Accordion from "./Accordion";
 
 export default function App() {
-    const [isWelcomeOpen, setWelcome] = useState(true);
+    // const [isWelcomeOpen, setWelcome] = useState(true);
     // const navAnimation = useSpring({
     //     transform: isNavOpen
     //         ? `translate3d(0,0,0) scale(1)`
@@ -67,7 +67,7 @@ export default function App() {
                 </h3>
             </animated.header> */}
 
-            {isWelcomeOpen && (
+            {/* {isWelcomeOpen && (
                 <animated.h3
                     style={fade}
                     className="let-me-in"
@@ -75,7 +75,7 @@ export default function App() {
                 >
                     {`->`} Please let me in
                 </animated.h3>
-            )}
+            )} */}
 
             <div onClick={() => setClick(!click)}>
                 <animated.h3
@@ -107,7 +107,7 @@ export default function App() {
             <SocialNetwork />
 
             <About style={aboutAnimation} />
-            <Welcome isOpen={isWelcomeOpen} />
+            <Welcome />
             <Flier />
         </div>
     );
