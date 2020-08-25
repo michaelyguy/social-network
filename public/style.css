@@ -243,6 +243,7 @@ header {
     -webkit-animation: welcome 2s linear infinite alternate both;
     animation: welcome 2s linear infinite alternate both;
     font-family: "Golia";
+    cursor: pointer;
 }
 
 @-webkit-keyframes welcome {
