@@ -664,3 +664,11 @@ header {
     position: relative;
     object-fit: cover;
 }
+
+.my-pic-svg {
+    background-image: url("me.png");
+    width: 40%;
+    position: absolute;
+    left: 50px;
+    top: 180px;
+}
