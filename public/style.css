@@ -3,21 +3,23 @@
 }
 @font-face {
     font-family: "Golia";
-    src: url("GoliaGolia-Regular.otf");
+    src: url("AttilaSansSharpTrial-Regular.otf");
 }
 
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: "Golia", sans-serif;
+    background-color: #34558b;
 }
 
 .welcome-container h1 {
     font-family: "Golia";
     margin-top: 15px;
     font-size: 60px;
+    color: white;
 }
 
 .welcome-container {
-    border: 1px solid black;
+    /* border: 2px solid white; */
     text-align: center;
     position: relative;
     margin: 0 auto;
@@ -25,13 +27,20 @@ body {
     width: 400px;
     -webkit-animation: roll-in-top 0.6s ease-out both;
     animation: roll-in-top 0.6s ease-out both;
+    color: white;
 }
 
 .inputs-fields {
     display: flex;
     margin: 20px 0;
+
     flex-direction: column;
     align-items: center;
+}
+
+input::placeholder {
+    color: white;
+    background-color: #34558b;
 }
 
 .inputs-fields a {
@@ -43,9 +52,10 @@ body {
 }
 
 input {
-    height: 18px;
+    height: 20px;
     margin: 5px 0;
     text-align: center;
+    border: 0;
 }
 
 .logo-small {
