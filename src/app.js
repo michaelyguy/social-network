@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import About from "./about";
 import Welcome from "./Welcome";
@@ -27,6 +27,11 @@ export default function App() {
     const fade = useSpring({
         opacity: 1,
         from: { opacity: 0 },
+    });
+
+    useEffect(() => {
+        console.log("heyyy");
+        document.body.classList.add("unscroll");
     });
 
     // const [showAbout, setShowAbout] = useState(false);

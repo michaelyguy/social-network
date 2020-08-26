@@ -36,6 +36,8 @@ export default function Petition() {
         config: config.slow,
     });
 
+    const mobile = window.innerWidth < 900 ? true : false;
+
     return (
         <div className="project-container-one">
             <Waypoint
@@ -47,29 +49,31 @@ export default function Petition() {
 
             <div
                 style={animation}
-                onClick={() => setFlipped((state) => !state)}
+                onClick={() => (mobile ? "" : setFlipped((state) => !state))}
                 className="flip"
             >
-                <animated.div
-                    style={{
-                        opacity,
-                        transform: transform.interpolate(
-                            (t) => `${t} rotateX(180deg)`
-                        ),
-                    }}
-                    className="project-wrapper-one front"
-                >
-                    <div className="project-box">
-                        <video
-                            autoPlay="autoplay"
-                            muted
-                            loop
-                            className="gif-project"
-                        >
-                            <source src="petition.mp4" type="video/mp4" />
-                        </video>
-                    </div>
-                </animated.div>
+                {!mobile && (
+                    <animated.div
+                        style={{
+                            opacity,
+                            transform: transform.interpolate(
+                                (t) => `${t} rotateX(180deg)`
+                            ),
+                        }}
+                        className="project-wrapper-one front"
+                    >
+                        <div className="project-box">
+                            <video
+                                autoPlay="autoplay"
+                                muted
+                                loop
+                                className="gif-project"
+                            >
+                                <source src="petition.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </animated.div>
+                )}
 
                 <animated.div
                     className="project-wrapper-one back"
@@ -79,18 +83,34 @@ export default function Petition() {
                     }}
                 >
                     <div className="project-box">
-                        <animated.img
-                            src="petition.jpg"
-                            className="img-project"
-                            onMouseMove={({ clientX: x, clientY: y }) =>
-                                setHover({ xys: calc(x, y) })
-                            }
-                            onMouseLeave={() => setHover({ xys: [0, 0, 1] })}
-                            style={{
-                                transform: hover.xys.interpolate(trans),
-                                config: config.slow,
-                            }}
-                        />
+                        {!mobile && (
+                            <animated.img
+                                src="petition.jpg"
+                                className="img-project"
+                                onMouseMove={({ clientX: x, clientY: y }) =>
+                                    setHover({ xys: calc(x, y) })
+                                }
+                                onMouseLeave={() =>
+                                    setHover({ xys: [0, 0, 1] })
+                                }
+                                style={{
+                                    transform: hover.xys.interpolate(trans),
+                                    config: config.slow,
+                                }}
+                            />
+                        )}
+
+                        {mobile && (
+                            <video
+                                autoPlay="autoplay"
+                                muted
+                                loop
+                                className="gif-project"
+                            >
+                                <source src="petition.mp4" type="video/mp4" />
+                            </video>
+                        )}
+
                         <div className="project-text">
                             <h1>Petition</h1>
                             <p className="text">

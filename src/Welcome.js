@@ -4,6 +4,12 @@ import { useSpring, animated, config } from "react-spring";
 export default function Welcome() {
     const [isWelcomeOpen, setWelcome] = useState(true);
 
+    function helloClicked() {
+        setWelcome(!isWelcomeOpen);
+        console.log("heyyyyyy");
+        document.body.classList.remove("unscroll");
+    }
+
     const { x } = useSpring({
         x: isWelcomeOpen ? 0 : 100,
         config: config.slow,
@@ -29,11 +35,7 @@ export default function Welcome() {
                 }}
                 className="welcome-left"
             >
-                <animated.h1
-                    onClick={() => setWelcome(!isWelcomeOpen)}
-                    style={fade}
-                    id="open"
-                >
+                <animated.h1 onClick={helloClicked} style={fade} id="open">
                     he
                 </animated.h1>
             </animated.div>
@@ -43,11 +45,7 @@ export default function Welcome() {
                 }}
                 className="welcome-right"
             >
-                <animated.h1
-                    onClick={() => setWelcome(!isWelcomeOpen)}
-                    style={fade}
-                    id="open"
-                >
+                <animated.h1 onClick={helloClicked} style={fade} id="open">
                     llo
                 </animated.h1>
             </animated.div>
