@@ -1,6 +1,6 @@
 import React from "react";
 import { animated } from "react-spring";
-import Svg from "./Svg";
+// import Svg from "./Svg";
 
 export default function About({ style }) {
     return (
@@ -58,8 +58,8 @@ export default function About({ style }) {
                     </a>
                 </div>
             </div>
-            <Svg />
-            {/* <img src="me.png" className="my-pic" /> */}
+            {/* <Svg /> */}
+            <img src="me.png" className="my-pic" />
         </animated.div>
     );
 }

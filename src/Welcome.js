@@ -6,7 +6,6 @@ export default function Welcome() {
 
     function helloClicked() {
         setWelcome(!isWelcomeOpen);
-        console.log("heyyyyyy");
         document.body.classList.remove("unscroll");
     }
 
