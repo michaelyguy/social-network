@@ -35,6 +35,8 @@ export default function SocialNetwork() {
         config: config.slow,
     });
 
+    const mobile = window.innerWidth < 900 ? true : false;
+
     return (
         <div className="project-container-three">
             <Waypoint
@@ -46,7 +48,7 @@ export default function SocialNetwork() {
 
             <animated.div
                 style={animationThree}
-                onClick={() => setFlipped((state) => !state)}
+                onClick={() => (mobile ? "" : setFlipped((state) => !state))}
                 className="flip"
             >
                 <animated.div

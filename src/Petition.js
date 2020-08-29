@@ -28,7 +28,6 @@ export default function Petition() {
     });
 
     ////////FLIP PROJECT END////////
-
     const [one, toggleOne] = useState(false);
     const animation = useSpring({
         opacity: one ? 1 : 0,
