@@ -223,7 +223,6 @@ header {
 
 .project-wrapper-two {
     height: 60vh;
-    /* background: gray; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -232,11 +231,9 @@ header {
 
 .project-wrapper-three {
     height: 60vh;
-    /* background: lightgray; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-bottom: 25px; */
 }
 
 .project-box {
@@ -419,7 +416,11 @@ header {
     }
 
     .project-wrapper-one {
-        margin-bottom: 100px;
+        margin-bottom: 80px;
+    }
+
+    .project-wrapper-two {
+        margin-bottom: 80px;
     }
 
     .project-box {

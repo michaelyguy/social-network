@@ -48,7 +48,7 @@ export default function ImageBoard() {
 
             <animated.div
                 style={animationTwo}
-                onClick={() => setFlipped((state) => !state)}
+                onClick={() => (mobile ? "" : setFlipped((state) => !state))}
                 className="flip"
             >
                 {!mobile && (
