@@ -12,7 +12,7 @@ export default function ImageBoard() {
     const trans = (x, y, s) =>
         `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-    const [Hover, setHover] = useSpring(() => ({
+    const [hover, setHover] = useSpring(() => ({
         xys: [0, 0, 1],
         config: config.slow,
     }));
@@ -35,6 +35,8 @@ export default function ImageBoard() {
         config: config.slow,
     });
 
+    const mobile = window.innerWidth < 900 ? true : false;
+
     return (
         <div className="project-container">
             <Waypoint
@@ -49,26 +51,31 @@ export default function ImageBoard() {
                 onClick={() => setFlipped((state) => !state)}
                 className="flip"
             >
-                <animated.div
-                    style={{
-                        opacity,
-                        transform: transform.interpolate(
-                            (t) => `${t} rotateX(180deg)`
-                        ),
-                    }}
-                    className="project-wrapper-two front"
-                >
-                    <div className="project-box">
-                        <video
-                            autoPlay="autoplay"
-                            muted
-                            loop
-                            className="gif-project"
-                        >
-                            <source src="image-board.mp4" type="video/mp4" />
-                        </video>
-                    </div>
-                </animated.div>
+                {!mobile && (
+                    <animated.div
+                        style={{
+                            opacity,
+                            transform: transform.interpolate(
+                                (t) => `${t} rotateX(180deg)`
+                            ),
+                        }}
+                        className="project-wrapper-two front"
+                    >
+                        <div className="project-box">
+                            <video
+                                autoPlay="autoplay"
+                                muted
+                                loop
+                                className="gif-project"
+                            >
+                                <source
+                                    src="image-board.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        </div>
+                    </animated.div>
+                )}
 
                 <animated.div
                     className="project-wrapper-two back"
@@ -78,18 +85,36 @@ export default function ImageBoard() {
                     }}
                 >
                     <div className="project-box">
-                        <animated.img
-                            src="image-board.png"
-                            className="img-project"
-                            onMouseMove={({ clientX: x, clientY: y }) =>
-                                setHover({ xys: calc(x, y) })
-                            }
-                            onMouseLeave={() => setHover({ xys: [0, 0, 1] })}
-                            style={{
-                                transform: Hover.xys.interpolate(trans),
-                                config: config.slow,
-                            }}
-                        />
+                        {!mobile && (
+                            <animated.img
+                                src="image-board.png"
+                                className="img-project"
+                                onMouseMove={({ clientX: x, clientY: y }) =>
+                                    setHover({ xys: calc(x, y) })
+                                }
+                                onMouseLeave={() =>
+                                    setHover({ xys: [0, 0, 1] })
+                                }
+                                style={{
+                                    transform: hover.xys.interpolate(trans),
+                                    config: config.slow,
+                                }}
+                            />
+                        )}
+                        {mobile && (
+                            <video
+                                autoPlay="autoplay"
+                                muted
+                                loop
+                                className="gif-project"
+                            >
+                                <source
+                                    src="image-board.mp4"
+                                    type="video/mp4"
+                                />
+                            </video>
+                        )}
+
                         <div className="project-text">
                             <h1>Image Board</h1>
                             <p className="text">
