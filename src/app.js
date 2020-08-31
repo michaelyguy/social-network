@@ -7,6 +7,7 @@ import Flier from "./Flier";
 import Petition from "./Petition";
 import ImageBoard from "./ImageBoard";
 import SocialNetwork from "./SocialNetwork";
+// import Modal from "./Modal";
 
 export default function App() {
     //////ABOUT/////////
@@ -43,33 +44,80 @@ export default function App() {
                 height="57"
                 allowtransparency="true"
             ></iframe>
-            {/* <Modal /> */}
 
             <div onClick={() => setClick(!click)}>
-                <animated.h3
-                    style={{
-                        transform: x
-                            .interpolate({
-                                range: [
-                                    0,
-                                    0.25,
-                                    0.35,
-                                    0.45,
-                                    0.55,
-                                    0.65,
-                                    0.75,
-                                    1,
-                                ],
-                                output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1],
-                            })
-                            .interpolate((x) => `scale(${x})`),
-                    }}
-                    className="abt-btn"
-                    onClick={() => setAbout(!isAboutOpen)}
-                >
-                    About
-                </animated.h3>
+                {!isAboutOpen && (
+                    <animated.h3
+                        style={{
+                            transform: x
+                                .interpolate({
+                                    range: [
+                                        0,
+                                        0.25,
+                                        0.35,
+                                        0.45,
+                                        0.55,
+                                        0.65,
+                                        0.75,
+                                        1,
+                                    ],
+                                    output: [
+                                        1,
+                                        0.97,
+                                        0.9,
+                                        1.1,
+                                        0.9,
+                                        1.1,
+                                        1.03,
+                                        1,
+                                    ],
+                                })
+                                .interpolate((x) => `scale(${x})`),
+                        }}
+                        className="abt-btn"
+                        onClick={() => setAbout(!isAboutOpen)}
+                    >
+                        About
+                    </animated.h3>
+                )}
+                {isAboutOpen && (
+                    <animated.h3
+                        style={{
+                            transform: x
+                                .interpolate({
+                                    range: [
+                                        0,
+                                        0.25,
+                                        0.35,
+                                        0.45,
+                                        0.55,
+                                        0.65,
+                                        0.75,
+                                        1,
+                                    ],
+                                    output: [
+                                        1,
+                                        0.97,
+                                        0.9,
+                                        1.1,
+                                        0.9,
+                                        1.1,
+                                        1.03,
+                                        1,
+                                    ],
+                                })
+                                .interpolate((x) => `scale(${x})`),
+                        }}
+                        className="abt-btn"
+                        onClick={() => setAbout(!isAboutOpen)}
+                    >
+                        Close
+                    </animated.h3>
+                )}
+                {/* {isAboutOpen && <h3>Projects</h3>} */}
+                {/* <Modal style={aboutAnimation} /> */}
             </div>
+
             <Petition />
             <ImageBoard />
             <SocialNetwork />

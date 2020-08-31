@@ -382,14 +382,28 @@ header {
     .unscroll {
         overflow: unset;
     }
-}
-
-@media screen and (max-width: 900px) {
     .my-pic {
         width: 85%;
         top: 0;
         position: relative;
     }
+    .about-container {
+        position: unset;
+        width: 100%;
+    }
+
+    .about-position {
+        width: unset;
+        margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /* .my-pic {
+        width: 85%;
+        top: 0;
+        position: relative;
+    } */
 
     .abt-btn {
         left: 20px;
@@ -453,7 +467,7 @@ header {
         font-size: 15px;
     }
 
-    .about-container {
+    /* .about-container {
         position: unset;
         width: 100%;
     }
@@ -461,7 +475,7 @@ header {
     .about-position {
         width: unset;
         margin: 0 20px;
-    }
+    } */
 }
 
 .my-pic-svg {
@@ -470,4 +484,20 @@ header {
     position: absolute;
     left: 50px;
     top: 180px;
+}
+
+#svg1 {
+    fill: red;
+    animation: round 10s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes round {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
 }
