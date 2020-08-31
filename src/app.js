@@ -7,6 +7,7 @@ import Flier from "./Flier";
 import Petition from "./Petition";
 import ImageBoard from "./ImageBoard";
 import SocialNetwork from "./SocialNetwork";
+import Copy from "./Copy";
 
 export default function App() {
     //////ABOUT/////////
@@ -71,6 +72,7 @@ export default function App() {
                 </animated.h3>
             </div>
             <Petition />
+            <Copy />
             <ImageBoard />
             <SocialNetwork />
 
