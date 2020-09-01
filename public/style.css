@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    /* overflow-x: hidden; */
 }
 
 @font-face {
@@ -14,7 +13,6 @@ body {
     -webkit-animation: body 2s linear infinite alternate both;
     animation: body 2s linear infinite alternate both;
     cursor: url("cursors-01.svg"), auto;
-    /* overflow: hidden; */
 }
 
 @-webkit-keyframes body {
@@ -32,15 +30,6 @@ body {
     100% {
         background: #b22cff;
     }
-}
-
-header {
-    /* width: 99.5vw; */
-    /* font-family: "Golia"; */
-    margin: 5px 5px;
-    display: flex;
-    justify-content: space-between;
-    /* position: fixed; */
 }
 
 .flier {
@@ -399,12 +388,6 @@ header {
 }
 
 @media screen and (max-width: 900px) {
-    /* .my-pic {
-        width: 85%;
-        top: 0;
-        position: relative;
-    } */
-
     .abt-btn {
         left: 20px;
     }
@@ -437,6 +420,10 @@ header {
         margin-bottom: 80px;
     }
 
+    .project-wrapper-three {
+        margin-bottom: 80px;
+    }
+
     .project-box {
         flex-direction: column;
         justify-content: center;
@@ -466,16 +453,6 @@ header {
     .technologies {
         font-size: 15px;
     }
-
-    /* .about-container {
-        position: unset;
-        width: 100%;
-    }
-
-    .about-position {
-        width: unset;
-        margin: 0 20px;
-    } */
 }
 
 .my-pic-svg {

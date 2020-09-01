@@ -12,18 +12,26 @@ import SocialNetwork from "./SocialNetwork";
 export default function App() {
     //////ABOUT/////////
     const [isAboutOpen, setAbout] = useState(false);
+
     const aboutAnimation = useSpring({
         transform: isAboutOpen ? `translate3d(0,0,0)` : `translate3d(0,100%,0)`,
     });
 
-    // const fade = useSpring({
-    //     opacity: 1,
-    //     from: { opacity: 0 },
-    // });
-
     useEffect(() => {
         document.body.classList.add("unscroll");
-    });
+    }, []);
+
+    function openAbout() {
+        console.log("open clicked");
+        setAbout(!isAboutOpen);
+        document.body.classList.add("unscroll");
+    }
+
+    function closeAbout() {
+        console.log("closed clicked");
+        setAbout(!isAboutOpen);
+        document.body.classList.remove("unscroll");
+    }
 
     /////animation on the btn/////
     const [click, setClick] = useState(true);
@@ -75,7 +83,7 @@ export default function App() {
                                 .interpolate((x) => `scale(${x})`),
                         }}
                         className="abt-btn"
-                        onClick={() => setAbout(!isAboutOpen)}
+                        onClick={openAbout}
                     >
                         About
                     </animated.h3>
@@ -109,13 +117,11 @@ export default function App() {
                                 .interpolate((x) => `scale(${x})`),
                         }}
                         className="abt-btn"
-                        onClick={() => setAbout(!isAboutOpen)}
+                        onClick={closeAbout}
                     >
                         Close
                     </animated.h3>
                 )}
-                {/* {isAboutOpen && <h3>Projects</h3>} */}
-                {/* <Modal style={aboutAnimation} /> */}
             </div>
 
             <Petition />
