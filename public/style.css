@@ -8,7 +8,7 @@
 
 body {
     font-family: "Golia", sans-serif;
-    background-color: #34558b;
+    background-color: whitesmoke;
 }
 
 .welcome-container h1 {
@@ -276,6 +276,7 @@ header {
 }
 
 .user-info {
+    background: thistle;
     display: flex;
     height: 80vh;
     flex-direction: column;
@@ -283,6 +284,7 @@ header {
 }
 
 .my-user-container {
+    /* background: teal; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -299,17 +301,23 @@ header {
 }
 
 .my-user-info {
-    position: relative;
-    display: flex;
-    margin-top: 15px;
-    display: flex;
+    /* background: grey; */
+    /* position: relative; */
+    /* display: flex;
+    flex-direction: column;
+    margin-top: 15px; */
     border: 1px solid black;
-    width: 700px;
-    margin: 30px 15px;
+    /* margin: 30px 15px; */
     -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         0.5s both;
     animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s
         both;
+}
+
+.name {
+    border-bottom: 1px solid black;
+    padding: 5px 10px 12px 5px;
+    text-align: center;
 }
 
 .uploader-container {
@@ -362,7 +370,7 @@ header {
 }
 
 .user-info-text p {
-    margin-top: 10px;
+    margin: 10px;
     font-size: 15px;
 }
 
@@ -371,11 +379,20 @@ header {
     bottom: 10px;
 }
 .bio-btn {
-    margin: 15px 0;
+    /* margin: 10px; */
+    margin: 10px 0;
+    background: transparent;
+    /* box-shadow: 0px 0px 0px transparent; */
+    border: 0px solid transparent;
+    border-top: 1px solid black;
+    width: 100%;
+    cursor: pointer;
+    /* text-shadow: 0px 0px 0px transparent; */
 }
 
 .user-info-text {
-    margin: 10px;
+    border-top: 1px solid black;
+    text-align: center;
 }
 
 .each-user h2 {

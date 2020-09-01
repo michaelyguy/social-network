@@ -1,5 +1,5 @@
 import React from "react";
-import ProfilePic from "./profilepic";
+// import ProfilePic from "./profilepic";
 import BioEditor from "./bioeditor";
 
 export default function Profile(props) {
@@ -10,20 +10,11 @@ export default function Profile(props) {
     return (
         <div className="my-user-container">
             <div className="my-user-info">
+                <h2 className="name">
+                    {props.first} {props.last}
+                </h2>
                 <img className="my-userpic" src={props.profilePic} />
                 <div className="user-info-text">
-                    <h2>
-                        {props.first} {props.last}
-                    </h2>
-
-                    {/* <ProfilePic
-                        first={props.first}
-                        last={props.last}
-                        profilePic={props.profilePic}
-                        uploaderIsVisible={props.uploaderIsVisible}
-                        toggleModal={props.toggleModal}
-                        newProfilePic={props.newProfilePic}
-                    /> */}
                     <BioEditor
                         setBio={props.setBio}
                         officialBio={props.officialBio}
