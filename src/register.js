@@ -29,7 +29,18 @@ export default function Register() {
                 onChange={handleChange}
             />
             <button onClick={handleClick}>Submit</button>
-            <Link to="/login">Click here to Log in!</Link>
+            <p>
+                {" "}
+                already registered? <Link to="/login">click here</Link>
+            </p>
+
+            {/* DRAG
+            <div id="mydiv">
+                <div id="mydivheader">Click here to move</div>
+                <p>Move</p>
+                <p>this</p>
+                <p>DIV</p>
+            </div> */}
         </div>
     );
 }

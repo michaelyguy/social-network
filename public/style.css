@@ -1,46 +1,71 @@
 * {
     margin: 0;
+    padding: 0;
 }
 @font-face {
     font-family: "Golia";
-    src: url("AttilaSansSharpTrial-Regular.otf");
+    src: url("DigestiveDemo-Two.otf");
 }
 
 body {
-    font-family: "Golia", sans-serif;
-    background-color: whitesmoke;
+    font-family: "Helvetica", sans-serif;
+    background-color: #dcdcdc;
 }
+
+/* DRAG
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+}
+
+#mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196f3;
+    color: #fff;
+}
+DRAG */
 
 .welcome-container h1 {
     font-family: "Golia";
-    margin-top: 15px;
-    font-size: 60px;
-    color: white;
+    /* margin-top: 15px; */
+    font-size: 50px;
+    color: #2f4f4f;
+    position: fixed;
+    top: 5px;
+    left: 20px;
+    text-transform: uppercase;
 }
 
 .welcome-container {
-    /* border: 2px solid white; */
+    border: 1px solid black;
     text-align: center;
     position: relative;
     margin: 0 auto;
     top: 260px;
     width: 400px;
-    -webkit-animation: roll-in-top 0.6s ease-out both;
-    animation: roll-in-top 0.6s ease-out both;
-    color: white;
+    /* -webkit-animation: roll-in-top 0.6s ease-out both;
+    animation: roll-in-top 0.6s ease-out both; */
+    /* color: white; */
 }
 
 .inputs-fields {
     display: flex;
     margin: 20px 0;
-
     flex-direction: column;
     align-items: center;
 }
 
 input::placeholder {
-    color: white;
-    background-color: #34558b;
+    color: black;
+    /* border-bottom: 1px solid black; */
+    /* background-color: whitesmoke; */
+    /* background-color: whitesmoke; */
+    font-size: 16px;
 }
 
 .inputs-fields a {
@@ -52,11 +77,20 @@ input::placeholder {
 }
 
 input {
-    height: 20px;
-    margin: 5px 0;
+    /* height: 30px; */
+    margin: 5px;
     text-align: center;
     border: 0;
+    border-bottom: 1px solid black;
+    padding: 12px;
+    background-color: transparent;
+    font-size: 16px;
 }
+/* .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
 
 .logo-small {
     font-family: "Golia";
@@ -293,8 +327,8 @@ header {
 }
 
 .my-userpic {
-    margin: -1px;
-    padding: 10px;
+    /* margin: 10px; */
+    padding: 15px;
     width: 350px;
     height: 350px;
     object-fit: cover;
@@ -387,6 +421,7 @@ header {
     border-top: 1px solid black;
     width: 100%;
     cursor: pointer;
+    /* height: 100px; */
     /* text-shadow: 0px 0px 0px transparent; */
 }
 
