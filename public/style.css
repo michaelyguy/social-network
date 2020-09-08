@@ -178,7 +178,7 @@ body {
     animation: welcome 2s linear infinite alternate both;
     font-family: "Golia";
     cursor: pointer;
-    cursor: url("cursor-open.png"), auto;
+    cursor: url("open.png"), auto;
 }
 
 @-webkit-keyframes welcome {
@@ -233,7 +233,7 @@ body {
 
 .project-text {
     width: 40%;
-    cursor: url("flip-btn.png"), auto;
+    cursor: url("flip.png"), auto;
 }
 
 .project-container-one {
@@ -254,13 +254,13 @@ body {
     width: 600px;
     will-change: transform;
     object-fit: cover;
-    cursor: url("flip-btn.png"), auto;
+    cursor: url("flip.png"), auto;
 }
 
 .gif-project {
     position: relative;
     width: 55%;
-    cursor: url("flip-btn.png"), auto;
+    cursor: url("flip.png"), auto;
 }
 
 .card:hover {
