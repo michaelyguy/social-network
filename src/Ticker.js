@@ -5,31 +5,31 @@ export default function Ticker() {
         <div id="ticker">
             <div id="links">
                 <a>
-                    Hello, I'm Guy - a full stack web developer based in Berlin.
+                    Hello, I'm Guy - a frontend web developer based in Berlin.
                 </a>
                 <a>
-                    Hello, I'm Guy - a full stack web developer based in Berlin.
+                    Hello, I'm Guy - a frontend web developer based in Berlin.
                 </a>
                 <a>
-                    Hello, I'm Guy - a full stack web developer based in Berlin.
+                    Hello, I'm Guy - a frontend web developer based in Berlin.
                 </a>
                 <a>
-                    Hello, I'm Guy - a full stack web developer based in Berlin.
+                    Hello, I'm Guy - a frontend web developer based in Berlin.
                 </a>
                 <a>
-                    Hello, I'm Guy - a full stack web developer based in Berlin.
+                    Hello, I'm Guy - a frontend web developer based in Berlin.
                 </a>
                 <a>
-                    Hello, I'm Guy - a full stack web developer based in Berlin.
+                    Hello, I'm Guy - a frontend web developer based in Berlin.
                 </a>
                 <a>
-                    Hello, I'm Guy - a full stack web developer based in Berlin.
+                    Hello, I'm Guy - a frontend web developer based in Berlin.
                 </a>
                 <a>
-                    Hello, I'm Guy - a full stack web developer based in Berlin.
+                    Hello, I'm Guy - a frontend web developer based in Berlin.
                 </a>
                 <a>
-                    Hello, I'm Guy - a full stack web developer based in Berlin.
+                    Hello, I'm Guy - a frontend web developer based in Berlin.
                 </a>
             </div>
         </div>

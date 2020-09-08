@@ -8,29 +8,25 @@ export default function About({ style }) {
             <div className="about-container">
                 <div className="about-position">
                     <p>
-                        I am a developer who is a{" "}
-                        <a
-                            className="designer-link"
-                            href="https://guymichaely.com/"
-                            target="_blank"
-                        >
-                            designer
-                        </a>{" "}
-                        first. I believe that websites and web apps should not
-                        only be functional but also pleasing to look at. My
-                        approach is UI/UX-driven. For me, to make sure that the
-                        user gets results with ease and comfort is as important
-                        as getting the correct results.
+                        Berlin-based web-developer and graphic designer,
+                        Combining the best out of both worlds, I focus on
+                        functional and interactive code writing while having a
+                        well-designed user experience in mind. I believe that
+                        websites and web apps should not only be functional but
+                        also pleasing to look at.
                     </p>
                     <br />
                     <p>
-                        I code because I want my designs to have life. Printed
-                        brochures, magazines, or posters will never be
-                        interactive unlike websites or apps. Coding gives me the
-                        perfect canvas for my art. The possibilities of creating
-                        interactive designs in coding are endless. I enjoy all
-                        aspects of web development—from planning to deployment.
-                        I love art and I love to code.
+                        I grew up in Tel-Aviv and studied graphic design in the
+                        Department of Visual Communication at Shenkar College of
+                        Engineering and Design, specializing in UX|UI design.
+                        During this experience, I fell in love with code as the
+                        enabler of creation and with the process of transforming
+                        my ideas into reality using it. This is what excites me.
+                        To deepen my knowledge and professionalize in code, I
+                        decided to participate in a coding Bootcamp at
+                        “Spiced-academy” in Berlin, in which I earned my
+                        certificate as a full stack web developer.
                     </p>
                     <br />
                     <h1>

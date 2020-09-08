@@ -87,7 +87,7 @@ export default function ImageBoard() {
                     <div className="project-box">
                         {!mobile && (
                             <animated.img
-                                src="image-board.png"
+                                src="img-board.jpg"
                                 className="img-project"
                                 onMouseMove={({ clientX: x, clientY: y }) =>
                                     setHover({ xys: calc(x, y) })
