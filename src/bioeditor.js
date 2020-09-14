@@ -65,7 +65,7 @@ export default class BioEditor extends React.Component {
                             className="bio-btn"
                             onClick={(e) => this.showBioArea(e)}
                         >
-                            Edit
+                            Edit bio
                         </button>
                     </div>
                 );

@@ -85,7 +85,7 @@ export default class App extends React.Component {
                         )}
                     </header> */}
                     <header>
-                        <h1 className="logo-small">anti-social</h1>
+                        <h1 className="logo">anti-social</h1>
                         <ProfilePic
                             first={this.state.first}
                             last={this.state.last}
