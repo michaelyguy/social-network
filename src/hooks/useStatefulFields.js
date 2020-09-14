@@ -1,7 +1,7 @@
 /// hooks/useStatefulFields ///
 import React, { useState } from "react";
 
-//THE FUNCTION NAME HAVE TO START WITH THE WORD USER//
+//THE FUNCTION NAME HAVE TO START WITH THE WORD USE//
 export function useStatefulFields() {
     const [values, setValues] = useState({});
 
@@ -13,10 +13,4 @@ export function useStatefulFields() {
     };
 
     return [values, handleChange];
-
-    // function handleChange(e) {
-    //     setValues({
-    //         [e.target.name]: e.target.value,
-    //     });
-    // }
 }

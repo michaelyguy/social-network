@@ -7,9 +7,15 @@
     src: url("DigestiveDemo-Two.otf");
 }
 
+@font-face {
+    font-family: "Benzol";
+    src: url("Benzol_commercial.otf");
+}
+
 body {
     font-family: "Helvetica", sans-serif;
-    background-color: #dcdcdc;
+    /* background-color: #dcdcdc; */
+    background-color: #ececec;
 }
 
 /* DRAG
@@ -86,17 +92,16 @@ input {
     background-color: transparent;
     font-size: 16px;
 }
-/* .logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-} */
 
 .logo-small {
-    font-family: "Golia";
+    font-size: 50px;
+    color: #2f4f4f;
     position: fixed;
-    top: 17px;
-    left: 15px;
+    top: 14px;
+    left: 20px;
+    text-transform: uppercase;
+    font-family: "Benzol";
+    font-weight: lighter;
 }
 
 .small-userpic {
@@ -106,8 +111,8 @@ input {
     height: 50px;
     width: 50px;
     object-fit: cover;
-    border: 0.5px solid black;
-    border-radius: 25px;
+    /* border: 1px solid #2f4f4f; */
+    /* border-radius: 25px; */
 }
 
 .chat-title {
@@ -255,8 +260,10 @@ input {
 }
 
 header {
+    /* background-color: #e2e2e2; */
+
     height: 70px;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1.5px solid #2f4f4f; */
     -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         both;
     animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -287,26 +294,34 @@ header {
     }
 }
 
-.users-link {
-    color: black;
-    text-decoration: none;
-    position: fixed;
-    top: 25px;
-    right: 160px;
-}
 .friends-link {
-    color: black;
+    color: #2f4f4f;
     text-decoration: none;
     position: fixed;
-    top: 25px;
-    right: 93px;
+    bottom: 25px;
+    right: 25px;
+    font-size: 16px;
+    font-weight: bolder;
 }
-.chat-link {
-    color: black;
+
+.users-link {
+    color: #2f4f4f;
     text-decoration: none;
     position: fixed;
-    top: 25px;
-    right: 260px;
+    bottom: 25px;
+    right: 125px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.chat-link {
+    color: #2f4f4f;
+    text-decoration: none;
+    position: fixed;
+    bottom: 25px;
+    right: 255px;
+    font-size: 16px;
+    font-weight: bolder;
 }
 
 .user-info {
@@ -328,19 +343,19 @@ header {
 
 .my-userpic {
     /* margin: 10px; */
-    padding: 15px;
+    /* padding: 15px; */
     width: 350px;
     height: 350px;
     object-fit: cover;
 }
 
 .my-user-info {
-    /* background: grey; */
+    /* background: #2f4f4f; */
     /* position: relative; */
     /* display: flex;
     flex-direction: column;
     margin-top: 15px; */
-    border: 1px solid black;
+    /* border: 1px solid #2f4f4f; */
     /* margin: 30px 15px; */
     -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         0.5s both;
@@ -349,9 +364,13 @@ header {
 }
 
 .name {
-    border-bottom: 1px solid black;
-    padding: 5px 10px 12px 5px;
+    /* border-bottom: 1px solid black; */
+    padding: 11px 10px 10px 10px;
     text-align: center;
+    font-family: "Benzol";
+    background-color: #2f4f4f;
+    color: #ececec;
+    font-weight: lighter;
 }
 
 .uploader-container {

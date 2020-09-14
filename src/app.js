@@ -61,7 +61,7 @@ export default class App extends React.Component {
         return (
             <BrowserRouter>
                 <div className="container">
-                    <header>
+                    {/* <header>
                         <h1 className="logo-small">anti-social</h1>
                         <ProfilePic
                             first={this.state.first}
@@ -83,7 +83,32 @@ export default class App extends React.Component {
                         {this.state.uploaderIsVisible && (
                             <Uploader setImage={() => this.setImage()} />
                         )}
+                    </header> */}
+                    <header>
+                        <h1 className="logo-small">anti-social</h1>
+                        <ProfilePic
+                            first={this.state.first}
+                            last={this.state.last}
+                            profilePic={this.state.profilePic}
+                            uploaderIsVisible={this.state.uploaderIsVisible}
+                            toggleModal={this.toggleModal}
+                            newProfilePic={this.state.newProfilePic}
+                        />
+                        {this.state.uploaderIsVisible && (
+                            <Uploader setImage={() => this.setImage()} />
+                        )}
                     </header>
+                    <fooer>
+                        <Link className="chat-link" to="/chat">
+                            Chat↘
+                        </Link>
+                        <Link className="users-link" to="/users">
+                            Find people↘
+                        </Link>
+                        <Link className="friends-link" to="/friends">
+                            Friends↘
+                        </Link>
+                    </fooer>
 
                     <Route
                         exact

@@ -7,8 +7,6 @@ import axios from "./axios";
 export async function receiveFriendsWannabes() {
     try {
         const { data } = await axios.get("/friends-wannabes");
-        // console.log("----data in action friends----");
-        // console.log(data);
         return {
             type: "RECEIVE_FRIENDS_WANNABES",
             friendsWannabes: data.rows,
@@ -21,40 +19,35 @@ export async function receiveFriendsWannabes() {
 export async function acceptFriendRequest(id) {
     try {
         const { data } = await axios.post(`/accept-friend-request/${id}`);
-        // console.log("----data in action acceptfriendrequest----");
-        // console.log(data);
         return {
             type: "ACCEPT_FRIEND_REQUEST",
             acceptedUserId: id,
         };
     } catch (err) {
-        console.log("ERROR IN action acceptFriendRequest");
+        console.log("ERROR IN ACTION - /acceptFriendRequest: ", err);
     }
 }
 
 export async function unfriend(id) {
     try {
         const { data } = await axios.post(`/end-friendship/${id}`);
-        console.log("----data in action unfriend----");
-        console.log(data);
         return {
             type: "UNFRIEND",
             cancelledUserId: id,
         };
     } catch (err) {
-        console.log("ERROR IN action unfriend", err);
+        console.log("ERROR IN ACTION - unfriend: ", err);
     }
 }
 
 export async function chatMessages(msgs) {
     try {
-        console.log("this is ourrr msgs in action", msgs);
-
+        // console.log("this is ourrr msgs in action", msgs);
         return {
             type: "LAST_MSGS",
             chatmsgs: msgs,
         };
     } catch (err) {
-        console.log("ERROR IN action ");
+        console.log("ERROR IN ACTION - /chatMessages: ", err);
     }
 }
