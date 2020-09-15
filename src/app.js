@@ -15,10 +15,15 @@ export default function App() {
     }, []);
     //////ABOUT/////////
     const [isAboutOpen, setAbout] = useState(false);
+    const [windowHeight, setHeight] = useState(0);
+
+    // const [isAboutTransitionEnd, setAboutTransition] = useState(true);
 
     function openAbout() {
         setAbout(!isAboutOpen);
         document.body.classList.add("unscroll");
+        setHeight(window.scrollY);
+        console.log("windowfddsfdsf", windowHeight);
     }
 
     function closeAbout() {
@@ -28,6 +33,9 @@ export default function App() {
 
     const aboutAnimation = useSpring({
         transform: isAboutOpen ? `translate3d(0,0,0)` : `translate3d(0,100%,0)`,
+        // onRest: () => {
+        //     setAboutTransition(!isAboutTransitionEnd);
+        // },
     });
 
     /////animation on the btn/////
@@ -38,96 +46,104 @@ export default function App() {
         config: { duration: 1000 },
     });
 
+    // var window = document;
+    // console.log("window", window);
     return (
         <div>
-            <Ticker />
-            <iframe
-                className="clock"
-                src="https://free.timeanddate.com/clock/i7dvxyp2/n37/fs48/tct/pct/th1"
-                frameBorder="0"
-                width="189"
-                height="57"
-                allowtransparency="true"
-            ></iframe>
+            <div>
+                <Ticker />
+                <iframe
+                    className="clock"
+                    src="https://free.timeanddate.com/clock/i7dvxyp2/n37/fs48/tct/pct/th1"
+                    frameBorder="0"
+                    width="189"
+                    height="57"
+                    allowtransparency="true"
+                ></iframe>
 
-            <div onClick={() => setClick(!click)}>
-                {!isAboutOpen && (
-                    <animated.h3
-                        style={{
-                            transform: x
-                                .interpolate({
-                                    range: [
-                                        0,
-                                        0.25,
-                                        0.35,
-                                        0.45,
-                                        0.55,
-                                        0.65,
-                                        0.75,
-                                        1,
-                                    ],
-                                    output: [
-                                        1,
-                                        0.97,
-                                        0.9,
-                                        1.1,
-                                        0.9,
-                                        1.1,
-                                        1.03,
-                                        1,
-                                    ],
-                                })
-                                .interpolate((x) => `scale(${x})`),
-                        }}
-                        className="abt-btn"
-                        onClick={openAbout}
-                    >
-                        About
-                    </animated.h3>
-                )}
-                {isAboutOpen && (
-                    <animated.h3
-                        style={{
-                            transform: x
-                                .interpolate({
-                                    range: [
-                                        0,
-                                        0.25,
-                                        0.35,
-                                        0.45,
-                                        0.55,
-                                        0.65,
-                                        0.75,
-                                        1,
-                                    ],
-                                    output: [
-                                        1,
-                                        0.97,
-                                        0.9,
-                                        1.1,
-                                        0.9,
-                                        1.1,
-                                        1.03,
-                                        1,
-                                    ],
-                                })
-                                .interpolate((x) => `scale(${x})`),
-                        }}
-                        className="abt-btn"
-                        onClick={closeAbout}
-                    >
-                        Close
-                    </animated.h3>
-                )}
+                <div onClick={() => setClick(!click)}>
+                    {!isAboutOpen && (
+                        <animated.h3
+                            style={{
+                                transform: x
+                                    .interpolate({
+                                        range: [
+                                            0,
+                                            0.25,
+                                            0.35,
+                                            0.45,
+                                            0.55,
+                                            0.65,
+                                            0.75,
+                                            1,
+                                        ],
+                                        output: [
+                                            1,
+                                            0.97,
+                                            0.9,
+                                            1.1,
+                                            0.9,
+                                            1.1,
+                                            1.03,
+                                            1,
+                                        ],
+                                    })
+                                    .interpolate((x) => `scale(${x})`),
+                            }}
+                            className="abt-btn"
+                            onClick={openAbout}
+                        >
+                            About
+                        </animated.h3>
+                    )}
+                    {isAboutOpen && (
+                        <animated.h3
+                            style={{
+                                transform: x
+                                    .interpolate({
+                                        range: [
+                                            0,
+                                            0.25,
+                                            0.35,
+                                            0.45,
+                                            0.55,
+                                            0.65,
+                                            0.75,
+                                            1,
+                                        ],
+                                        output: [
+                                            1,
+                                            0.97,
+                                            0.9,
+                                            1.1,
+                                            0.9,
+                                            1.1,
+                                            1.03,
+                                            1,
+                                        ],
+                                    })
+                                    .interpolate((x) => `scale(${x})`),
+                            }}
+                            className="abt-btn"
+                            onClick={closeAbout}
+                        >
+                            Close
+                        </animated.h3>
+                    )}
+                </div>
+                <div
+                    style={{ top: -windowHeight }}
+                    className={isAboutOpen && "stuck"}
+                >
+                    <Petition />
+                    <ImageBoard />
+                    <SocialNetwork />
+                </div>
+                {/* <Modal /> */}
+                <Welcome />
+                <Flier />
             </div>
-
-            <Petition />
-            <ImageBoard />
-            <SocialNetwork />
-
             <About style={aboutAnimation} />
-            <Welcome />
-            <Flier />
         </div>
     );
 }

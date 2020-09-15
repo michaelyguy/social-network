@@ -97,6 +97,7 @@ body {
     -webkit-animation: body 2s linear infinite alternate both;
     animation: body 2s linear infinite alternate both;
     z-index: 10;
+    overflow: scroll;
 }
 
 .about-container {
@@ -477,4 +478,9 @@ body {
     to {
         transform: rotateZ(360deg);
     }
+}
+
+.stuck {
+    position: fixed;
+    overflow: hidden;
 }
