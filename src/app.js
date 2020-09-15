@@ -133,7 +133,7 @@ export default function App() {
                 </div>
                 <div
                     style={{ top: -windowHeight }}
-                    className={isAboutOpen && "stuck"}
+                    className={isAboutOpen ? "stuck" : ""}
                 >
                     <Petition />
                     <ImageBoard />

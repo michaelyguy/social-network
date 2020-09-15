@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Waypoint } from "react-waypoint";
 import { animated, useSpring, config } from "react-spring";
 
 export default function Petition() {
+    const vidRef = useRef();
+    const playVideo = () => {
+        vidRef.current.play();
+        // console.log(vidRef.current.);
+    };
     ////CARD ON HOVER/////
     const calc = (x, y) => [
         -(y - window.innerHeight / 2) / 20,
@@ -48,7 +53,10 @@ export default function Petition() {
 
             <div
                 style={animation}
-                onClick={() => (mobile ? "" : setFlipped((state) => !state))}
+                onClick={() => {
+                    mobile ? "" : setFlipped((state) => !state);
+                    playVideo();
+                }}
                 className="flip"
             >
                 {!mobile && (
@@ -63,7 +71,7 @@ export default function Petition() {
                     >
                         <div className="project-box">
                             <video
-                                autoPlay="autoplay"
+                                ref={vidRef}
                                 muted
                                 loop
                                 className="gif-project"
