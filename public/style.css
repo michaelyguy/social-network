@@ -311,7 +311,6 @@ body {
 }
 
 .mood {
-    /* font-size: 50px; */
     position: fixed;
     bottom: 15px;
     right: 20px;
@@ -385,6 +384,7 @@ body {
     .about-position {
         width: unset;
         margin: 0 30px;
+        font-size: 18px;
     }
 }
 
@@ -448,11 +448,11 @@ body {
     }
 
     .text {
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .technologies {
-        font-size: 15px;
+        font-size: 18px;
     }
 }
 
