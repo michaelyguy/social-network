@@ -7,7 +7,6 @@ import Flier from "./Flier";
 import Petition from "./Petition";
 import ImageBoard from "./ImageBoard";
 import SocialNetwork from "./SocialNetwork";
-// import Modal from "./Modal";
 
 export default function App() {
     useEffect(() => {
@@ -33,9 +32,6 @@ export default function App() {
 
     const aboutAnimation = useSpring({
         transform: isAboutOpen ? `translate3d(0,0,0)` : `translate3d(0,100%,0)`,
-        // onRest: () => {
-        //     setAboutTransition(!isAboutTransitionEnd);
-        // },
     });
 
     /////animation on the btn/////
@@ -46,10 +42,8 @@ export default function App() {
         config: { duration: 1000 },
     });
 
-    // var window = document;
-    // console.log("window", window);
     return (
-        <div>
+        <>
             <div>
                 <Ticker />
                 <iframe
@@ -144,6 +138,6 @@ export default function App() {
                 <Flier />
             </div>
             <About style={aboutAnimation} />
-        </div>
+        </>
     );
 }
