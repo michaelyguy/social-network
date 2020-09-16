@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Waypoint } from "react-waypoint";
 import { animated, useSpring, config } from "react-spring";
 
 export default function SocialNetwork() {
-    ////CARD ON HOVER/////
+    const vidRef = useRef();
+    const playVideo = () => {
+        vidRef.current.play();
+    };
+
+    ////HOVER ON CARD/////
     const calc = (x, y) => [
         -(y - window.innerHeight / 2) / 20,
         (x - window.innerWidth / 2) / 20,
@@ -16,8 +21,7 @@ export default function SocialNetwork() {
         xys: [0, 0, 1],
         config: config.slow,
     }));
-
-    ///////CARD ON HOVER END//////
+    ///////HOVER END//////
 
     //////FLIP PROJECT///////
     const [flipped, setFlipped] = useState(false);
@@ -26,8 +30,8 @@ export default function SocialNetwork() {
         transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
         config: config.slow,
     });
+    ////////FLIP END////////
 
-    ////////FLIP PROJECT END////////
     const [three, toggleThree] = useState(false);
     const animationThree = useSpring({
         opacity: three ? 1 : 0,
@@ -48,7 +52,10 @@ export default function SocialNetwork() {
 
             <animated.div
                 style={animationThree}
-                onClick={() => (mobile ? "" : setFlipped((state) => !state))}
+                onClick={() => {
+                    mobile ? "" : setFlipped((state) => !state);
+                    playVideo();
+                }}
                 className="flip"
             >
                 {!mobile && (
@@ -63,7 +70,7 @@ export default function SocialNetwork() {
                     >
                         <div className="project-box">
                             <video
-                                autoPlay="autoplay"
+                                ref={vidRef}
                                 muted
                                 loop
                                 className="gif-project"

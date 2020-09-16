@@ -6,9 +6,9 @@ export default function Petition() {
     const vidRef = useRef();
     const playVideo = () => {
         vidRef.current.play();
-        // console.log(vidRef.current.);
     };
-    ////CARD ON HOVER/////
+
+    ////HOVER ON CARD/////
     const calc = (x, y) => [
         -(y - window.innerHeight / 2) / 20,
         (x - window.innerWidth / 2) / 20,
@@ -21,8 +21,7 @@ export default function Petition() {
         xys: [0, 0, 1],
         config: config.slow,
     }));
-
-    ///////CARD ON HOVER END//////
+    ///////HOVER END//////
 
     //////FLIP PROJECT///////
     const [flipped, setFlipped] = useState(false);
@@ -31,8 +30,8 @@ export default function Petition() {
         transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
         config: config.slow,
     });
+    ////////FLIP END////////
 
-    ////////FLIP PROJECT END////////
     const [one, toggleOne] = useState(false);
     const animation = useSpring({
         opacity: one ? 1 : 0,
