@@ -24,7 +24,7 @@ export default function About({ style }) {
                         enabler of creation and with the process of transforming
                         my ideas into reality using it. This is what excites me.
                         To deepen my knowledge and professionalize in code, I
-                        decided to participate in a coding Bootcamp at “SPICED
+                        decided to participate in a coding Bootcamp at SPICED
                         Academy in Berlin, in which I earned my certificate as a
                         full stack web developer.
                     </p>
