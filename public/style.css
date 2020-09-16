@@ -106,7 +106,7 @@ body {
     right: 25px;
     top: 230px;
     font-size: 25px;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 .about-position {
@@ -347,14 +347,14 @@ body {
 .technologies {
     margin-top: 1.17em;
     font-size: 19px;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 .text {
     font-size: 25px;
     font-weight: normal;
     margin-top: 15px;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 .unscroll {
@@ -383,7 +383,7 @@ body {
 
     .about-position {
         width: unset;
-        margin: 0 30px;
+        margin: 0 20px;
         font-size: 18px;
     }
 }
@@ -415,20 +415,24 @@ body {
 
     .project-wrapper-one {
         margin-bottom: 80px;
+        /* margin-top: 50px; */
     }
 
     .project-wrapper-two {
         margin-bottom: 80px;
+        /* margin-top: 30px; */
     }
 
     .project-wrapper-three {
         margin-bottom: 80px;
+        /* margin-top: 30px; */
     }
 
     .project-box {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 50px;
     }
 
     .img-project {
@@ -453,6 +457,7 @@ body {
 
     .technologies {
         font-size: 18px;
+        /* margin-bottom: 30px; */
     }
 }
 

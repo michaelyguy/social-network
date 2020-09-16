@@ -19,14 +19,14 @@ export default function About({ style }) {
                     <p>
                         I grew up in Tel-Aviv and studied graphic design in the
                         Department of Visual Communication at Shenkar College of
-                        Engineering and Design, specializing in UX|UI design.
+                        Engineering and Design, specializing in UX / UI design.
                         During this experience, I fell in love with code as the
                         enabler of creation and with the process of transforming
                         my ideas into reality using it. This is what excites me.
                         To deepen my knowledge and professionalize in code, I
-                        decided to participate in a coding Bootcamp at
-                        “Spiced-academy” in Berlin, in which I earned my
-                        certificate as a full stack web developer.
+                        decided to participate in a coding Bootcamp at “SPICED
+                        Academy in Berlin, in which I earned my certificate as a
+                        full stack web developer.
                     </p>
                     <br />
                     <h1>

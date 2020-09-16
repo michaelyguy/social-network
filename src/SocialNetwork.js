@@ -134,8 +134,8 @@ export default function SocialNetwork() {
                                 chat room.
                             </p>
                             <p className="technologies">
-                                Technologies used - JavaScript, AWS S3, Node,
-                                PostgreSQL, Socket.IO, React and Redux
+                                JavaScript, AWS S3, Node.js PostgreSQL,
+                                Socket.IO, React and Redux
                             </p>
                         </div>
                     </div>
