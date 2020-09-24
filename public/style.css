@@ -16,8 +16,30 @@ body {
     font-family: "Helvetica", sans-serif;
     /* background-color: #dcdcdc; */
     background-color: #ececec;
+    background-image: url("background.jpg");
 }
 
+.new-logo {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+.new-profile-pic {
+    position: absolute;
+    top: 5%;
+    right: 15%;
+}
+
+.new-regsiter {
+    position: absolute;
+    top: 25%;
+}
+
+.main-new {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+}
 /* DRAG
 #mydiv {
     position: absolute;

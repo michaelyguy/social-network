@@ -10,7 +10,8 @@ export default function Register() {
 
     return (
         <div className="inputs-fields">
-            {error && <p>Somthing went wrong. Please try again!</p>}
+            <img src="register.png" className="new-regsiter" alt="register" />
+            {/* {error && <p>Somthing went wrong. Please try again!</p>}
             <input
                 name="first"
                 placeholder="First name"
@@ -32,7 +33,7 @@ export default function Register() {
             <p>
                 {" "}
                 already registered? <Link to="/login">click here</Link>
-            </p>
+            </p> */}
 
             {/* DRAG
             <div id="mydiv">
