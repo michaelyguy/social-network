@@ -9,40 +9,38 @@ export default function Register() {
     const [error, handleClick] = useAuthSubmit("/register", values);
 
     return (
-        <div className="inputs-fields">
+        <>
             <img src="register.png" className="new-regsiter" alt="register" />
-            {/* {error && <p>Somthing went wrong. Please try again!</p>}
-            <input
-                name="first"
-                placeholder="First name"
-                onChange={handleChange}
-            />
-            <input
-                name="last"
-                placeholder="Last name"
-                onChange={handleChange}
-            />
-            <input name="email" placeholder="Email" onChange={handleChange} />
-            <input
-                name="password"
-                type="password"
-                placeholder="Password"
-                onChange={handleChange}
-            />
-            <button onClick={handleClick}>Submit</button>
-            <p>
-                {" "}
-                already registered? <Link to="/login">click here</Link>
-            </p> */}
-
-            {/* DRAG
-            <div id="mydiv">
-                <div id="mydivheader">Click here to move</div>
-                <p>Move</p>
-                <p>this</p>
-                <p>DIV</p>
-            </div> */}
-        </div>
+            <div className="inputs-fields">
+                {error && <p>Somthing went wrong. Please try again!</p>}
+                <input
+                    name="first"
+                    placeholder="First name"
+                    onChange={handleChange}
+                />
+                <input
+                    name="last"
+                    placeholder="Last name"
+                    onChange={handleChange}
+                />
+                <input
+                    name="email"
+                    placeholder="Email"
+                    onChange={handleChange}
+                />
+                <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    onChange={handleChange}
+                />
+                <button onClick={handleClick}>Submit</button>
+                <p>
+                    {" "}
+                    already registered? <Link to="/login">click here</Link>
+                </p>{" "}
+            </div>
+        </>
     );
 }
 
