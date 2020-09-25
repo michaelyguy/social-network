@@ -8,11 +8,6 @@ export default function Welcome() {
     return (
         <>
             <img src="logo.png" className="new-logo" alt="Logo" />
-            <img
-                src="profile-pic.png"
-                className="new-profile-pic"
-                alt="Profile-pic"
-            />
             <img src="main.png" className="main-new" alt="main" />
 
             {/* <div className="welcome-container"> */}

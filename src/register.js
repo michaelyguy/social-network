@@ -10,6 +10,11 @@ export default function Register() {
 
     return (
         <>
+            <img
+                src="profile-pic.png"
+                className="new-profile-pic"
+                alt="Profile-pic"
+            />
             <img src="register.png" className="new-regsiter" alt="register" />
 
             <div className="inputs-fields">

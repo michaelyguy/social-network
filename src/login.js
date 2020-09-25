@@ -11,8 +11,12 @@ export default function Login() {
 
     return (
         <>
+            <img
+                src="profile-pic.png"
+                className="new-profile-pic"
+                alt="Profile-pic"
+            />
             <img src="login.png" className="new-regsiter" alt="register" />
-
             <div className="inputs-fields">
                 {error && <p>Somthing went wrong. Please try again!</p>}
                 <input

@@ -28,6 +28,7 @@ body {
     position: absolute;
     top: 5%;
     right: 15%;
+    z-index: 1;
 }
 
 .new-regsiter {
@@ -126,14 +127,17 @@ input {
 }
 
 .small-userpic {
-    position: fixed;
-    top: 8px;
-    right: 20px;
-    height: 50px;
-    width: 50px;
+    /* position: fixed;
+    top: 78px;
+    right: 187px; */
+    height: 104px;
+    width: 112px;
     object-fit: cover;
-    /* border: 1px solid #2f4f4f; */
-    /* border-radius: 25px; */
+    z-index: 10;
+
+    position: absolute;
+    top: 8%;
+    right: 15.3%;
 }
 
 .chat-title {
