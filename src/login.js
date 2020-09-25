@@ -10,18 +10,30 @@ export default function Login() {
     const [error, handleClick] = useAuthSubmit("/login", values);
 
     return (
-        <div className="inputs-fields">
-            {error && <p>Somthing went wrong. Please try again!</p>}
-            <input name="email" placeholder="email" onChange={handleChange} />
-            <input
-                name="password"
-                type="password"
-                placeholder="password"
-                onChange={handleChange}
-            />
-            <button onClick={handleClick}>Submit</button>
-            <Link to="/password/reset/start">Forgot your password?</Link>
-        </div>
+        <>
+            <img src="login.png" className="new-regsiter" alt="register" />
+
+            <div className="inputs-fields">
+                {error && <p>Somthing went wrong. Please try again!</p>}
+                <input
+                    name="email"
+                    placeholder="Email"
+                    onChange={handleChange}
+                />
+                <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    onChange={handleChange}
+                />
+                <button onClick={handleClick}>Submit</button>
+                <p className="password-link">
+                    <Link to="/password/reset/start">
+                        Forgot your password?
+                    </Link>
+                </p>
+            </div>
+        </>
     );
 }
 

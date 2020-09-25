@@ -88,8 +88,18 @@ input::placeholder {
 
 .login-link {
     position: relative;
-    left: -44px;
+    left: -52px;
     margin-top: -20px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.password-link {
+    position: relative;
+    left: -73px;
+    margin-top: -20px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 input {
@@ -100,7 +110,7 @@ input {
     padding: 4px;
     width: 285px;
     /* background-color: transparent; */
-    font-size: 14px;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
