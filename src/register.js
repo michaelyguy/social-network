@@ -11,6 +11,7 @@ export default function Register() {
     return (
         <>
             <img src="register.png" className="new-regsiter" alt="register" />
+
             <div className="inputs-fields">
                 {error && <p>Somthing went wrong. Please try again!</p>}
                 <input
@@ -35,7 +36,7 @@ export default function Register() {
                     onChange={handleChange}
                 />
                 <button onClick={handleClick}>Submit</button>
-                <p>
+                <p className="login-link">
                     {" "}
                     already registered? <Link to="/login">click here</Link>
                 </p>{" "}

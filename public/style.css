@@ -56,8 +56,8 @@ body {
 
 .inputs-fields {
     position: absolute;
-    top: 145px;
-    left: 720px;
+    top: 155px;
+    left: 671px;
     display: flex;
     margin: 150px 0;
     flex-direction: column;
@@ -67,29 +67,41 @@ body {
 
 input::placeholder {
     color: black;
-    /* border-bottom: 1px solid black; */
-    /* background-color: whitesmoke; */
-    /* background-color: whitesmoke; */
-    font-size: 16px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .inputs-fields a {
-    color: black;
+    color: blue;
 }
 
 .inputs-fields button {
-    margin: 10px;
+    border: 1px gray solid;
+    background-color: lightgray;
+    margin: 30px;
+    width: 100px;
+    height: 23px;
+    position: relative;
+    left: -100px;
+    /* top: 50px; */
+}
+
+.login-link {
+    position: relative;
+    left: -44px;
+    margin-top: -20px;
 }
 
 input {
-    /* height: 30px; */
     margin: 5px;
-    text-align: center;
-    border: 0;
-    border-bottom: 1px solid black;
-    padding: 12px;
-    background-color: transparent;
-    font-size: 16px;
+    /* text-align: center; */
+    /* border: 0; */
+    border: 2px solid lightgrey;
+    padding: 4px;
+    width: 285px;
+    /* background-color: transparent; */
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .logo {
