@@ -11,31 +11,43 @@ export default function Login() {
 
     return (
         <>
-            <img
+            {/* <img
                 src="profile-pic.png"
                 className="new-profile-pic"
                 alt="Profile-pic"
-            />
-            <img src="login.png" className="new-regsiter" alt="register" />
-            <div className="inputs-fields">
-                {error && <p>Somthing went wrong. Please try again!</p>}
-                <input
-                    name="email"
-                    placeholder="Email"
-                    onChange={handleChange}
-                />
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    onChange={handleChange}
-                />
-                <button onClick={handleClick}>Submit</button>
-                <p className="password-link">
-                    <Link to="/password/reset/start">
-                        Forgot your password?
-                    </Link>
-                </p>
+            /> */}
+            {/* <img src="login.png" className="new-regsiter" alt="register" /> */}
+
+            <div className="card-wrapper-welcome">
+                <div id="card-header" className="card-header">
+                    <div className="card-close"></div>
+                    <div className="card-title">Login</div>
+                    <div className="card-move">
+                        <img className="move-png" src="move.png" />
+                    </div>{" "}
+                </div>
+                <div className="card-content"></div>
+
+                <div className="inputs-fields">
+                    {error && <p>Somthing went wrong. Please try again!</p>}
+                    <input
+                        name="email"
+                        placeholder="Email"
+                        onChange={handleChange}
+                    />
+                    <input
+                        name="password"
+                        type="password"
+                        placeholder="Password"
+                        onChange={handleChange}
+                    />
+                    <button onClick={handleClick}>Submit</button>
+                    <p className="password-link">
+                        <Link to="/password/reset/start">
+                            Forgot your password?
+                        </Link>
+                    </p>
+                </div>
             </div>
         </>
     );

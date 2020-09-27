@@ -9,14 +9,14 @@
 
 @font-face {
     font-family: "Benzol";
-    src: url("Benzol_commercial.otf");
+    src: url("DigestiveDemo-Two.otf");
 }
 
 body {
     font-family: "Helvetica", sans-serif;
     /* background-color: #dcdcdc; */
-    background-color: #ececec;
-    background-image: url("background.jpg");
+    background-color: #377e7f;
+    /* background-image: url("background.jpg"); */
 }
 
 .new-logo {
@@ -37,11 +37,11 @@ body {
     left: 650px;
 }
 
-.main-new {
+/* .main-new {
     position: absolute;
     top: 55%;
     right: 8%;
-}
+} */
 
 .welcome-container {
     /* border: 1px solid black; */
@@ -60,10 +60,10 @@ body {
     top: 155px;
     left: 671px; */
     display: flex;
-    margin: 20px 15px;
+    margin: 15px 10px;
     flex-direction: column;
     align-items: center;
-    z-index: 20;
+    /* z-index: 20; */
 }
 
 input::placeholder {
@@ -116,28 +116,19 @@ input {
 }
 
 .logo {
-    font-size: 50px;
-    color: #2f4f4f;
-    position: fixed;
-    top: 14px;
-    left: 20px;
+    font-size: 60px;
+    color: black;
     text-transform: uppercase;
     font-family: "Benzol";
     font-weight: lighter;
+    margin: 2px 20px 5px 20px;
 }
 
 .small-userpic {
-    /* position: fixed;
-    top: 78px;
-    right: 187px; */
-    height: 104px;
-    width: 112px;
+    height: 100px;
+    width: 100px;
     object-fit: cover;
-    z-index: 10;
-
-    position: absolute;
-    top: 8%;
-    right: 15.3%;
+    /* border: 1.5px solid black; */
 }
 
 .chat-title {
@@ -612,18 +603,73 @@ textarea {
     /* margin-right: 40px; */
 }
 
-.card-wrapper {
-    /* width: 300px;
-    height: 400px; */
+.card-wrapper-welcome {
     background-color: whitesmoke;
     position: absolute;
     top: 15%;
-    left: 50%;
+    left: 35%;
     z-index: 100;
     border: 3px solid lightgray;
     outline: 1.5px solid black;
 }
-.card-wrapper:before {
+
+.card-wrapper-pic {
+    background-color: whitesmoke;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    z-index: 100;
+    border: 3px solid lightgray;
+    outline: 1.5px solid black;
+}
+
+.card-wrapper-logo {
+    background-color: whitesmoke;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    z-index: 100;
+    border: 3px solid lightgray;
+    outline: 1.5px solid black;
+}
+
+.card-wrapper-main {
+    background-color: whitesmoke;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    z-index: 100;
+    border: 3px solid lightgray;
+    outline: 1.5px solid black;
+}
+
+.card-wrapper-main:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1.5px solid black;
+}
+
+.main {
+    width: 320px;
+}
+
+.card-wrapper-logo:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1.5px solid black;
+}
+
+.card-wrapper-welcome:before {
     content: " ";
     position: absolute;
     z-index: -1;
@@ -635,31 +681,45 @@ textarea {
 }
 
 .card-header {
+    /* position: absolute; */
     display: flex;
     /* flex-direction: row; */
     justify-content: space-between;
+    height: 28px;
 }
 
 .card-close {
     background-color: lightgray;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    /* height: 30px; */
     border: 1.5px solid black;
     border-right: 0;
 }
 .card-title {
-    background-color: rgb(47, 79, 79);
-    height: 30px;
+    background-color: #377e7f;
+    /* height: 30px; */
     flex-grow: 2;
     text-align: center;
     color: white;
-    line-height: 30px;
+    line-height: 25px;
     border: 1.5px solid black;
+    font-size: 15px;
 }
 .card-move {
     background-color: lightgray;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    /* height: 30px; */
     border: 1.5px solid black;
     border-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.move-png {
+    width: 20px;
+}
+
+.card-content {
+    border: 1.5 solid black;
 }

@@ -69,10 +69,31 @@ export default class App extends React.Component {
         return (
             <BrowserRouter>
                 <div className="container">
-                    <img src="logo.png" className="new-logo" alt="Logo" />
-                    <img src="main.png" className="main-new" alt="main" />
-                    {/* <header>
-                        <h1 className="logo">anti-social</h1> */}
+                    <div className="card-wrapper-logo">
+                        <div id="card-header" className="card-header">
+                            <div className="card-close"></div>
+                            <div className="card-title">Logo</div>
+                            <div className="card-move">
+                                <img className="move-png" src="move.png" />
+                            </div>
+                        </div>
+                        <div className="card-content">
+                            <h1 className="logo">Anti Social</h1>
+                        </div>
+                    </div>
+
+                    <div className="card-wrapper-main">
+                        <div id="card-header" className="card-header">
+                            <div className="card-close"></div>
+                            <div className="card-title">Main</div>
+                            <div className="card-move">
+                                <img className="move-png" src="move.png" />
+                            </div>
+                        </div>
+                        <div className="card-content">
+                            <img className="main" src="main.png" />
+                        </div>
+                    </div>
 
                     <ProfilePic
                         first={this.state.first}
@@ -86,7 +107,6 @@ export default class App extends React.Component {
                     {this.state.uploaderIsVisible && (
                         <Uploader setImage={() => this.setImage()} />
                     )}
-                    {/* </header> */}
                     <footer>
                         <Link className="chat-link" to="/chat">
                             Chat↘

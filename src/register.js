@@ -11,18 +11,20 @@ export default function Register() {
 
     return (
         <>
-            <div className="card-wrapper">
+            {/* <img
+                src="profile-pic.png"
+                className="new-profile-pic"
+                alt="Profile-pic"
+            /> */}
+            <div className="card-wrapper-welcome">
                 <div id="card-header" className="card-header">
                     <div className="card-close"></div>
-                    <div className="card-title">test</div>
-                    <div className="card-move"></div>
+                    <div className="card-title">Register</div>
+                    <div className="card-move">
+                        <img className="move-png" src="move.png" />
+                    </div>{" "}
                 </div>
                 <div className="card-content">
-                    <img
-                        src="profile-pic.png"
-                        className="new-profile-pic"
-                        alt="Profile-pic"
-                    />
                     {/* <img
                         src="register.png"
                         className="new-regsiter"
