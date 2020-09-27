@@ -9,6 +9,7 @@ import FindPeople from "./findpeople";
 import Friends from "./friends";
 import { Link } from "react-router-dom";
 import Chat from "./chat";
+// import WindowBox from "./Window-box";
 
 export default class App extends React.Component {
     constructor() {
@@ -36,6 +37,13 @@ export default class App extends React.Component {
             // console.log("-----THIS.STATE----");
             // console.log(this.state);
         });
+
+        // var boxes = document.querySelectorAll(".card-header");
+        // console.log(boxes, "box");
+        // boxes[0].addEventListener("mousemove", function (event) {
+        //     boxes.style.left = event.clientX - 50 + "px";
+        //     boxes.style.top = event.clientY - 50 + "px";
+        // });
     }
 
     setImage(newProfilePic) {
@@ -65,6 +73,7 @@ export default class App extends React.Component {
                     <img src="main.png" className="main-new" alt="main" />
                     {/* <header>
                         <h1 className="logo">anti-social</h1> */}
+
                     <ProfilePic
                         first={this.state.first}
                         last={this.state.last}
@@ -73,11 +82,12 @@ export default class App extends React.Component {
                         toggleModal={this.toggleModal}
                         newProfilePic={this.state.newProfilePic}
                     />
+
                     {this.state.uploaderIsVisible && (
                         <Uploader setImage={() => this.setImage()} />
                     )}
                     {/* </header> */}
-                    <fooer>
+                    <footer>
                         <Link className="chat-link" to="/chat">
                             Chat↘
                         </Link>
@@ -87,7 +97,7 @@ export default class App extends React.Component {
                         <Link className="friends-link" to="/friends">
                             Friends↘
                         </Link>
-                    </fooer>
+                    </footer>
 
                     <Route
                         exact

@@ -56,11 +56,11 @@ body {
 }
 
 .inputs-fields {
-    position: absolute;
+    /* position: absolute;
     top: 155px;
-    left: 671px;
+    left: 671px; */
     display: flex;
-    margin: 150px 0;
+    margin: 20px 15px;
     flex-direction: column;
     align-items: center;
     z-index: 20;
@@ -610,4 +610,56 @@ textarea {
     padding: 0;
     margin-top: 10px;
     /* margin-right: 40px; */
+}
+
+.card-wrapper {
+    /* width: 300px;
+    height: 400px; */
+    background-color: whitesmoke;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    z-index: 100;
+    border: 3px solid lightgray;
+    outline: 1.5px solid black;
+}
+.card-wrapper:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1.5px solid black;
+}
+
+.card-header {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+}
+
+.card-close {
+    background-color: lightgray;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid black;
+    border-right: 0;
+}
+.card-title {
+    background-color: rgb(47, 79, 79);
+    height: 30px;
+    flex-grow: 2;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+    border: 1.5px solid black;
+}
+.card-move {
+    background-color: lightgray;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid black;
+    border-left: 0;
 }

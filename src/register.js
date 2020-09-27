@@ -3,6 +3,7 @@ import axios from "./axios";
 import { Link } from "react-router-dom";
 import { useStatefulFields } from "./hooks/useStatefulFields";
 import { useAuthSubmit } from "./hooks/useAuthSubmit";
+import WindowBox from "./Window-box";
 
 export default function Register() {
     const [values, handleChange] = useStatefulFields();
@@ -10,41 +11,55 @@ export default function Register() {
 
     return (
         <>
-            <img
-                src="profile-pic.png"
-                className="new-profile-pic"
-                alt="Profile-pic"
-            />
-            <img src="register.png" className="new-regsiter" alt="register" />
+            <div className="card-wrapper">
+                <div id="card-header" className="card-header">
+                    <div className="card-close"></div>
+                    <div className="card-title">test</div>
+                    <div className="card-move"></div>
+                </div>
+                <div className="card-content">
+                    <img
+                        src="profile-pic.png"
+                        className="new-profile-pic"
+                        alt="Profile-pic"
+                    />
+                    {/* <img
+                        src="register.png"
+                        className="new-regsiter"
+                        alt="register"
+                    /> */}
 
-            <div className="inputs-fields">
-                {error && <p>Somthing went wrong. Please try again!</p>}
-                <input
-                    name="first"
-                    placeholder="First name"
-                    onChange={handleChange}
-                />
-                <input
-                    name="last"
-                    placeholder="Last name"
-                    onChange={handleChange}
-                />
-                <input
-                    name="email"
-                    placeholder="Email"
-                    onChange={handleChange}
-                />
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    onChange={handleChange}
-                />
-                <button onClick={handleClick}>Submit</button>
-                <p className="login-link">
-                    {" "}
-                    already registered? <Link to="/login">click here</Link>
-                </p>{" "}
+                    <div className="inputs-fields">
+                        {error && <p>Somthing went wrong. Please try again!</p>}
+                        <input
+                            name="first"
+                            placeholder="First name"
+                            onChange={handleChange}
+                        />
+                        <input
+                            name="last"
+                            placeholder="Last name"
+                            onChange={handleChange}
+                        />
+                        <input
+                            name="email"
+                            placeholder="Email"
+                            onChange={handleChange}
+                        />
+                        <input
+                            name="password"
+                            type="password"
+                            placeholder="Password"
+                            onChange={handleChange}
+                        />
+                        <button onClick={handleClick}>Submit</button>
+                        <p className="login-link">
+                            {" "}
+                            already registered?{" "}
+                            <Link to="/login">click here</Link>
+                        </p>{" "}
+                    </div>
+                </div>
             </div>
         </>
     );
