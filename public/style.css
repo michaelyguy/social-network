@@ -348,8 +348,7 @@ header {
     overflow-y: scroll;
 }
 
-.my-user-container {
-    /* background: teal; */
+/* .my-user-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -358,29 +357,31 @@ header {
 }
 
 .my-userpic {
-    /* margin: 10px; */
-    /* padding: 15px; */
     width: 350px;
     height: 350px;
     object-fit: cover;
+} */
+
+.my-userpic {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
 }
 
-.my-user-info {
-    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-        0.5s both;
-    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s
-        both;
-    background-color: #2f4f4f;
+.user-line {
+    margin: 5px 10px;
 }
 
-.name {
-    /* border-bottom: 1px solid black; */
-    padding: 11px 10px 10px 10px;
-    text-align: center;
-    font-family: "Benzol";
+.info {
+    /* padding: 11px 10px 10px 10px; */
+    /* text-align: center; */
+    /* font-family: "Benzol";
     background-color: #2f4f4f;
     color: #ececec;
-    font-weight: lighter;
+    font-weight: lighter; */
+    margin: 7px 10px;
+    border: 2px solid lightgrey;
+    padding: 4px;
 }
 
 .uploader-container {
@@ -433,10 +434,10 @@ header {
 }
 
 .user-info-text p {
-    margin: 10px;
+    /* margin: 10px;
     font-size: 18px;
     color: #ececec;
-    font-weight: normal;
+    font-weight: normal; */
 }
 
 .status-btn {
@@ -444,25 +445,17 @@ header {
     bottom: 10px;
 }
 .bio-btn {
-    /* margin: 10px; */
-    margin: 10px 0 15px 0;
-    background: transparent;
-    /* box-shadow: 0px 0px 0px transparent; */
-    border: 0px solid transparent;
-    /* border-top: 1px solid black; */
-    width: 100%;
-    cursor: pointer;
-    color: #ececec;
-    border-bottom: 1px solid #ececec;
-    width: 47px;
-    /* height: 100px; */
-    /* text-shadow: 0px 0px 0px transparent; */
+    background-color: lightgray;
+    width: 70px;
+    height: 25px;
+    margin-top: 30px;
+    margin: 10px;
 }
 
 .user-info-text {
-    /* border-top: 1px solid black; */
-    text-align: center;
-    background: #2f4f4f;
+    /* border-top: 1px solid black;
+    text-align: center; */
+    /* background: #2f4f4f; */
 }
 
 .each-user h2 {
@@ -643,6 +636,16 @@ textarea {
     outline: 1.5px solid black;
 }
 
+.card-wrapper-profile {
+    background-color: whitesmoke;
+    position: absolute;
+    bottom: 25%;
+    left: 35%;
+    z-index: 100;
+    border: 3px solid lightgray;
+    outline: 1.5px solid black;
+}
+
 .card-wrapper-main:before {
     content: " ";
     position: absolute;
@@ -685,7 +688,8 @@ textarea {
     display: flex;
     /* flex-direction: row; */
     justify-content: space-between;
-    height: 28px;
+    height: 25px;
+    /* font-weight: bolder; */
 }
 
 .card-close {
@@ -694,14 +698,23 @@ textarea {
     /* height: 30px; */
     border: 1.5px solid black;
     border-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.minimize {
+    width: 12px;
+    height: 1px;
+    border: 1.5px black solid;
+}
+
 .card-title {
     background-color: #377e7f;
-    /* height: 30px; */
     flex-grow: 2;
     text-align: center;
     color: white;
-    line-height: 25px;
+    line-height: 21px;
     border: 1.5px solid black;
     font-size: 15px;
 }

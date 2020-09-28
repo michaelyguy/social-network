@@ -18,7 +18,9 @@ export default function Register() {
             /> */}
             <div className="card-wrapper-welcome">
                 <div id="card-header" className="card-header">
-                    <div className="card-close"></div>
+                    <div className="card-close">
+                        <div className="minimize"></div>
+                    </div>
                     <div className="card-title">Register</div>
                     <div className="card-move">
                         <img className="move-png" src="move.png" />

@@ -71,7 +71,9 @@ export default class App extends React.Component {
                 <div className="container">
                     <div className="card-wrapper-logo">
                         <div id="card-header" className="card-header">
-                            <div className="card-close"></div>
+                            <div className="card-close">
+                                <div className="minimize"></div>
+                            </div>{" "}
                             <div className="card-title">Logo</div>
                             <div className="card-move">
                                 <img className="move-png" src="move.png" />
@@ -84,7 +86,9 @@ export default class App extends React.Component {
 
                     <div className="card-wrapper-main">
                         <div id="card-header" className="card-header">
-                            <div className="card-close"></div>
+                            <div className="card-close">
+                                <div className="minimize"></div>
+                            </div>{" "}
                             <div className="card-title">Main</div>
                             <div className="card-move">
                                 <img className="move-png" src="move.png" />
