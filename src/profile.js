@@ -27,12 +27,10 @@ export default function Profile(props) {
                     </p>
                     <p className="user-line">About</p>
 
-                    {/* <div className="user-info-text info"> */}
                     <BioEditor
                         setBio={props.setBio}
                         officialBio={props.officialBio}
                     />
-                    {/* </div> */}
                 </div>
             </div>
         </>

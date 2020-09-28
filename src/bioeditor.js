@@ -73,7 +73,6 @@ export default class BioEditor extends React.Component {
             } else {
                 return (
                     <div>
-                        {/* <textarea placeholder="Describe yourself here..." /> */}
                         <button
                             className="bio-btn"
                             onClick={(e) => this.showBioArea(e)}
