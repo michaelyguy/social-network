@@ -41,7 +41,7 @@ export default class BioEditor extends React.Component {
     render() {
         if (this.state.isTextEdited) {
             return (
-                <div>
+                <div className="bio-box">
                     <textarea
                         name="bioText"
                         defaultValue={this.props.officialBio}
@@ -73,7 +73,13 @@ export default class BioEditor extends React.Component {
             } else {
                 return (
                     <div>
-                        <p onClick={(e) => this.showBioArea(e)}>Add bio</p>
+                        {/* <textarea placeholder="Describe yourself here..." /> */}
+                        <button
+                            className="bio-btn"
+                            onClick={(e) => this.showBioArea(e)}
+                        >
+                            Add bio
+                        </button>
                     </div>
                 );
             }

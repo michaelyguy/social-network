@@ -452,6 +452,12 @@ header {
     margin: 10px;
 }
 
+.bio-box {
+    display: flex;
+    flex-direction: column;
+    /* margin: 7px 10px; */
+}
+
 .user-info-text {
     /* border-top: 1px solid black;
     text-align: center; */
@@ -520,7 +526,14 @@ header {
 
 textarea {
     width: 250px;
-    height: 80px;
+    /* height: 80px; */
+    margin: 7px 10px;
+    /* border: 2px solid lightgrey; */
+    padding: 4px;
+    width: 92%;
+    background-color: transparent;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .user-big button {
