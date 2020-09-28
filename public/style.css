@@ -772,6 +772,7 @@ textarea {
 }
 
 .card-header {
+    cursor: move;
     /* position: absolute; */
     display: flex;
     /* flex-direction: row; */
