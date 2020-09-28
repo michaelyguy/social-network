@@ -94,7 +94,7 @@ export default function SocialNetwork() {
                     <div className="project-box">
                         {!mobile && (
                             <animated.img
-                                src="social-network.png"
+                                src="social.jpg"
                                 className="img-project"
                                 onMouseMove={({ clientX: x, clientY: y }) =>
                                     setHover({ xys: calc(x, y) })
