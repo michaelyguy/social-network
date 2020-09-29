@@ -33,8 +33,7 @@ export default function FriendsButton(props) {
     async function handleClick() {
         if (buttonText == "Make Friend Request") {
             const data = await axios.post(`/make-friend-request/${props.id}`);
-            // console.log("----data in /make-friend-request/${props.id}----");
-            // console.log(data);
+
             setButtonText("Cancel Friend Request");
         } else if (buttonText == "Cancel Friend Request") {
             const data = await axios.post(`/end-friendship/${props.id}`);
