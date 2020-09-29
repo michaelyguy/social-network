@@ -1,9 +1,8 @@
 import React from "react";
 import { animated } from "react-spring";
-// import Svg from "./Svg";
+import Draggable from "react-draggable";
 
 export default function About({ style }) {
-    // console.log("style: ", style);
     return (
         <animated.div className="about-wrapper" style={style}>
             <div className="about-container">
@@ -47,8 +46,9 @@ export default function About({ style }) {
                     </a>
                 </div>
             </div>
-            {/* <Svg /> */}
-            <img src="me.png" className="my-pic" />
+            <Draggable>
+                <img src="me.png" className="my-pic" />
+            </Draggable>
         </animated.div>
     );
 }

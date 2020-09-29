@@ -143,7 +143,6 @@ export default function App() {
                     <ImageBoard />
                     <SocialNetwork />
                 </div>
-                {/* <Modal /> */}
                 <Welcome />
                 <Flier />
             </div>

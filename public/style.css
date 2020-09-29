@@ -124,6 +124,7 @@ body {
     position: absolute;
     left: 50px;
     top: 180px;
+    cursor: move;
 }
 
 .lets-talk {
@@ -373,7 +374,7 @@ body {
     }
     .my-pic {
         width: 85%;
-        top: 0;
+        top: -50px;
         position: relative;
     }
     .about-container {
@@ -385,6 +386,7 @@ body {
         width: unset;
         margin: 0 20px;
         font-size: 20px;
+        z-index: 5;
     }
 }
 
