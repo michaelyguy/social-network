@@ -11,13 +11,6 @@ export default function Login() {
 
     return (
         <>
-            {/* <img
-                src="profile-pic.png"
-                className="new-profile-pic"
-                alt="Profile-pic"
-            /> */}
-            {/* <img src="login.png" className="new-regsiter" alt="register" /> */}
-
             <div className="card-wrapper-welcome">
                 <div id="card-header" className="card-header">
                     <div className="card-close">

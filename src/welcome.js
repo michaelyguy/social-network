@@ -3,7 +3,7 @@ import Register from "./register";
 import Login from "./login";
 import ResetPassword from "./resetPassword";
 import { HashRouter, Route } from "react-router-dom";
-import Draggable, { DraggableCore } from "react-draggable";
+import Draggable from "react-draggable";
 
 export default function Welcome() {
     return (

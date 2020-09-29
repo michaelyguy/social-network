@@ -1,16 +1,11 @@
 import React from "react";
+import Draggable from "react-draggable";
 
 export default function ProfilePic(props) {
     console.log("---props in prifilepic---");
     console.log(props);
     return (
-        <>
-            {/* <img
-                src="profile-pic.png"
-                className="new-profile-pic"
-                alt="Profile-pic"
-            /> */}
-
+        <Draggable>
             <div className="card-wrapper-pic">
                 <div id="card-header" className="card-header">
                     <div className="card-close">
@@ -30,6 +25,6 @@ export default function ProfilePic(props) {
                     />
                 </div>
             </div>
-        </>
+        </Draggable>
     );
 }

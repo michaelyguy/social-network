@@ -1,6 +1,6 @@
 import React from "react";
 import BioEditor from "./bioeditor";
-import Draggable, { DraggableCore } from "react-draggable";
+import Draggable from "react-draggable";
 
 export default function Profile(props) {
     console.log("----PROPS IN PROFILE-----");

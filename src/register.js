@@ -3,7 +3,7 @@ import axios from "./axios";
 import { Link } from "react-router-dom";
 import { useStatefulFields } from "./hooks/useStatefulFields";
 import { useAuthSubmit } from "./hooks/useAuthSubmit";
-import Draggable, { DraggableCore } from "react-draggable";
+import Draggable from "react-draggable";
 
 export default function Register() {
     const [values, handleChange] = useStatefulFields();

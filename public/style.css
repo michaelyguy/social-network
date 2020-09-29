@@ -87,6 +87,10 @@ input::placeholder {
     /* top: 50px; */
 }
 
+#reset-btn {
+    margin: 30px 30px 5px 30px;
+}
+
 .login-link {
     position: relative;
     left: -52px;
@@ -349,7 +353,25 @@ header {
 .user-line {
     margin: 5px 10px;
     font-size: 14px;
-    /* font-weight: medium; */
+}
+
+.reset-line {
+    margin: 5px 10px;
+    font-size: 14px;
+    position: relative;
+    left: -46px;
+}
+.reset-line-one {
+    margin: 5px 10px;
+    font-size: 14px;
+    position: relative;
+    left: -38px;
+}
+.reset-line-two {
+    margin: 5px 10px;
+    font-size: 14px;
+    position: relative;
+    left: -56px;
 }
 
 .info {
