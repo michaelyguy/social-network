@@ -3,6 +3,7 @@ import { animated } from "react-spring";
 // import Svg from "./Svg";
 
 export default function About({ style }) {
+    // console.log("style: ", style);
     return (
         <animated.div className="about-wrapper" style={style}>
             <div className="about-container">
@@ -29,14 +30,6 @@ export default function About({ style }) {
                         full stack web developer.
                     </p>
                     <br />
-                    <h1>
-                        <a
-                            className="lets-talk"
-                            href="mailto: michaelyguy@gmail.com"
-                        >
-                            Let's talk!
-                        </a>
-                    </h1>
                     <a
                         className="designer-link"
                         href="https://www.linkedin.com/in/guymichaely/"

@@ -135,7 +135,7 @@ body {
     /* cursor: pointer; */
     text-decoration: none;
     color: black;
-    z-index: 10;
+    z-index: 100;
     font-size: calc(20px + 2vw);
 }
 
