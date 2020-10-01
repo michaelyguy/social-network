@@ -114,9 +114,10 @@ body {
 }
 
 .designer-link {
-    /* text-decoration: none; */
-    /* font-family: "Golia"; */
     color: black;
+    /* font-weight: bolder; */
+    text-decoration: none;
+    margin-right: 10px;
 }
 
 .my-pic {
