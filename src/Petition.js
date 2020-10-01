@@ -73,10 +73,20 @@ export default function Petition() {
                                 ref={vidRef}
                                 muted
                                 loop
+                                playsinline
+                                controls="true"
                                 className="gif-project"
                             >
                                 <source src="petition.mp4" type="video/mp4" />
                             </video>
+                            {/* <video
+                                ref={vidRef}
+                                muted
+                                loop
+                                className="gif-project"
+                            >
+                                <source src="petition.mp4" type="video/mp4" />
+                            </video> */}
                         </div>
                     </animated.div>
                 )}
