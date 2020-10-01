@@ -46,6 +46,7 @@ export default function About({ style }) {
                     </a>
                 </div>
             </div>
+
             <Draggable>
                 <img src="me.png" className="my-pic" />
             </Draggable>

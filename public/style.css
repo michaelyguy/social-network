@@ -339,9 +339,14 @@ body {
     font-size: calc(20px + 2vw);
 }
 
-.project-text h1 {
+/* .project-text h1 {
     font-size: 50px;
     font-family: "Golia";
+    font-weight: normal;
+} */
+
+.project-text h1 {
+    font-size: 25px;
     font-weight: normal;
 }
 
