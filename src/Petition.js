@@ -69,16 +69,6 @@ export default function Petition() {
                         className="project-wrapper-one front"
                     >
                         <div className="project-box">
-                            <video
-                                ref={vidRef}
-                                muted
-                                loop
-                                playsinline
-                                controls="true"
-                                className="gif-project"
-                            >
-                                <source src="petition1.mp4" type="video/mp4" />
-                            </video>
                             {/* <video
                                 ref={vidRef}
                                 muted
@@ -87,8 +77,18 @@ export default function Petition() {
                                 controls="true"
                                 className="gif-project"
                             >
-                                <source src="petition.mp4" type="video/mp4" />
+                                <source src="petition1.mp4" type="video/mp4" />
                             </video> */}
+                            <video
+                                ref={vidRef}
+                                muted
+                                loop
+                                playsinline
+                                controls="true"
+                                className="gif-project"
+                            >
+                                <source src="petition.mp4" type="video/mp4" />
+                            </video>
                         </div>
                     </animated.div>
                 )}
