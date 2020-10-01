@@ -142,7 +142,14 @@ export default function App() {
                     <Petition />
                     <ImageBoard />
                     <SocialNetwork />
-                    <video autoPlay muted loop className="gif-project">
+                    <video
+                        width="320"
+                        height="240"
+                        autoPlay
+                        muted
+                        loop
+                        className="gif-project"
+                    >
                         <source src="petition.mp4" type="video/mp4"></source>
                     </video>
                 </div>
