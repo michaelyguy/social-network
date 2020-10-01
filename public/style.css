@@ -116,14 +116,15 @@ body {
 .designer-link {
     color: black;
     /* font-weight: bolder; */
-    text-decoration: none;
-    margin-right: 10px;
+    /* text-decoration: none; */
+    margin-right: 5px;
+    /* z-index: 100; */
 }
 
 .my-pic {
     width: 40%;
     position: absolute;
-    left: 50px;
+    left: 60px;
     top: 180px;
     cursor: move;
 }
@@ -470,6 +471,10 @@ body {
 
     .about-position {
         font-size: 18px;
+    }
+
+    .my-pic {
+        left: 30px;
     }
 }
 
