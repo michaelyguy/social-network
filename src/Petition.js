@@ -75,7 +75,10 @@ export default function Petition() {
                                 loop
                                 className="gif-project"
                             >
-                                <source src="petition.mp4" type="video/mp4" />
+                                <source
+                                    src="petition.mp4"
+                                    type="video/mp4"
+                                ></source>
                             </video>
                         </div>
                     </animated.div>
