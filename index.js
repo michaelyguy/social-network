@@ -19,6 +19,9 @@ if (process.env.NODE_ENV != "production") {
 app.get("*", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 });
+app.get("/", (req, res) => {
+    return res.send("Hello");
+});
 
 app.listen(process.env.PORT || 8080, function () {
     console.log("I'm listening.");
