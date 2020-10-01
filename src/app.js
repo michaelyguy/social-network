@@ -111,17 +111,16 @@ export default class App extends React.Component {
                     {this.state.uploaderIsVisible && (
                         <Uploader setImage={() => this.setImage()} />
                     )}
-                    <footer>
-                        <Link className="chat-link" to="/chat">
-                            Chat↘
-                        </Link>
-                        <Link className="users-link" to="/users">
-                            Find people↘
-                        </Link>
-                        <Link className="friends-link" to="/friends">
-                            Friends↘
-                        </Link>
-                    </footer>
+
+                    <Link className="chat-link" to="/chat">
+                        <img src="folder.png" /> <p>Chat</p>
+                    </Link>
+                    <Link className="users-link" to="/users">
+                        <img src="folder.png" /> <p>Find people</p>
+                    </Link>
+                    <Link className="friends-link" to="/friends">
+                        <img src="folder.png" /> <p>Friends</p>
+                    </Link>
 
                     <Route
                         exact
