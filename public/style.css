@@ -135,8 +135,21 @@ input {
     color: whitesmoke;
     text-decoration: none;
     position: fixed;
-    bottom: 25px;
+    bottom: 40px;
     right: 5%;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 130px;
+    justify-content: space-between;
+}
+.profile-link {
+    color: whitesmoke;
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    left: 5%;
     font-size: 14px;
     display: flex;
     flex-direction: column;
@@ -149,7 +162,7 @@ input {
     color: whitesmoke;
     text-decoration: none;
     position: fixed;
-    bottom: 25px;
+    bottom: 40px;
     right: 15%;
     font-size: 14px;
     display: flex;
@@ -163,7 +176,7 @@ input {
     color: whitesmoke;
     text-decoration: none;
     position: fixed;
-    bottom: 25px;
+    bottom: 40px;
     right: 25%;
     font-size: 14px;
     display: flex;
@@ -213,6 +226,7 @@ input {
     margin: 7px 10px;
     border: 2px solid lightgrey;
     padding: 4px;
+    font-size: 14px;
 }
 
 .uploader-text {
@@ -400,8 +414,8 @@ textarea {
 .card-wrapper-main {
     background-color: whitesmoke;
     position: absolute;
-    bottom: 10%;
-    left: 10%;
+    bottom: 12%;
+    left: 15%;
     z-index: 100;
     border: 3px solid lightgray;
     outline: 1.5px solid black;
@@ -426,7 +440,7 @@ textarea {
     background-color: whitesmoke;
     position: absolute;
     bottom: 25%;
-    left: 35%;
+    left: 40%;
     z-index: 100;
     border: 3px solid lightgray;
     outline: 1.5px solid black;
@@ -488,8 +502,8 @@ textarea {
 .card-wrapper-search {
     background-color: whitesmoke;
     position: absolute;
-    top: 3%;
-    right: 15%;
+    top: 6%;
+    right: 30%;
     z-index: 100;
     border: 3px solid lightgray;
     outline: 1.5px solid black;
@@ -510,7 +524,7 @@ textarea {
     background-color: whitesmoke;
     position: absolute;
     top: 3%;
-    right: 15%;
+    right: 20%;
     z-index: 100;
     border: 3px solid lightgray;
     outline: 1.5px solid black;

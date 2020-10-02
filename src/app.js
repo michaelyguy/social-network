@@ -121,6 +121,9 @@ export default class App extends React.Component {
                     <Link className="friends-link" to="/friends">
                         <img src="folder.png" /> <p>Friends</p>
                     </Link>
+                    <Link className="profile-link" to="/">
+                        <img src="comp.png" /> <p>My profile</p>
+                    </Link>
 
                     <Route
                         exact
