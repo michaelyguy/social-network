@@ -46,7 +46,6 @@ export default function App() {
         <>
             <div>
                 <Ticker />
-                <iframe src="https://free.timeanddate.com/clock/i7dvxyp2/n37/fs48/tct/pct/th1"></iframe>
 
                 <div onClick={() => setClick(!click)}>
                     {!isAboutOpen && (

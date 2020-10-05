@@ -322,23 +322,12 @@ body {
     font-size: calc(20px + 2vw);
 }
 
-iframe {
-    z-index: 12;
-    position: fixed;
-    bottom: 15px;
-    left: 20px;
-    /* font-size: calc(20px + 2vw); */
-    border: 0;
-    width: 189px;
-    height: 57px;
-}
-
 .abt-btn {
     z-index: 15;
     font-size: 50px;
     position: fixed;
     bottom: 15px;
-    right: 50%;
+    left: 20px;
     font-weight: normal;
     cursor: pointer;
     font-size: calc(20px + 2vw);
