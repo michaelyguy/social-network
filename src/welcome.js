@@ -9,7 +9,7 @@ export default function Welcome() {
     return (
         <>
             <Draggable>
-                <div className="card-wrapper-logo">
+                <div className="card-wrapper-logo flicker">
                     <div id="card-header" className="card-header">
                         <div className="card-close">
                             <div className="minimize"></div>

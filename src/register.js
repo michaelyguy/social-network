@@ -23,12 +23,6 @@ export default function Register() {
                         </div>{" "}
                     </div>
                     <div className="card-content">
-                        {/* <img
-                        src="register.png"
-                        className="new-regsiter"
-                        alt="register"
-                    /> */}
-
                         <div className="inputs-fields">
                             {error && (
                                 <p>Somthing went wrong. Please try again!</p>
