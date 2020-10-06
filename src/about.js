@@ -34,7 +34,7 @@ export default function About({ style }) {
                         href="https://www.linkedin.com/in/guymichaely/"
                         target="_blank"
                     >
-                        linkdin
+                        linkedin
                     </a>{" "}
                     <a
                         className="designer-link"

@@ -107,6 +107,7 @@ body {
     top: 175px;
     font-size: 25px;
     line-height: 1.4;
+    pointer-events: none;
 }
 
 .about-position {
@@ -116,10 +117,8 @@ body {
 
 .designer-link {
     color: black;
-    /* font-weight: bolder; */
-    /* text-decoration: none; */
     margin-right: 5px;
-    /* z-index: 100; */
+    pointer-events: auto;
 }
 
 .my-pic {
@@ -132,7 +131,6 @@ body {
 }
 
 .lets-talk {
-    /* position: absolute; */
     position: fixed;
     bottom: 15px;
     right: 20px;
