@@ -34,15 +34,14 @@ export default function About({ style }) {
                         href="https://www.linkedin.com/in/guymichaely/"
                         target="_blank"
                     >
-                        linkedin
-                    </a>{" "}
+                        Linkedin
+                    </a>
                     <a
                         className="designer-link"
                         href="https://github.com/michaelyguy"
                         target="_blank"
                     >
-                        {" "}
-                        github
+                        Github
                     </a>
                 </div>
             </div>
