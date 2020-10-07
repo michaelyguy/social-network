@@ -124,7 +124,7 @@ export default function Petition() {
                             <h1>Petition</h1>
                             <p className="text">
                                 An online petition - created in support of the
-                                Black Lives Matters movement - which enables the
+                                Black Lives Matters movement, which enables the
                                 supporters of the cause to register on the site,
                                 log in and submit their signature to give their
                                 support for the cause. The users can find other

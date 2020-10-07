@@ -22,7 +22,6 @@ export default function App() {
         setAbout(!isAboutOpen);
         document.body.classList.add("unscroll");
         setHeight(window.scrollY);
-        console.log("windowfddsfdsf", windowHeight);
     }
 
     function closeAbout() {
