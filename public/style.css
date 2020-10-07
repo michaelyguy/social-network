@@ -103,7 +103,6 @@ body {
 .about-container {
     position: absolute;
     width: 45%;
-    /* right: 25px; */
     right: 45px;
     top: 175px;
     font-size: 20px;
@@ -380,13 +379,20 @@ body {
     .about-container {
         position: unset;
         width: 100%;
+        font-size: 18px;
     }
 
     .about-position {
         width: unset;
         margin: 0 20px;
-        font-size: 20px;
+        font-size: 18px;
+        line-height: 1.4;
         z-index: 5;
+    }
+
+    .technologies {
+        font-size: 18px;
+        line-height: 1.4;
     }
 }
 
@@ -417,17 +423,14 @@ body {
 
     .project-wrapper-one {
         margin-bottom: 130px;
-        /* margin-top: 50px; */
     }
 
     .project-wrapper-two {
         margin-bottom: 80px;
-        /* margin-top: 30px; */
     }
 
     .project-wrapper-three {
         margin-bottom: 130px;
-        /* margin-top: 30px; */
     }
 
     .project-box {
@@ -455,12 +458,7 @@ body {
 
     .text {
         font-size: 18px;
-    }
-
-    .technologies {
-        font-size: 15px;
-        /* font-weight: bolder; */
-        /* margin-bottom: 30px; */
+        line-height: 1.4;
     }
 
     .about-position {
