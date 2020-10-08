@@ -497,6 +497,11 @@ input {
     margin: 30px 13px;
 }
 
+.comp-png {
+    width: 115px;
+    margin-bottom: 5px;
+}
+
 textarea {
     width: 250px;
     margin: 7px 10px;
@@ -510,14 +515,8 @@ textarea {
 .user-big button {
     color: black;
     position: relative;
-    /* position: absolute; */
     top: -57px;
     left: 190px;
-    /* background-color: blue; */
-
-    /* padding: 0;
-    border: none;
-    background: none; */
 }
 
 .friends {

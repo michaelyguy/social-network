@@ -113,13 +113,14 @@ export default class App extends React.Component {
                     )}
 
                     <Link className="chat-link" to="/chat">
-                        <img src="folder.png" /> <p>Chat</p>
+                        <img src="window.png" /> <p>Chat</p>
                     </Link>
-                    <Link className="users-link" to="/users">
-                        <img src="folder.png" /> <p>Find people</p>
+                    <Link className="users-link " to="/users">
+                        <img className="comp-png" src="compp.png" />
+                        <p>Find people</p>
                     </Link>
                     <Link className="friends-link" to="/friends">
-                        <img src="folder.png" /> <p>Friends</p>
+                        <img src="fold.png" /> <p>Friends</p>
                     </Link>
                     <Link className="profile-link" to="/">
                         <img src="comp.png" /> <p>My profile</p>
